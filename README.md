@@ -55,3 +55,56 @@ Below is a breakdown of what the key files in the project directory do:
 * The platform implements an OAuth flow allowing users to authenticate with their Google accounts.
 * Users can directly import PDF files from Google Drive to generate tests, flashcards, or access reading modes.
 * The system caches the AI-generated results for specific Google Drive files to optimize performance and reduce redundant API calls.
+
+
+# Tech Stack & Dependencies Documentation
+
+This document outlines the complete technology stack and dependencies used to build the Shingaku platform. It is categorized by architectural layers for clarity.
+
+## 1. Frontend Technologies
+The frontend is built as a dynamic, responsive Web App using standard web technologies, integrated tightly with Flask's templating engine.
+
+* **Core Languages:** HTML5, CSS3, JavaScript (ES6+)
+* **Templating:** Jinja2 (served via Flask)
+* **Styling Architecture:** Custom CSS using CSS Variables (`:root`), CSS Grid, and Flexbox for responsive, modular design (Dark/Light mode themes) without the use of preprocessors.
+* **Frontend APIs & Features:**
+  * **Canvas API:** Used for procedural pixel-avatar generation and client-side PDF rendering.
+  * **Web Audio API:** Used for Pomodoro timer alarms and UI interaction sounds.
+  * **BroadcastChannel API:** Used for synchronizing the Pomodoro timer across multiple browser tabs.
+* **External Frontend Libraries:**
+  * **Three.js:** Used for rendering the interactive 3D WebGL animations (e.g., the Hogyoku on the homepage).
+  * **KaTeX:** Used for fast, client-side rendering of LaTeX mathematical formulas in flashcards and reading modes.
+  * **PDF.js:** Used for natively rendering PDF documents within the Computer-Based Test (CBT) interface.
+
+## 2. Backend Technologies
+The backend is a monolithic Python server that handles API routing, authentication, file processing, and database interactions.
+
+* **Core Language:** Python 3.x
+* **Web Framework:** Flask
+  * `flask[async]`: Enables asynchronous route handling.
+  * `flask_cors`: Manages Cross-Origin Resource Sharing (CORS) headers.
+  * `flask_login`: Manages user session state and authentication.
+* **WSGI HTTP Server:** Gunicorn (for production deployment)
+* **Environment Management:** `python-dotenv` (listed as `dotenv`) for loading secrets from the `config.env` file.
+
+## 3. Database & Storage
+* **Primary Database:** MongoDB
+* **Database Driver:** `pymongo` (used for all CRUD operations on user profiles, schedules, test history, etc.).
+
+## 4. AI & Cloud Integrations
+* **Generative AI:** Google Gemini API
+  * `google-genai`: The official SDK used to interface with Gemini models for generating CBTs, flashcards, schedules, and learning roadmaps.
+* **Google Cloud / OAuth Integration:**
+  * `google-auth` & `google-auth-oauthlib`: Manages OAuth 2.0 user authentication flows.
+  * `google-api-python-client`: Interfaces with Google Drive to fetch user documents seamlessly.
+* **HTTP Client:** `requests` (used for external API communications).
+
+## 5. Document & Image Processing
+The platform performs heavy server-side extraction of PDFs and images to feed structured data to the AI.
+
+* **PDF Processing:** `PyMuPDF` (used for fast PDF reading, page extraction, and text parsing).
+* **Image Processing:** `Pillow` (Python Imaging Library, used for manipulating uploaded schedules and extracted diagrams).
+* **Computer Vision & Math:** `opencv-python` and `numpy` (used for advanced image manipulation, array handling, and potentially for proctoring/anti-cheat computer vision features).
+
+## 6. Web3 & Blockchain Integration
+* **Blockchain Interaction:** `web3` (Web3.py is used to interact with Ethereum-compatible blockchains, generating cryptographic hashes of exam questions and student submissions to ensure tamper-proof academic integrity).
