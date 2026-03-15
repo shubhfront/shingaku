@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Notes - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/notes">
+    <meta property="og:title" content="Notes - Shingaku">
+    <meta property="og:description" content="Access notes for every branch of engineering with AI flashcards and Kindle mode.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/notes">
+    <meta name="twitter:title" content="Notes - Shingaku">
+    <meta name="twitter:description" content="Access notes for every branch of engineering with AI flashcards and Kindle mode.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/notes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/notes.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+</head>
+<body>
+
+<!-- ================================================================
+     DESKTOP LAYOUT (md+)
+     ================================================================ -->
+<div id="desktopApp">
+    <!-- Navbar -->
+    <nav class="dk-nav">
+        <div class="flex items-center gap-4">
+            <a href="/" class="flex items-center gap-2 group select-none cursor-pointer" style="text-decoration:none;">
+                <div class="relative w-10 h-10 bg-white/10 clip-button flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+                    <i data-lucide="sword" class="h-5 w-5 text-white"></i>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-2xl font-bold tracking-widest heading-font text-white">SHIN<span class="text-orange-500">GAKU</span></span>
+                    <p class="text-[8px] text-neutral-500 font-bold uppercase tracking-widest">Soul Archives</p>
+                </div>
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="dk-search-wrap">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-neutral-600 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10"></i>
+                <input id="dkSearch" type="text" placeholder="Search notes, chapters..." oninput="dkSearchFilter()" onfocus="dkSearchFocus()" autocomplete="off"
+                    class="bg-white/[0.03] border border-white/[0.06] rounded-xl pl-9 pr-4 py-2 text-xs font-bold w-72 outline-none text-white focus:border-[var(--reishi)] transition-colors">
+                <div id="dkSearchDropdown" class="dk-search-dropdown custom-scroll"></div>
+            </div>
+            <div class="flex items-center gap-3 pl-4 border-l border-white/[0.06]">
+                <button class="theme-toggle-btn" onclick="toggleNotesTheme()" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 notes-icon-sun hidden"></i>
+                    <i data-lucide="moon" class="w-4 h-4 notes-icon-moon"></i>
+                </button>
+                <a href="/profile" class="w-8 h-8 rounded-full border border-white/10 overflow-hidden hover:border-[var(--getsuga)] transition-colors">
+                    <img src="{{ avatar }}" alt="" class="w-full h-full object-cover">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Body -->
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Subject Sidebar (icon rail) -->
+        <aside class="dk-sidebar" id="dkSubjectSidebar">
+            <div class="dk-sidebar-label">
+                <span>Subjects</span>
+                <button class="sidebar-mini-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
+                    <i data-lucide="panel-left-close" id="sidebarToggleIcon" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            <!-- Populated by JS -->
+        </aside>
+
+        <!-- Sidebar Expand (overlaps border) -->
+        <button class="panel-expand-btn" id="sidebarExpandBtn" onclick="toggleSidebar()" title="Show Subjects">
+            <i data-lucide="panel-left-open" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Chapter List -->
+        <aside class="dk-chapters" id="dkChapterPanel">
+            <div class="dk-chap-header">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-teko text-2xl font-bold text-white uppercase leading-none" id="dkSubjectTitle">Mathematics</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="badge badge-orange" id="dkChapCount">6 chapters</span>
+                        <button class="sidebar-mini-btn" onclick="toggleChapterPanel()" title="Collapse Chapters">
+                            <i data-lucide="panel-left-close" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="text-[10px] text-neutral-500 font-bold">Select a chapter to view study material</p>
+                <div class="relative mt-3">
+                    <i data-lucide="search" class="w-3 h-3 text-neutral-600 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                    <input id="dkChapSearch" type="text" placeholder="Filter chapters..." oninput="dkChapFilter()"
+                        class="w-full bg-white/[0.04] border border-white/[0.06] rounded-lg pl-8 pr-3 py-2 text-[11px] font-bold outline-none text-white focus:border-[var(--reishi)] transition-colors">
+                </div>
+            </div>
+            <div id="dkChapterList" class="flex-1 overflow-y-auto custom-scroll"></div>
+        </aside>
+
+        <!-- Chapter Expand (overlaps border) -->
+        <button class="panel-expand-btn" id="chapterExpandBtn" onclick="toggleChapterPanel()" title="Show Chapters">
+            <i data-lucide="panel-left-open" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Content Area -->
+        <main class="dk-content">
+            <!-- Hero / Header -->
+            <div class="dk-hero">
+                <div class="flex items-center gap-2 mb-3" id="dkBreadcrumb">
+                    <span class="text-[10px] text-neutral-500 font-bold cursor-pointer hover:text-white transition-colors" onclick="dkBreadSubject()">Mathematics</span>
+                    <i data-lucide="chevron-right" class="w-3 h-3 text-neutral-600"></i>
+                    <span class="text-[10px] text-[var(--getsuga)] font-bold">Fundamentals of Algebra</span>
+                </div>
+                <div class="flex items-center justify-between mb-1">
+                    <div>
+                        <h2 class="font-teko text-5xl font-bold text-white uppercase leading-none tracking-wide" id="dkContentTitle">Fundamentals of Algebra</h2>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mt-3 pb-5">
+                    <span class="badge badge-blue" id="dkModuleBadge">6 modules</span>
+                    <span class="badge badge-green">Updated recently</span>
+                </div>
+            </div>
+            <!-- Stats Strip -->
+            <div class="dk-stats">
+                <div class="dk-stat-item">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-[var(--reishi)]"></i>
+                    <span class="text-[10px] font-bold text-neutral-400" id="dkStatNotes">6 Notes</span>
+                </div>
+                <div class="dk-stat-item">
+                    <i data-lucide="video" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span class="text-[10px] font-bold text-neutral-400">3 Recordings</span>
+                </div>
+                <div class="dk-stat-item">
+                    <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-green-400"></i>
+                    <span class="text-[10px] font-bold text-neutral-400">2 Practice</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="dk-stat-item fc-stat-btn" onclick="openFcSelectModal()" title="Generate AI Flashcards" style="cursor:pointer; background:rgba(168,85,247,0.06); border-color:rgba(168,85,247,0.2);">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">Flashcards</span>
+                </div>
+                <div class="dk-stat-item" style="background:transparent; border-color:transparent;">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-neutral-600"></i>
+                    <span class="text-[10px] font-bold text-neutral-500">Last studied 2h ago</span>
+                </div>
+            </div>
+            <!-- Tabs -->
+            <div class="dk-tabs" id="dkTabBar">
+                <button class="dk-tab active" onclick="dkSwitchTab('notes', this)">Notes</button>
+                <button class="dk-tab" onclick="dkSwitchTab('recordings', this)">Recordings</button>
+                <button class="dk-tab" onclick="dkSwitchTab('practice', this)">Practice</button>
+            </div>
+            <!-- Resource Grid -->
+            <div id="dkResourceGrid" class="flex-1 overflow-y-auto p-8 custom-scroll">
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5" id="dkCards"></div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ================================================================
+     MOBILE LAYOUT (<768px)
+     ================================================================ -->
+<div id="mobileApp">
+    <!-- Screen 1: Chapters -->
+    <div id="mobScreenChapters" class="mob-screen center" style="z-index:10;">
+        <!-- Header -->
+        <div class="mob-hdr">
+            <a href="/" class="mob-back" style="text-decoration:none;">
+                <div class="relative w-8 h-8 bg-white/10 clip-button flex items-center justify-center">
+                    <i data-lucide="sword" class="h-4 w-4 text-white"></i>
+                </div>
+            </a>
+            <div class="flex-1 min-w-0">
+                <h1 class="heading-font text-base text-white leading-none tracking-widest">SHIN<span class="text-orange-500">GAKU</span></h1>
+                <p class="text-[9px] text-neutral-500 font-bold mt-0.5">Soul Archives</p>
+            </div>
+            <button id="mobGridBtn" class="mob-grid-btn" title="Subjects" onclick="mobToggleSubjectPicker()">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                <span class="dot-ping"></span>
+            </button>
+            <button class="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center text-neutral-500" title="Search" onclick="mobToggleSearch()">
+                <i data-lucide="search" class="w-4 h-4"></i>
+            </button>
+            <button class="theme-toggle-btn" onclick="toggleNotesTheme()" title="Toggle Theme">
+                <i data-lucide="sun" class="w-4 h-4 notes-icon-sun hidden"></i>
+                <i data-lucide="moon" class="w-4 h-4 notes-icon-moon"></i>
+            </button>
+            <a href="/profile" class="w-8 h-8 rounded-full border border-white/10 overflow-hidden flex-shrink-0">
+                <img src="{{ avatar }}" alt="" class="w-full h-full object-cover">
+            </a>
+        </div>
+        <!-- Search (hidden by default) -->
+        <div id="mobSearchWrap" class="hidden">
+            <div class="mob-search">
+                <i data-lucide="search" class="w-4 h-4 text-neutral-500 flex-shrink-0"></i>
+                <input type="text" placeholder="Search chapters..." id="mobSearchInput" oninput="mobFilterChapters()">
+            </div>
+        </div>
+        <!-- Subject Picker Overlay -->
+        <div id="mobSubjectOverlay" class="mob-subject-overlay">
+            <div class="backdrop" onclick="mobCloseSubjectPicker()"></div>
+            <div class="mob-subject-sheet">
+                <div class="mob-sheet-handle"></div>
+                <div class="mob-sheet-title"><span class="title-dot"></span>Choose Subject</div>
+                <div class="mob-subject-grid" id="mobSubjectGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+        <!-- Active Subject Indicator -->
+        <div id="mobActiveSubjectBar" class="flex items-center gap-3 px-4 py-2 flex-shrink-0 border-b border-white/[0.06] bg-[var(--void-light)]">
+            <div id="mobActiveSubIcon" class="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"></div>
+            <span id="mobActiveSubLabel" class="text-xs font-bold text-white flex-1"></span>
+            <button class="text-[10px] font-bold text-[var(--getsuga)] uppercase tracking-wider" onclick="mobToggleSubjectPicker()">Change</button>
+        </div>
+        <!-- Subject Info Card -->
+        <div class="px-4 pt-4 pb-2 flex-shrink-0">
+            <div class="flex items-center justify-between">
+                <h2 class="font-teko text-2xl font-bold text-white uppercase" id="mobSubTitle">Mathematics</h2>
+                <span class="badge badge-orange" id="mobChapCount">6 chapters</span>
+            </div>
+        </div>
+        <!-- Chapter Cards -->
+        <div id="mobChapterList" class="flex-1 overflow-y-auto pt-2 pb-20 scrollbar-hide">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Screen 2: Content (Resources) -->
+    <div id="mobScreenContent" class="mob-screen off-right" style="z-index:20;">
+        <div class="mob-hdr">
+            <div class="mob-back" onclick="mobGoBack()">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h1 class="font-coc text-sm text-white leading-none truncate" id="mobContentTitle">Fundamentals of Algebra</h1>
+                <p class="text-[9px] text-neutral-500 font-bold mt-0.5" id="mobContentSub">Mathematics &bull; 6 modules</p>
+            </div>
+        </div>
+        <!-- Hero Banner -->
+        <div class="relative px-4 py-5 flex-shrink-0" style="background: linear-gradient(135deg, rgba(0,210,255,0.06), rgba(255,107,0,0.04));">
+            <div class="flex items-center gap-3">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--reishi)] to-cyan-700 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="book-open" class="w-6 h-6 text-black"></i>
+                </div>
+                <div class="min-w-0">
+                    <h2 class="font-teko text-xl font-bold text-white uppercase leading-tight" id="mobHeroTitle">Fundamentals of Algebra</h2>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="badge badge-blue" id="mobHeroModules">6 modules</span>
+                        <span class="badge badge-green">Updated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tabs -->
+        <div class="mob-tab-row" id="mobTabRow">
+            <button class="mob-tab active" onclick="mobSwitchTab('notes', this)">Notes</button>
+            <button class="mob-tab" onclick="mobSwitchTab('recordings', this)">Recordings</button>
+            <button class="mob-tab" onclick="mobSwitchTab('practice', this)">Practice</button>
+        </div>
+        <!-- Resource List -->
+        <div id="mobResourceList" class="flex-1 overflow-y-auto px-4 py-4 scrollbar-hide"></div>
+        <!-- Mobile Flashcard FAB -->
+        <button class="mob-fc-fab" onclick="openFcSelectModal()" title="Generate Flashcards">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </button>
+    </div>
+</div>
+
+<!-- PDF Viewer Overlay -->
+<div id="pdfViewerOverlay" class="pdf-viewer-overlay">
+    <div class="pdf-viewer-header">
+        <div class="flex items-center gap-3 min-w-0">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="file-text" class="w-4 h-4 text-red-400"></i>
+            </div>
+            <span id="pdfViewerTitle" class="text-sm font-bold text-white truncate">PDF Viewer</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="downloadCurrentPdf()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--getsuga)]/20 hover:border-[var(--getsuga)]/30 transition-colors flex-shrink-0" title="Download PDF">
+                <i data-lucide="download" class="w-4 h-4 text-white"></i>
+            </button>
+            <button onclick="closePdfViewer()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20 hover:border-red-500/30 transition-colors flex-shrink-0">
+                <i data-lucide="x" class="w-4 h-4 text-white"></i>
+            </button>
+        </div>
+    </div>
+    <iframe id="pdfViewerFrame" class="pdf-viewer-frame" src="" frameborder="0"></iframe>
+</div>
+
+<!-- ================================================================
+     FLASHCARD SELECTION MODAL
+     ================================================================ -->
+<div id="fcSelectModal" class="fc-select-modal">
+    <div class="fc-select-backdrop" onclick="closeFcSelectModal()"></div>
+    <div class="fc-select-sheet">
+        <div class="mob-sheet-handle"></div>
+        <h3 style="font-family:'Teko',sans-serif; font-size:24px; font-weight:700; color:white; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Generate Flashcards</h3>
+        <p style="font-size:11px; color:#666; font-weight:700; margin-bottom:16px;">Select PDFs to create flashcards from</p>
+        <div id="fcSelectList" class="fc-select-list custom-scroll"></div>
+        <button id="fcSelectGenBtn" onclick="startFlashcardGeneration()" class="fc-generate-btn">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Generate Flashcards</span>
+        </button>
+    </div>
+</div>
+
+<!-- ================================================================
+     FLASHCARD OVERLAY
+     ================================================================ -->
+<div id="flashcardOverlay" class="flashcard-overlay">
+    <div class="flashcard-header">
+        <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+            <div style="width:32px; height:32px; border-radius:10px; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <i data-lucide="layers" class="w-4 h-4" style="color:#a855f7;"></i>
+            </div>
+            <span id="flashcardTitle" style="font-size:14px; font-weight:700; color:white; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Flashcards</span>
+            <span id="flashcardCounter" style="font-size:11px; font-weight:700; color:#555;">1 / 20</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <button onclick="flashcardShuffle()" class="fc-header-btn" title="Shuffle Cards">
+                <i data-lucide="shuffle" class="w-4 h-4"></i>
+            </button>
+            <select id="fcFilterDifficulty" onchange="flashcardFilter()" class="fc-filter-select">
+                <option value="all">All Levels</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <select id="fcFilterCategory" onchange="flashcardFilter()" class="fc-filter-select">
+                <option value="all">All Types</option>
+                <option value="Definition">Definitions</option>
+                <option value="Formula">Formulas</option>
+                <option value="Theorem">Theorems</option>
+                <option value="Key Concept">Key Concepts</option>
+                <option value="Example">Examples</option>
+                <option value="Fact">Facts</option>
+            </select>
+            <button onclick="closeFlashcardOverlay()" style="width:32px; height:32px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; cursor:pointer; color:white;" title="Close">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+    <div class="flashcard-body">
+        <div id="flashcardContainer" class="flashcard-container"></div>
+        <div class="flashcard-nav" id="flashcardNav">
+            <button onclick="flashcardPrev()" class="fc-nav-btn" title="Previous (Left Arrow)">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <div class="fc-progress-bar">
+                <div id="fcProgressFill" class="fc-progress-fill" style="width:0%"></div>
+            </div>
+            <button onclick="flashcardNext()" class="fc-nav-btn" title="Next (Right Arrow)">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
+    <div id="flashcardLoading" class="fc-loading-state" style="display:none;">
+        <div class="fc-spinner"></div>
+        <p style="font-size:13px; font-weight:700; color:#888; margin-top:16px;">Generating flashcards with AI...</p>
+        <p style="font-size:11px; color:#444; margin-top:6px;">This may take 15-30 seconds per PDF</p>
+    </div>
+</div>
+
+<!-- ================================================================
+     KINDLE MODE OVERLAY
+     ================================================================ -->
+<div id="kindleOverlay" class="kindle-overlay">
+    <div class="kindle-header">
+        <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+            <div style="width:32px; height:32px; border-radius:10px; background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <i data-lucide="book-open" class="w-4 h-4" style="color:#f59e0b;"></i>
+            </div>
+            <span id="kindleTitle" style="font-size:14px; font-weight:700; color:white; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Kindle Mode</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <button onclick="kindleChangeFontSize(-1)" class="kindle-ctrl-btn" title="Decrease font size">
+                <i data-lucide="minus" class="w-3 h-3"></i>
+            </button>
+            <span id="kindleFontLabel" style="font-size:10px; font-weight:700; color:#555; width:24px; text-align:center;">16</span>
+            <button onclick="kindleChangeFontSize(1)" class="kindle-ctrl-btn" title="Increase font size">
+                <i data-lucide="plus" class="w-3 h-3"></i>
+            </button>
+            <div style="width:1px; height:20px; background:rgba(255,255,255,0.06); margin:0 4px;"></div>
+            <button onclick="closeKindleOverlay()" style="width:32px; height:32px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; cursor:pointer; color:white;" title="Close">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+    <div id="kindleBody" class="kindle-body custom-scroll"></div>
+    <div id="kindleLoading" class="fc-loading-state" style="display:none;">
+        <div class="fc-spinner"></div>
+        <p style="font-size:13px; font-weight:700; color:#888; margin-top:16px;">Extracting content with AI...</p>
+        <p style="font-size:11px; color:#444; margin-top:6px;">Reading and structuring the PDF...</p>
+    </div>
+    <div class="kindle-footer" id="kindleFooter" style="display:none;">
+        <div class="kindle-progress-track">
+            <div id="kindleProgressFill" class="kindle-progress-fill" style="width:0%"></div>
+        </div>
+        <span id="kindlePageInfo" style="font-size:10px; font-weight:700; color:#555;">Page 1</span>
+    </div>
+</div>
+
+<script src="/static/js/notes.js"></script>
+
+</body>
+</html>

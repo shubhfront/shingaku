@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Test Arena - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/test_section">
+    <meta property="og:title" content="Test Arena - Shingaku">
+    <meta property="og:description" content="Convert PDF papers to CBT exams and practice with AI-powered testing.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/test_section">
+    <meta name="twitter:title" content="Test Arena - Shingaku">
+    <meta name="twitter:description" content="Convert PDF papers to CBT exams and practice with AI-powered testing.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/test_section">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/test_section.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script></script>
+</head>
+<body>
+
+<!-- ================================================================
+     DESKTOP LAYOUT (md+)
+     ================================================================ -->
+<div id="desktopApp">
+    <!-- Navbar -->
+    <nav class="dk-nav">
+        <div class="flex items-center gap-4">
+            <a href="/dashboard" class="flex items-center gap-2 group select-none cursor-pointer" style="text-decoration:none;">
+                <div class="relative w-10 h-10 bg-white/10 clip-button flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+                    <i data-lucide="sword" class="h-5 w-5 text-white"></i>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-2xl font-bold tracking-widest heading-font text-white">SHIN<span class="text-orange-500">GAKU</span></span>
+                    <p class="text-[8px] text-neutral-500 font-bold uppercase tracking-widest">Test Arena</p>
+                </div>
+            </a>
+            <div class="w-px h-5 bg-white/[0.06]"></div>
+            <button class="dk-nav-link" id="navHistoryBtn" onclick="switchTab(currentTab === 'history' ? 'papers' : 'history')" style="border:none;cursor:pointer;"><i data-lucide="history" class="w-4 h-4"></i><span>Test History</span></button>
+            <button class="dk-nav-link" id="navLiveBtn" onclick="switchTab(currentTab === 'live' ? 'papers' : 'live')" style="border:none;cursor:pointer;"><i data-lucide="radio" class="w-4 h-4"></i><span>Live Tests</span></button>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="/notes" class="dk-nav-link"><i data-lucide="book-open" class="w-4 h-4"></i><span>Notes</span></a>
+            <a href="/dashboard" class="dk-nav-link"><i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span></a>
+            <div class="w-px h-5 bg-white/[0.06]"></div>
+            <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">
+                <i data-lucide="sun" class="w-4 h-4 icon-sun hidden"></i>
+                <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Body: Sidebar + Main -->
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- Sidebar Expand Button (visible when collapsed) -->
+        <button class="sidebar-expand-btn" id="sidebarExpandBtn" onclick="toggleSidebar()" title="Show Subjects">
+            <i data-lucide="panel-left-open" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Subject Sidebar -->
+        <aside class="dk-sidebar custom-scroll" id="dkSidebar">
+            <div class="dk-sidebar-label">
+                <span>Subjects</span>
+                <button class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
+                    <i data-lucide="panel-left-close" id="sidebarToggleIcon" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+            <div id="dkSubjectList"></div>
+        </aside>
+
+        <!-- Main Area -->
+        <main class="dk-main custom-scroll">
+            <!-- Hero -->
+            <div class="dk-hero">
+                <div class="dk-hero-glow"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="badge badge-orange"><i data-lucide="swords" class="w-3 h-3 inline"></i> Battle Zone</span>
+                        <span class="badge badge-blue" id="dkPdfCount">0 PDFs</span>
+                    </div>
+                    <h1 class="font-teko text-5xl font-bold text-white uppercase tracking-wide leading-none">TEST <span style="color:var(--getsuga)">ARENA</span></h1>
+                    <p class="text-sm text-neutral-400 mt-2 font-bold max-w-lg">Upload a PDF or pick from your question papers to start a Computer-Based Test.</p>
+                </div>
+            </div>
+
+            <!-- Upload Strip -->
+            <div class="dk-upload-strip">
+                <div class="dk-upload-zone" id="dkUploadZone">
+                    <div class="dk-upload-idle" id="dkUploadIdle">
+                        <div class="dk-upload-icon-wrap">
+                            <i data-lucide="upload" class="w-5 h-5" style="color:var(--getsuga)"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-bold text-white">Upload your own PDF</p>
+                            <p class="text-[10px] text-neutral-500 font-bold">Drag & drop or click to browse — converts to CBT</p>
+                        </div>
+                        <div class="dk-upload-browse">Browse</div>
+                        <input type="file" id="dkPdfInput" accept=".pdf" class="hidden">
+                    </div>
+                    <div class="dk-upload-active hidden" id="dkUploadActive">
+                        <div class="w-10 h-10 rounded-xl bg-red-900/20 border border-red-800/20 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="file-text" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-bold text-white truncate" id="dkFileName">file.pdf</p>
+                            <p class="text-[10px] text-neutral-500 font-bold" id="dkFileSize">0 MB</p>
+                        </div>
+                        <button class="dk-upload-remove" onclick="clearUpload()" title="Remove">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                        <button class="dk-btn-primary" onclick="startCBTFromUpload()">
+                            <i data-lucide="zap" class="w-4 h-4"></i> Start CBT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop tab bar hidden — history accessed via navbar -->
+            <div class="ts-tab-bar" style="display:none;"></div>
+
+            <!-- Papers Panel -->
+            <div class="dk-pdf-list" id="dkPdfList"></div>
+
+            <!-- History Panel (hidden by default) -->
+            <div class="hist-list hidden" id="dkHistoryList"></div>
+
+            <!-- Live Tests Panel (hidden by default) -->
+            <div class="hidden" id="dkLiveTestsList"></div>
+        </main>
+    </div>
+</div>
+
+<!-- ================================================================
+     MOBILE LAYOUT (<768px)
+     ================================================================ -->
+<div id="mobileApp">
+    <!-- Screen 1: Home -->
+    <div id="mobScreen1" class="mob-screen center" style="z-index:10;">
+        <div class="mob-hdr">
+            <a href="/dashboard" class="mob-back" style="text-decoration:none;">
+                <div class="relative w-8 h-8 bg-white/10 clip-button flex items-center justify-center">
+                    <i data-lucide="sword" class="h-4 w-4 text-white"></i>
+                </div>
+            </a>
+            <div class="flex-1 min-w-0">
+                <h1 class="heading-font text-base text-white leading-none tracking-widest">SHIN<span class="text-orange-500">GAKU</span></h1>
+                <p class="text-[9px] text-neutral-500 font-bold mt-0.5">Test Arena</p>
+            </div>
+            <a href="/notes" class="mob-icon-btn" title="Notes"><i data-lucide="book-open" class="w-4 h-4"></i></a>
+            <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">
+                <i data-lucide="sun" class="w-4 h-4 icon-sun hidden"></i>
+                <i data-lucide="moon" class="w-4 h-4 icon-moon"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto scrollbar-hide">
+            <!-- Upload Card -->
+            <div class="mob-upload-card">
+                <div class="mob-upload-zone" id="mobUploadZone2">
+                    <div class="mob-upload-idle" id="mobUploadIdle">
+                        <div class="mob-upload-icon">
+                            <i data-lucide="file-up" class="w-5 h-5" style="color:var(--getsuga)"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-xs font-bold text-white">Upload a PDF</p>
+                            <p class="text-[10px] text-neutral-500 font-bold">Tap to browse • converts to CBT</p>
+                        </div>
+                        <div class="mob-upload-chevron"><i data-lucide="chevron-right" class="w-4 h-4"></i></div>
+                        <input type="file" id="mobPdfInput" accept=".pdf" class="hidden">
+                    </div>
+                    <div class="mob-upload-active hidden" id="mobUploadActive">
+                        <div class="flex items-center gap-3 w-full">
+                            <div class="w-9 h-9 rounded-lg bg-red-900/20 border border-red-800/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-4 h-4 text-red-400"></i>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-xs font-bold text-white truncate" id="mobFileName">file.pdf</p>
+                                <p class="text-[10px] text-neutral-500 font-bold" id="mobFileSize">0 MB</p>
+                            </div>
+                            <button class="mob-upload-remove" onclick="clearUpload()"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+                        </div>
+                        <button class="mob-btn-primary" onclick="startCBTFromUpload()">
+                            <i data-lucide="zap" class="w-3.5 h-3.5"></i> Convert to CBT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Mobile Tab Bar -->
+            <div class="mob-tab-bar">
+                <button class="mob-tab active" id="mobTabPapers" onclick="switchTab('papers')">
+                    <i data-lucide="library" class="w-3.5 h-3.5"></i>
+                    <span>Papers</span>
+                </button>
+                <button class="mob-tab" id="mobTabHistory" onclick="switchTab('history')">
+                    <i data-lucide="history" class="w-3.5 h-3.5"></i>
+                    <span>History</span>
+                </button>
+                <button class="mob-tab" id="mobTabLive" onclick="switchTab('live')">
+                    <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+                    <span>Live</span>
+                </button>
+            </div>
+
+            <!-- Mobile Papers Content (subjects) -->
+            <div id="mobPapersContent">
+                <div class="px-4 pt-4 pb-2 flex-shrink-0">
+                    <div class="flex items-center justify-between">
+                        <h2 class="font-teko text-xl font-bold text-white uppercase">Pick a Subject</h2>
+                        <span class="badge badge-blue" id="mobPdfCount">0 PDFs</span>
+                    </div>
+                </div>
+                <div id="mobSubjectGrid" class="mob-subject-list scrollbar-hide"></div>
+            </div>
+
+            <!-- Mobile History Content -->
+            <div id="mobHistoryContent" class="hidden">
+                <div id="mobHistoryList" class="mob-hist-list"></div>
+            </div>
+
+            <!-- Mobile Live Tests Content -->
+            <div id="mobLiveTestsContent" class="hidden">
+                <div id="mobLiveTestsList" class="mob-hist-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 2: Subject PDFs -->
+    <div id="mobScreen2" class="mob-screen off-right" style="z-index:20;">
+        <div class="mob-hdr">
+            <div class="mob-back" onclick="mobGoBack()">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h1 class="font-coc text-sm text-white leading-none truncate" id="mobSubjectTitle">Subject</h1>
+                <p class="text-[9px] text-neutral-500 font-bold mt-0.5" id="mobSubjectMeta">0 PDFs</p>
+            </div>
+        </div>
+        <!-- Subject Hero -->
+        <div class="mob-sub-hero" id="mobSubHero">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" id="mobSubHeroIcon">
+                    <i data-lucide="book-open" class="w-5 h-5 text-black"></i>
+                </div>
+                <div class="min-w-0 flex-1">
+                    <h2 class="font-teko text-xl font-bold text-white uppercase leading-tight overflow-hidden whitespace-nowrap text-ellipsis" id="mobSubHeroTitle">Subject</h2>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="badge badge-blue" id="mobSubHeroCount">0 PDFs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PDF List -->
+        <div id="mobPdfList" class="flex-1 overflow-y-auto px-4 py-3 scrollbar-hide"></div>
+    </div>
+</div>
+
+<!-- ================================================================
+     MODE MODAL (Bottom Sheet)
+     ================================================================ -->
+<div class="ts-modal-overlay" id="modeModal">
+    <div class="ts-modal-backdrop" onclick="closeModeModal()"></div>
+    <div class="ts-modal-sheet">
+        <div class="ts-modal-handle"></div>
+        <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[var(--getsuga)] to-orange-700 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="swords" class="w-5 h-5 text-black"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <h3 class="font-teko text-2xl font-bold text-white uppercase leading-none">Choose Mode</h3>
+                <p class="text-[10px] text-neutral-500 font-bold mt-0.5 truncate" id="modalFileName">document.pdf</p>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <button class="ts-mode-btn" onclick="selectMode('cbt')">
+                <div class="ts-mode-icon" style="background:var(--getsuga-glow); border-color:rgba(255,123,0,0.2);">
+                    <i data-lucide="brain" class="w-5 h-5" style="color:var(--getsuga)"></i>
+                </div>
+                <div class="flex-1 text-left min-w-0">
+                    <p class="text-sm font-bold text-white">CBT Mode</p>
+                    <p class="text-[10px] text-neutral-500 font-bold">AI extracts questions — full exam simulation</p>
+                </div>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-600 flex-shrink-0"></i>
+            </button>
+            <button class="ts-mode-btn" onclick="selectMode('pdf')">
+                <div class="ts-mode-icon" style="background:var(--reishi-glow); border-color:rgba(0,242,255,0.2);">
+                    <i data-lucide="eye" class="w-5 h-5" style="color:var(--reishi)"></i>
+                </div>
+                <div class="flex-1 text-left min-w-0">
+                    <p class="text-sm font-bold text-white">View PDF</p>
+                    <p class="text-[10px] text-neutral-500 font-bold">Open in built-in PDF reader</p>
+                </div>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-600 flex-shrink-0"></i>
+            </button>
+            <button class="ts-mode-btn" onclick="selectMode('download')">
+                <div class="ts-mode-icon" style="background:rgba(34,197,94,0.08); border-color:rgba(34,197,94,0.2);">
+                    <i data-lucide="download" class="w-5 h-5 text-green-400"></i>
+                </div>
+                <div class="flex-1 text-left min-w-0">
+                    <p class="text-sm font-bold text-white">Download PDF</p>
+                    <p class="text-[10px] text-neutral-500 font-bold">Save to your device</p>
+                </div>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-600 flex-shrink-0"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================
+     DRIVE CBT LOADING OVERLAY
+     ================================================================ -->
+<div class="ts-drive-loading hidden" id="driveLoadingOverlay">
+    <div class="ts-drive-loading-content">
+        <div class="ts-drive-loading-spinner">
+            <i data-lucide="loader" class="w-8 h-8 animate-spin" style="color:var(--getsuga)"></i>
+        </div>
+        <h3 class="font-teko text-2xl font-bold text-white uppercase mt-4">Generating CBT</h3>
+        <p class="text-xs text-neutral-500 font-bold mt-1 truncate max-w-[280px]" id="driveLoadingTitle">Processing...</p>
+        <p class="text-[10px] text-neutral-600 font-bold mt-3">Extracting questions with AI — this may take a moment</p>
+    </div>
+</div>
+
+<!-- ================================================================
+     CBT VIEWER
+     ================================================================ -->
+<div class="ts-cbt-overlay hidden" id="cbtOverlay">
+    <div class="ts-cbt-header">
+        <button class="ts-icon-btn" onclick="exitCBT()"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
+        <div class="flex-1 min-w-0">
+            <p class="text-sm font-bold text-white truncate" id="cbtTitle">Test</p>
+            <p class="text-[10px] text-neutral-500 font-bold" id="cbtProgress">Page 1 of 10</p>
+        </div>
+        <div class="ts-cbt-timer">
+            <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+            <span id="cbtTimerText">00:00</span>
+        </div>
+    </div>
+    <div class="ts-cbt-body custom-scroll" id="cbtBody">
+        <div class="ts-cbt-page-wrap" id="cbtPageWrap">
+            <canvas id="cbtCanvas"></canvas>
+        </div>
+    </div>
+    <div class="ts-cbt-footer">
+        <button class="ts-cbt-nav-btn" onclick="cbtPrevPage()" id="cbtPrevBtn">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i> Prev
+        </button>
+        <div class="ts-cbt-page-ind">
+            <span id="cbtCurrentPage">1</span> / <span id="cbtTotalPages">1</span>
+        </div>
+        <button class="ts-cbt-nav-btn primary" onclick="cbtNextPage()" id="cbtNextBtn">
+            Next <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+    </div>
+</div>
+
+<!-- ================================================================
+     TEST ANALYSIS OVERLAY
+     ================================================================ -->
+<div class="ts-analysis-overlay hidden" id="analysisOverlay">
+    <div class="ts-analysis-header">
+        <button class="ts-icon-btn" onclick="closeAnalysis()"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
+        <div class="flex-1 min-w-0">
+            <p class="text-sm font-bold text-white truncate" id="analysisTitle">Test Analysis</p>
+            <p class="text-[10px] text-neutral-500 font-bold" id="analysisSubtitle">Detailed Breakdown</p>
+        </div>
+    </div>
+    <div class="ts-analysis-body custom-scroll" id="analysisBody">
+        <!-- Populated by JS -->
+    </div>
+</div>
+
+<!-- PDF Viewer Overlay -->
+<div id="tsPdfViewerOverlay" class="ts-pdf-viewer-overlay">
+    <div class="ts-pdf-viewer-header">
+        <div class="flex items-center gap-3 min-w-0">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="file-text" class="w-4 h-4 text-red-400"></i>
+            </div>
+            <span id="tsPdfViewerTitle" class="text-sm font-bold text-white truncate">PDF Viewer</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="downloadTsPdf()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--getsuga)]/20 hover:border-[var(--getsuga)]/30 transition-colors flex-shrink-0" title="Download PDF">
+                <i data-lucide="download" class="w-4 h-4 text-white"></i>
+            </button>
+            <button onclick="closeTsPdfViewer()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20 hover:border-red-500/30 transition-colors flex-shrink-0">
+                <i data-lucide="x" class="w-4 h-4 text-white"></i>
+            </button>
+        </div>
+    </div>
+    <iframe id="tsPdfViewerFrame" class="ts-pdf-viewer-frame" src="" frameborder="0"></iframe>
+</div>
+
+<script src="/static/js/test_section.js"></script>
+</body>
+</html>

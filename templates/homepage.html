@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shingaku is an AI-powered EdTech platform for NIT Hamirpur students. Convert papers to CBT exams, access notes with Kindle mode, track attendance, and take live tests.">
+    <title>Shingaku - AI-Powered CBT Exams, Notes & Attendance for NIT Hamirpur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/homepage.css">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/">
+    <meta property="og:title" content="Shingaku - AI-Powered CBT Exams, Notes & Attendance">
+    <meta property="og:description" content="Convert papers to CBT exams, access notes with Kindle mode, track attendance, and take live tests. Built for NIT Hamirpur students.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/">
+    <meta name="twitter:title" content="Shingaku - AI-Powered CBT Exams, Notes & Attendance">
+    <meta name="twitter:description" content="Convert papers to CBT exams, access notes with Kindle mode, track attendance, and take live tests. Built for NIT Hamirpur students.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Shingaku",
+        "url": "https://shingaku.com",
+        "description": "AI-powered EdTech platform for NIT Hamirpur students. Convert papers to CBT exams, access notes with Kindle mode, track attendance, and take live tests.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "Shingaku",
+            "url": "https://shingaku.com"
+        },
+        "featureList": [
+            "PDF to CBT Exam Conversion",
+            "AI-Powered Flashcards",
+            "Kindle Mode for Notes",
+            "Attendance Tracker",
+            "Live Tests with Blockchain Verification",
+            "Academic Calendar"
+        ]
+    }
+    </script>
+</head>
+<body class="relative selection:bg-orange-500 selection:text-black">
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen">
+        <div class="tetris-container">
+            <div class="tetris-cell"></div>
+            <div class="tetris-cell"></div>
+            <div class="tetris-cell"></div>
+            <div class="tetris-cell"></div> <!-- Center -->
+        </div>
+        <div class="font-mono text-xs tracking-[0.3em] theme-text-secondary animate-pulse">SYSTEM INITIALIZING...</div>
+    </div>
+
+    <!-- Three.js Background Container -->
+    <div id="canvas-container" class="fixed inset-0 pointer-events-none z-0 transition-opacity duration-1000"></div>
+
+    <!-- HUD Elements (Hidden on mobile) -->
+    <div class="fixed top-0 left-0 p-4 md:p-8 pointer-events-none z-40 hidden md:block" style="border-color: var(--hud-color)">
+        <div class="border-t-2 border-l-2 w-8 h-8 transition-colors duration-500" style="border-color: var(--hud-color)"></div>
+        <div class="text-[10px] mt-2 font-mono tracking-widest transition-colors duration-500" style="color: var(--hud-color)">SYS.01 // ONLINE</div>
+    </div>
+    <div class="fixed top-0 right-0 p-4 md:p-8 pointer-events-none z-40 hidden md:block">
+        <div class="border-t-2 border-r-2 w-8 h-8 float-right transition-colors duration-500" style="border-color: var(--hud-color)"></div>
+        <div class="clear-both text-[10px] mt-2 font-mono tracking-widest text-right transition-colors duration-500" style="color: var(--hud-color)">SEC.L99</div>
+    </div>
+    <div class="fixed bottom-0 left-0 p-4 md:p-8 pointer-events-none z-40 hidden md:block">
+        <div class="border-b-2 border-l-2 w-8 h-8 transition-colors duration-500" style="border-color: var(--hud-color)"></div>
+        <div class="text-[10px] mb-2 font-mono tracking-widest transition-colors duration-500" style="color: var(--hud-color)">COORD.X45-Y92</div>
+    </div>
+    <div class="fixed bottom-0 right-0 p-4 md:p-8 pointer-events-none z-40 hidden md:block">
+        <div class="border-b-2 border-r-2 w-8 h-8 float-right transition-colors duration-500" style="border-color: var(--hud-color)"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 left-0 px-4 py-4 md:px-8 md:py-6 mix-blend-difference md:bg-transparent transition-transform duration-500">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="relative w-10 h-10 bg-white/10 clip-button flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+                    <i data-lucide="sword" class="h-5 w-5 text-white"></i>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-2xl font-bold tracking-widest heading-font text-white">SHIN<span class="text-orange-500">GAKU</span></span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-[0.2em] uppercase">
+                <a href="#academy" class="nav-link group"><span>Platform</span></a>
+                <a href="#squads" class="nav-link group"><span>Features</span></a>
+                <a href="#captains" class="nav-link group"><span>Creators</span></a>
+                
+                <button id="theme-toggle" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="sun" class="w-5 h-5 text-white hidden" id="icon-sun"></i>
+                    <i data-lucide="moon" class="w-5 h-5 text-white" id="icon-moon"></i>
+                </button>
+
+                <div id="auth-section">
+                    <button onclick="openAuthModal('signup')" class="clip-button bg-white text-black px-6 py-2 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 flex flex-col items-center leading-tight">
+                        <span>ENROLL</span>
+                    </button>
+                </div>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2 z-50"><i data-lucide="menu" class="h-8 w-8"></i></button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 z-[100] flex-col transition-all duration-300 overflow-y-auto mobile-menu-hidden" style="display: flex;">
+            <!-- Solid opaque background -->
+            <div class="mobile-menu-bg absolute inset-0"></div>
+            
+            <!-- Close button -->
+            <div class="relative z-10 flex items-center justify-between px-6 py-5 border-b border-white/10">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white/10 clip-button flex items-center justify-center">
+                        <i data-lucide="sword" class="h-4 w-4 text-white"></i>
+                    </div>
+                    <span class="text-lg font-bold tracking-widest heading-font text-white">SHIN<span class="text-orange-500">GAKU</span></span>
+                </div>
+                <button id="mobile-menu-close" class="text-white p-2 hover:text-orange-500 transition-colors">
+                    <i data-lucide="x" class="h-7 w-7"></i>
+                </button>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="relative z-10 flex flex-col px-6 pt-8 gap-2 flex-1">
+                <a href="#academy" class="mobile-nav-link flex items-center gap-4 py-4 px-4 text-xl font-bold tracking-[0.15em] text-white/80 hover:text-orange-500 hover:bg-white/5 transition-all border-b border-white/5">
+                    <i data-lucide="layers" class="w-5 h-5 text-orange-500/60"></i>
+                    PLATFORM
+                </a>
+                <a href="#squads" class="mobile-nav-link flex items-center gap-4 py-4 px-4 text-xl font-bold tracking-[0.15em] text-white/80 hover:text-orange-500 hover:bg-white/5 transition-all border-b border-white/5">
+                    <i data-lucide="zap" class="w-5 h-5 text-orange-500/60"></i>
+                    FEATURES
+                </a>
+                <a href="#captains" class="mobile-nav-link flex items-center gap-4 py-4 px-4 text-xl font-bold tracking-[0.15em] text-white/80 hover:text-orange-500 hover:bg-white/5 transition-all border-b border-white/5">
+                    <i data-lucide="users" class="w-5 h-5 text-orange-500/60"></i>
+                    CREATORS
+                </a>
+            </nav>
+
+            <!-- Auth Section -->
+            <div id="mobile-auth-section" class="relative z-10 px-6 pb-10 pt-4">
+                <button onclick="openAuthModal('signup'); closeMobileMenu();" class="w-full clip-button bg-orange-500 text-black py-4 font-bold hover:bg-orange-400 transition-all tracking-widest text-lg">ENROLL NOW</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-card clip-cut-corner relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold heading-font mb-2">ACCESS <span class="theme-accent-primary">DASHBOARD</span></h2>
+                <div class="flex justify-center gap-4 text-sm tracking-widest mt-4 border-b border-white/10 pb-4">
+                    <button id="tab-login" onclick="switchAuthTab('login')" class="pb-1 border-b-2 border-transparent hover:text-orange-500 transition-colors">LOG IN</button>
+                    <button id="tab-signup" onclick="switchAuthTab('signup')" class="pb-1 border-b-2 border-orange-500 text-orange-500 transition-colors">SIGN UP</button>
+                </div>
+            </div>
+
+            <form id="auth-form">
+                <!-- Username -->
+                <div id="field-username" class="input-group mb-4">
+                    <input type="text" id="username" class="auth-input" placeholder=" " required>
+                    <label for="username" class="input-label">Username</label>
+                    <p id="err-username" class="text-red-500 text-xs mt-1 hidden font-mono tracking-wider"></p>
+                </div>
+
+                <!-- Email -->
+                <div id="group-email" class="input-group mb-4">
+                    <input type="email" id="email" class="auth-input" placeholder=" " required>
+                    <label for="email" class="input-label">Student Mail</label>
+                    <p id="err-email" class="text-red-500 text-xs mt-1 hidden font-mono tracking-wider"></p>
+                </div>
+
+                <!-- Password -->
+                <div id="group-password" class="input-group mb-4 relative">
+                    <input type="password" id="password" class="auth-input pr-10" placeholder=" " required>
+                    <label for="password" class="input-label">Password</label>
+                    <button type="button" class="absolute right-3 top-3 text-gray-500 hover:text-white transition-colors focus:outline-none z-10" onclick="togglePassword('password', this)">
+                        <svg class="w-5 h-5 eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        <svg class="w-5 h-5 eye-closed hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>
+                    </button>
+                    <p id="err-password" class="text-red-500 text-xs mt-1 hidden font-mono tracking-wider"></p>
+                </div>
+
+                <!-- Confirm Password -->
+                <div id="field-confirm-password" class="input-group mb-6 relative">
+                    <input type="password" id="confirm-password" class="auth-input pr-10" placeholder=" " required>
+                    <label for="confirm-password" class="input-label">Confirm Password</label>
+                    <button type="button" class="absolute right-3 top-3 text-gray-500 hover:text-white transition-colors focus:outline-none z-10" onclick="togglePassword('confirm-password', this)">
+                        <svg class="w-5 h-5 eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        <svg class="w-5 h-5 eye-closed hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>
+                    </button>
+                    <p id="err-confirm-password" class="text-red-500 text-xs mt-1 hidden font-mono tracking-wider"></p>
+                </div>
+
+                <!-- OTP Field -->
+                <div id="group-otp" class="input-group mb-6 hidden">
+                    <input type="text" id="otp" class="auth-input text-center text-xl font-bold tracking-[0.5em]" placeholder=" " maxlength="6">
+                    <label for="otp" class="input-label text-center w-full">OTP</label>
+                    <p id="err-otp" class="text-red-500 text-xs mt-1 hidden font-mono tracking-wider text-center"></p>
+                    <p class="text-xs text-center theme-text-secondary mt-2">Code sent to Email.</p>
+                </div>
+
+                <!-- Remember Me -->
+                <div id="group-remember" class="flex items-center mb-6">
+                    <input type="checkbox" id="remember-me" class="w-4 h-4 cursor-pointer" style="accent-color: var(--accent-primary);">
+                    <label for="remember-me" class="ml-2 text-xs theme-text-secondary tracking-widest uppercase cursor-pointer hover:opacity-80 transition-opacity">Remember Me</label>
+                </div>
+
+                <button id="submit-button-1" type="submit" class="w-full theme-btn-primary py-3 font-bold tracking-widest clip-cut-corner transition-transform active:scale-95">
+                    <span id="submit-text">INITIATE SIGN UP</span>
+                </button>
+            </form>
+            
+            <p class="text-xs text-center mt-4 text-gray-500">By accessing the Shingaku Portal, you agree Terms of Service And Conditions.</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="academy" class="relative min-h-screen flex items-center justify-center overflow-hidden z-10 pt-20">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0">
+            <div class="text-[15vw] md:text-[18vw] leading-none font-bold text-outline opacity-20 whitespace-nowrap reveal-hidden absolute">SHINGAKU</div>
+            <div class="text-[25vw] font-jp font-black text-outline opacity-10 whitespace-nowrap reveal-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" style="writing-mode: horizontal-tb;">卍解</div>
+        </div>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-sm md:max-w-2xl h-[50vh] md:h-[80vh] bg-contain bg-bottom bg-no-repeat opacity-80 pointer-events-none hero-mask reveal-hidden delay-100"></div>
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-10 md:mt-20">
+            <div class="inline-flex items-center gap-2 px-4 py-2 border border-white/10 bg-white/5 rounded-full mb-6 backdrop-blur-md reveal-hidden delay-100 theme-border">
+                <span class="w-2 h-2 rounded-full theme-bg-primary animate-pulse" style="background-color: var(--accent-primary)"></span>
+                <span class="text-xs font-bold tracking-[0.2em] theme-accent-primary">WELCOME TO SHINGAKU</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-bold mb-2 theme-text-primary tracking-tighter mix-blend-difference reveal-hidden delay-200" style="text-shadow: 0 10px 30px rgba(0,0,0,0.5);">MASTER THE <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500">ACADEMIC ARTS</span></h1>
+            <p class="font-jp text-lg md:text-2xl text-white/80 mb-8 font-light tracking-widest reveal-hidden delay-200">WITH GRACE</p>
+            <p class="theme-text-secondary text-base md:text-xl mb-12 max-w-lg mx-auto leading-relaxed reveal-hidden delay-300">A.I, CBT Modes, Clans and More...<br/>Forged In Fire by Nirusaki & Shubhfront & Himanshu.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 items-center reveal-hidden delay-400">
+                <button id="hero-cta-btn" onclick="openAuthModal('signup')" class="clip-cut-corner theme-btn-primary pl-8 pr-6 py-4 font-bold text-lg transition-all duration-300 flex items-center gap-4 group">
+                    <span id="hero-cta-text" class="flex flex-col items-start leading-none"><span>START TRAINING</span></span>
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center bg-black text-white group-hover:bg-white group-hover:text-black transition-colors"><i data-lucide="arrow-right" class="w-4 h-4"></i></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid (Updated Content) -->
+    <section id="squads" class="py-16 md:py-32 relative z-10 theme-bg-secondary">
+        <div class="absolute inset-0 bg-[linear-gradient(var(--border-color)_1px,transparent_1px),linear-gradient(90deg,var(--border-color)_1px,transparent_1px)] bg-[size:40px_40px] opacity-10"></div>
+        <div class="absolute top-10 right-10 text-[10rem] md:text-[20rem] font-jp font-black theme-text-secondary opacity-5 pointer-events-none select-none writing-vertical">護廷十三隊</div>
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal-hidden">
+                <div>
+                    <h2 class="text-4xl md:text-7xl font-bold theme-text-primary mb-2 uppercase">Core <span class="text-outline-accent">Features</span></h2>
+                    <p class="theme-text-secondary max-w-md">Enhance Your Knowledge With Advanced Tools.</p>
+                </div>
+            </div>
+            <div class="bento-grid">
+                <!-- 1. Gikon AI -->
+                <div class="bento-item md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 clip-cut-corner group p-8 flex flex-col justify-between">
+                    <!-- Background GIF: Matrix Rain / Code -->
+                    <div class="absolute inset-0 bg-[url('./static/assets/gif/1.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90 z-0"></div>
+                    <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity duration-500 z-10"><i data-lucide="bot" class="w-48 h-48 theme-accent-primary"></i></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-4"><span class="px-3 py-1 border theme-border theme-accent-primary text-xs font-bold rounded-full inline-block">SQUAD 12</span></div>
+                        <h3 class="text-3xl md:text-4xl font-bold theme-text-primary mb-1">A.I FEATURES</h3>
+                        <p class="theme-text-secondary max-w-sm">Kindle Mode,Flash Cards, Anytime. Advanced Academic Guidance.</p>
+                    </div>
+                </div>
+                <!-- 2. Squad Archives -->
+                <div class="bento-item md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 clip-cut-corner p-6 flex flex-col relative group overflow-hidden reveal-hidden delay-200">
+                     <!-- Background GIF: Library/Books -->
+                     <div class="absolute inset-0 bg-[url('./static/assets/gif/2.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                    <div class="relative z-10 mt-auto">
+                        <i data-lucide="library" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-0">NOTES ARCHIVES</h3>
+                        <p class="text-gray-300 text-sm">Access notes for every Branch of Engineering - The Great Library.</p>
+                    </div>
+                </div>
+                <!-- 3. Mission Log -->
+                <div class="bento-item md:col-span-1 p-6 relative group reveal-hidden delay-400">
+                    <!-- Background GIF: Checklist/Writing -->
+                    <div class="absolute inset-0 bg-[url('./static/assets/gif/3.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-black/60 z-0"></div>
+                    <div class="relative z-10"><i data-lucide="clipboard-list" class="w-8 h-8 text-purple-500 mb-4"></i><h3 class="text-xl font-bold theme-text-primary">TO DO LIST</h3><p class="theme-text-secondary text-sm">Strategic To-Do Lists & Notes.</p></div>
+                </div>
+                <!-- 4. Ancient Scrolls -->
+                <div class="bento-item md:col-span-1 p-6 relative group reveal-hidden delay-400">
+                    <!-- Background GIF: Old Scrolls/Paper -->
+                    <div class="absolute inset-0 bg-[url('./static/assets/gif/4.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-black/60 z-0"></div>
+                    <div class="relative z-10"><i data-lucide="scroll" class="w-8 h-8 text-yellow-500 mb-4"></i><h3 class="text-xl font-bold theme-text-primary">PYQ'S</h3><p class="theme-text-secondary text-sm">Previous Year Papers & Assignments.</p></div>
+                </div>
+                <!-- 5. Senkaimon Digitizer -->
+                <div class="bento-item md:col-span-1 lg:col-span-2 p-8 flex items-center justify-between group overflow-hidden reveal-hidden delay-200">
+                    <!-- Background GIF: Portal/Scanning -->
+                    <div class="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-black/70 z-0"></div>
+                    <div class="relative z-10"><h3 class="text-2xl font-bold theme-text-primary mb-1">DIGITIZER</h3><p class="theme-text-secondary text-sm">Transmute Physical Paper Into Digital CBT Exams.</p><button class="mt-6 text-xs font-bold border-b theme-border pb-1 hover:text-orange-500 transition-colors">OPEN GATE</button></div>
+                    <div class="relative z-10"><i data-lucide="scan-line" class="w-10 h-10 theme-text-secondary"></i></div>
+                </div>
+                <!-- 6. Faction Wars (Small) -->
+                <div class="bento-item md:col-span-1 p-6 relative group reveal-hidden delay-400">
+                    <!-- Background GIF: Map/Strategy -->
+                    <div class="absolute inset-0 bg-[url('./static/assets/gif/5.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-black/60 z-0"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="users" class="w-8 h-8 text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-bold theme-text-primary">COMMUNITY CLASH</h3>
+                        <p class="theme-text-secondary text-sm">Bringing Back Global and Clan System With Voice Chats.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Tenteikura (Small) -->
+                <div class="bento-item md:col-span-1 p-6 relative group reveal-hidden delay-400">
+                    <!-- Background GIF: Signal/Radar -->
+                    <div class="absolute inset-0 bg-[url('./static/assets/gif/6.webp')] bg-cover bg-center opacity-25 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 bg-black/60 z-0"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="bell" class="w-8 h-8 text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold theme-text-primary">KINDLE MODE</h3>
+                        <p class="theme-text-secondary text-sm">Rest Your Eyes With This Calm A.I Feature</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Captains -->
+    <section id="captains" class="py-16 md:py-32 theme-bg-primary relative z-10 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/3 sticky top-32 h-fit reveal-hidden">
+                <span class="theme-accent-primary font-mono text-xs tracking-widest mb-4 block">/// CREATORS</span>
+                <h2 class="text-5xl md:text-8xl font-bold theme-text-primary leading-[0.9] mb-4">THE <br/> COOKS <br/> <span class="text-outline">00</span></h2>
+                <h3 class="text-4xl font-jp font-bold theme-text-secondary opacity-30 mb-8">RESPECT THE COOKS</h3>
+                <p class="theme-text-secondary mb-8">The Minds Behind Shingaku.</p>
+            </div>
+            <div class="md:w-2/3 space-y-4">
+                <div class="group relative theme-bg-card border-b theme-border p-8 transition-colors cursor-pointer reveal-hidden delay-100" onclick="window.open('https://github.com/nirusaki-malaal', '_blank')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6"><span class="text-2xl font-mono theme-text-secondary group-hover:text-orange-500 transition-colors">01</span><div><h3 class="text-3xl font-bold theme-text-primary">NIRUSAKI</h3><p class="text-sm font-jp theme-text-secondary">FULL STACK DEVELOPER</p><p class="theme-text-secondary text-sm tracking-widest uppercase mt-1">Tatakae</p></div></div><i data-lucide="github" class="theme-text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                </div>
+                <div class="group relative theme-bg-card border-b theme-border p-8 transition-colors cursor-pointer reveal-hidden delay-200" onclick="window.open('https://github.com/shubhfront', '_blank')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6"><span class="text-2xl font-mono theme-text-secondary group-hover:text-cyan-400 transition-colors">02</span><div><h3 class="text-3xl font-bold theme-text-primary">SHUBHFRONT</h3><p class="text-sm font-jp theme-text-secondary">FRONTEND DEVELOPER</p><p class="theme-text-secondary text-sm tracking-widest uppercase mt-1">Moving Forward</p></div></div><i data-lucide="github" class="theme-text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                </div>
+                <div class="group relative theme-bg-card border-b theme-border p-8 transition-colors cursor-pointer reveal-hidden delay-200" onclick="window.open('https://github.com/JainwinCoder', '_blank')">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6"><span class="text-2xl font-mono theme-text-secondary group-hover:text-cyan-400 transition-colors">02</span><div><h3 class="text-3xl font-bold theme-text-primary">HIMANSHU</h3><p class="text-sm font-jp theme-text-secondary">AI/ML DEVELOPER</p><p class="theme-text-secondary text-sm tracking-widest uppercase mt-1">Chilling...</p></div></div><i data-lucide="github" class="theme-text-secondary group-hover:text-white transition-colors"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="join" class="relative min-h-screen theme-bg-secondary overflow-hidden z-10 flex items-center justify-center">
+        <!-- Background Video Placeholder -->
+        <div class="absolute inset-0 z-0">
+             <!-- Replace with your actual video source -->
+             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-50 mobile-video">
+                 <source src="/static/assets/input.mp4" type="video/mp4">
+             </video>
+             <!-- Fallback GIF -->
+             <div class="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-30"></div>
+             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        </div>
+
+        <!-- Music Button -->
+        <button id="sparkle-btn" onclick="toggleSparkle()" class="absolute bottom-6 right-6 z-20 w-10 h-10 rounded-full border border-white/15 bg-black/40 backdrop-blur-sm flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all duration-300 group cursor-pointer" title="Play Music">
+            <i data-lucide="music" class="w-4 h-4 text-white/60 group-hover:text-orange-400 transition-colors" id="sparkle-icon"></i>
+        </button>
+        <audio id="sparkle-audio" src="/static/assets/sparkle.mp3" preload="metadata"></audio>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal-hidden">
+            <h2 class="text-[10vw] font-bold theme-text-primary leading-none opacity-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none">SOUL SOCIETY</h2>
+            <h2 class="text-[15vw] font-jp font-black theme-text-primary leading-none opacity-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none">
+                尸魂界
+            </h2>
+            
+            <h2 class="text-4xl md:text-6xl font-bold theme-text-primary mb-4">READY TO AWAKEN?</h2>
+            <p class="text-2xl font-jp font-bold theme-text-secondary mb-8">覚醒せよ</p>
+            <p class="theme-text-secondary mb-10 max-w-xl mx-auto">Join others in the Arena.</p>
+            <button id="footer-cta-btn" onclick="openAuthModal('signup')" class="theme-btn-primary p-4 px-8 font-bold tracking-[0.2em] clip-cut-corner transition-all flex flex-col items-center mx-auto"><span id="footer-cta-text">INITIATE</span></button>
+            <div class="mt-20 flex justify-center gap-8 theme-text-secondary text-sm font-mono uppercase tracking-widest">
+                <a href="https://github.com/Nirusaki-Malaal" target="_blank" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="github" class="w-4 h-4"></i>Nirusaki</a><a href="https://github.com/shubhfront" target="_blank" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="github" class="w-4 h-4"></i>Shubhfront</a><a href="https://github.com/JainwinCoder" target="_blank" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="github" class="w-4 h-4"></i>HIMANSHU</a>
+            </div>
+            <p class="mt-8 theme-text-secondary text-xs">© 2026 SHINGAKU. FORGED BY <a href="https://github.com/Nirusaki-Malaal" target="_blank" class="hover:text-orange-500 transition-colors">NIRUSAKI</a> & <a href="https://github.com/shubhfront" target="_blank" class="hover:text-orange-500 transition-colors">SHUBHFRONT</a> & <a href="https://github.com/JainwinCoder" target="_blank" class="hover:text-orange-500 transition-colors">HIMANSHU</a>.</p>
+        </div>
+    </section>
+
+<script src="/static/js/homepage.js"></script>
+<script>
+(function(){
+    var audio = document.getElementById('sparkle-audio');
+    var btn = document.getElementById('sparkle-btn');
+    var playing = false;
+
+    window.toggleSparkle = function(){
+        if(playing){
+            audio.pause();
+            playing = false;
+            btn.classList.remove('sparkle-playing');
+        } else {
+            // Random start: keep at least 30s before the end so it doesn't clip
+            var safeEnd = Math.max(0, audio.duration - 30);
+            audio.currentTime = Math.random() * safeEnd;
+            audio.volume = 0.5;
+            audio.play();
+            playing = true;
+            btn.classList.add('sparkle-playing');
+        }
+    };
+
+    audio.addEventListener('ended', function(){
+        playing = false;
+        btn.classList.remove('sparkle-playing');
+    });
+})();
+</script>
+</body>
+</html>

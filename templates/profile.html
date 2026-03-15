@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Profile - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/profile">
+    <meta property="og:title" content="Profile - Shingaku">
+    <meta property="og:description" content="Manage your Shingaku profile and account settings.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/profile">
+    <meta name="twitter:title" content="Profile - Shingaku">
+    <meta name="twitter:description" content="Manage your Shingaku profile and account settings.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/profile">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+<body class="flex flex-col h-screen">
+
+    <div class="scanlines"></div>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loader-ring mb-4"></div>
+        <div class="font-teko text-xl tracking-[0.3em] text-white animate-pulse">Loading Profile...</div>
+    </div>
+
+    <!-- TRANSITION OVERLAY -->
+    <div id="transition-overlay"></div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container"></div>
+
+    <!-- DELETE ACCOUNT 2FA MODAL -->
+    <div id="delete-modal" class="modal-overlay fixed inset-0 z-[120] flex items-center justify-center p-4">
+        <div class="modal-content glass-card w-full max-w-md p-8 clip-angle relative border-red-900/30 shadow-red-900/20">
+            <button onclick="closeModal('delete-modal')" class="absolute top-4 right-4 text-neutral-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            
+            <div class="text-center mb-6">
+                <i data-lucide="shield-alert" class="w-12 h-12 text-[var(--danger)] mx-auto mb-2"></i>
+                <h3 class="font-teko text-3xl text-white uppercase text-[var(--danger)]">Security Protocol</h3>
+                <p class="text-xs font-mono text-neutral-400">Two-Step Verification Required</p>
+            </div>
+
+            <!-- Step 1: Password -->
+            <div id="delete-step-1">
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="text-[10px] font-mono text-neutral-500 uppercase font-bold block mb-2">Confirm Password</label>
+                        <input type="password" id="delete-password" class="shingaku-input danger-input w-full p-3 text-sm font-bold tracking-widest text-center" placeholder="••••••••">
+                    </div>
+                </div>
+                <button id="delete-verify-btn" onclick="verifyDeletePassword()" class="w-full clip-btn px-6 py-3 bg-[var(--danger)] text-white hover:bg-red-600 text-xs font-bold uppercase tracking-widest transition-colors shadow-lg shadow-red-900/20">
+                    <span id="delete-verify-text">Verify & Send OTP</span>
+                </button>
+            </div>
+
+            <!-- Step 2: OTP (Hidden) -->
+            <div id="delete-step-2" class="hidden">
+                <p class="text-xs text-center text-white mb-4 bg-white/5 p-3 rounded border border-white/10">
+                    Code sent to <span class="text-[var(--reishi)] font-bold" id="delete-email-hint">your email</span>
+                </p>
+                <div class="space-y-4 mb-6">
+                    <div>
+                        <label class="text-[10px] font-mono text-neutral-500 uppercase font-bold block mb-2">Enter 6-Digit Code</label>
+                        <div class="flex justify-center gap-2">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                            <input type="text" maxlength="1" class="otp-input shingaku-input danger-input w-12 h-12 text-center text-xl font-bold rounded">
+                        </div>
+                    </div>
+                </div>
+                <button onclick="verifyOTPAndDelete()" class="w-full clip-btn px-6 py-3 bg-white text-[var(--danger)] hover:bg-neutral-200 text-xs font-bold uppercase tracking-widest transition-colors shadow-lg">
+                    Confirm Deletion
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AVATAR MODAL -->
+    <div id="avatar-modal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="modal-content glass-card w-full max-w-2xl p-8 clip-angle relative">
+            <button onclick="closeModal('avatar-modal')" class="absolute top-4 right-4 text-neutral-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            
+            <h3 class="font-teko text-3xl text-white uppercase mb-2">Avatar Selection</h3>
+            <p class="text-xs font-mono text-neutral-400 mb-6">Choose an Avatar form from the archive.</p>
+            
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 mb-6 max-h-[50vh] overflow-y-auto custom-scroll" id="avatar-grid">
+                <!-- Avatars injected here -->
+            </div>
+
+            <div class="flex justify-end gap-4">
+                <button onclick="regenerateAvatarGrid()" class="clip-btn px-6 py-2 border border-white/20 hover:bg-white/10 text-xs font-bold uppercase tracking-widest text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Reroll
+                </button>
+                <button onclick="closeModal('avatar-modal')" class="clip-btn px-6 py-2 bg-[var(--reishi)] text-black hover:bg-white text-xs font-bold uppercase tracking-widest transition-colors">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHOTO MENU -->
+    <div id="photo-menu" class="hidden absolute z-50 w-48 bg-black border border-white/10 shadow-xl clip-angle">
+        <button onclick="openAvatarModal()" class="w-full text-left px-4 py-3 text-xs font-mono text-neutral-300 hover:text-white hover:bg-white/5 flex items-center gap-2">
+            <i data-lucide="grid" class="w-3 h-3"></i> Choose Avatar
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="h-16 flex items-center justify-between px-4 md:px-10 z-50 border-b border-white/5 bg-black/40 backdrop-blur-md shrink-0">
+        <button onclick="navigateToDashboard()" class="group flex items-center gap-3 text-neutral-400 hover:text-white transition-colors">
+            <div class="w-8 h-8 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors clip-btn">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </div>
+            <span class="font-teko uppercase text-xl tracking-wider hidden md:block">Settings</span>
+        </button>
+        <div class="flex items-center gap-3 select-none">
+            {% if is_admin %}
+            <a href="/admin" class="flex items-center gap-2 px-3 py-1.5 bg-[var(--getsuga)]/10 border border-[var(--getsuga)]/20 rounded-lg text-[var(--getsuga)] hover:bg-[var(--getsuga)]/20 transition-colors" title="Admin Panel">
+                <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                <span class="font-mono text-[10px] font-bold uppercase tracking-wider hidden md:inline">Admin</span>
+            </a>
+            {% endif %}
+            <button onclick="toggleProfileTheme()" class="theme-toggle-btn" title="Toggle Theme">
+                <i data-lucide="moon" id="theme-icon-dark" class="w-4 h-4"></i>
+                <i data-lucide="sun" id="theme-icon-light" class="w-4 h-4 hidden"></i>
+            </button>
+            <img id="nav-avatar" src="" class="w-8 h-8 rounded-full border border-white/20 pixel-avatar bg-black">
+            <span class="font-mono text-[10px] md:text-xs text-[var(--reishi)] tracking-widest opacity-80">ID: 550E-8400</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center p-2 md:p-6 z-10 overflow-hidden">
+        
+        <!-- Settings Container -->
+        <div class="glass-card w-full h-full clip-angle flex flex-col md:flex-row overflow-hidden relative">
+            
+            <!-- Sidebar -->
+            <aside class="w-full md:w-72 bg-black/40 border-b md:border-b-0 md:border-r border-white/5 flex flex-row md:flex-col shrink-0">
+                <div class="p-8 hidden md:block">
+                    <h2 class="font-teko text-3xl text-white uppercase tracking-wider mb-1">Account Center</h2>
+                    <p class="text-[10px] text-neutral-500 font-mono uppercase tracking-widest">Manage Settings</p>
+                </div>
+                
+                <nav class="flex flex-row md:flex-col p-0 md:p-0 w-full md:space-y-1 overflow-x-auto no-scrollbar">
+                    <button onclick="switchTab('profile')" class="tab-btn active flex-1 md:flex-none w-full text-center md:text-left py-4 md:py-5 text-xs md:text-sm font-mono text-neutral-400 flex items-center justify-center md:justify-start gap-2 md:gap-4 whitespace-nowrap px-4 md:px-8">
+                        <i data-lucide="user" class="w-5 h-5 md:w-4 md:h-4"></i>
+                        <span class="uppercase tracking-wide font-bold hidden md:inline">Profile</span>
+                    </button>
+                    <button onclick="switchTab('password')" class="tab-btn flex-1 md:flex-none w-full text-center md:text-left py-4 md:py-5 text-xs md:text-sm font-mono text-neutral-400 flex items-center justify-center md:justify-start gap-2 md:gap-4 whitespace-nowrap px-4 md:px-8">
+                        <i data-lucide="lock" class="w-5 h-5 md:w-4 md:h-4"></i>
+                        <span class="uppercase tracking-wide font-bold hidden md:inline">Security</span>
+                    </button>
+                    <button onclick="switchTab('notifications')" class="tab-btn flex-1 md:flex-none w-full text-center md:text-left py-4 md:py-5 text-xs md:text-sm font-mono text-neutral-400 flex items-center justify-center md:justify-start gap-2 md:gap-4 whitespace-nowrap px-4 md:px-8">
+                        <i data-lucide="bell" class="w-5 h-5 md:w-4 md:h-4"></i>
+                        <span class="uppercase tracking-wide font-bold hidden md:inline">Alerts</span>
+                    </button>
+                    <button onclick="switchTab('wake')" class="tab-btn flex-1 md:flex-none w-full text-center md:text-left py-4 md:py-5 text-xs md:text-sm font-mono text-neutral-400 flex items-center justify-center md:justify-start gap-2 md:gap-4 whitespace-nowrap px-4 md:px-8">
+                        <i data-lucide="alarm-clock" class="w-5 h-5 md:w-4 md:h-4"></i>
+                        <span class="uppercase tracking-wide font-bold hidden md:inline">Wake Me Up</span>
+                    </button>
+                    <div class="hidden md:block flex-1"></div>
+                    <button onclick="switchTab('danger')" class="tab-btn flex-1 md:flex-none w-full text-center md:text-left py-4 md:py-5 text-[10px] md:text-xs font-mono text-[var(--danger)] hover:text-red-400 flex items-center justify-center md:justify-start gap-2 md:gap-4 whitespace-nowrap md:border-t border-white/5 px-4 md:px-8">
+                        <i data-lucide="alert-triangle" class="w-5 h-5 md:w-4 md:h-4"></i>
+                        <span class="uppercase tracking-wide font-bold hidden md:inline">Danger</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Right Content -->
+            <div class="flex-1 bg-transparent relative overflow-hidden flex flex-col">
+                
+                <!-- Scrollable Form Area -->
+                <div class="flex-1 overflow-y-auto custom-scroll p-4 md:p-8 md:p-12 pt-4 md:pt-8">
+                    
+                    <!-- TAB: EDIT PROFILE -->
+                    <div id="tab-profile" class="tab-content space-y-6 md:space-y-8 max-w-3xl">
+                        
+                        <!-- Profile Header -->
+                        <div class="bg-black/20 border border-white/5 p-6 rounded-lg mb-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 backdrop-blur-sm relative overflow-hidden group">
+                            <div class="relative group cursor-pointer" onclick="togglePhotoMenu(event)">
+                                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-black ring-2 ring-[var(--reishi)] ring-opacity-50 group-hover:ring-opacity-100 transition-all shadow-[0_0_30px_rgba(0,210,255,0.15)]">
+                                    <img id="profile-avatar" src="" class="w-full h-full object-cover pixel-avatar bg-[#1a1a1a]">
+                                </div>
+                                <div class="absolute inset-0 rounded-full bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                                    <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left z-10">
+                                <h1 class="text-2xl md:text-4xl font-teko font-bold text-white uppercase tracking-wide mb-1" id="display-username">{{username}}</h1>
+                                <!-- <p class="text-[10px] md:text-xs font-mono text-neutral-400 mb-4">Substitute Soul Reaper • Squad 11</p> -->
+                                <button onclick="togglePhotoMenu(event)" class="text-[10px] md:text-xs font-bold font-mono text-black bg-[var(--reishi)] hover:bg-white transition-colors px-4 py-2 rounded-sm uppercase tracking-wider clip-btn relative shadow-[0_0_10px_rgba(0,210,255,0.2)]">
+                                    Change Photo
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Name Field -->
+                        <div class="flex flex-col md:flex-row md:items-start gap-1 md:gap-12 group">
+                            <label class="w-32 pt-3 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Name</label>
+                            <div class="flex-1 space-y-2 relative">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Name</label>
+                                <div class="relative">
+                                    <input type="text" id="name-input" value="{{name}}" readonly class="shingaku-input w-full p-3 md:p-4 rounded-sm text-sm font-bold tracking-wide">
+                                    <button class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-[var(--getsuga)] transition-colors p-1" onclick="enableEdit('name-input')">
+                                        <i data-lucide="pencil" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                                <p class="text-[10px] text-neutral-600 font-mono">Your public display name.</p>
+                            </div>
+                        </div>
+
+                        <!-- Username Field -->
+                        <div class="flex flex-col md:flex-row md:items-start gap-1 md:gap-12 group">
+                            <label class="w-32 pt-3 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Username</label>
+                            <div class="flex-1 space-y-2 relative">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Username</label>
+                                <div class="relative">
+                                    <input id="username-input" type="text" value="{{username}}" disabled class="shingaku-input locked w-full p-3 md:p-4 rounded-sm text-sm bg-white/5 opacity-80">
+                                    <i data-lucide="lock" class="w-4 h-4 text-neutral-600 absolute right-4 top-1/2 -translate-y-1/2"></i>
+                                </div>
+                                <p class="text-[10px] text-neutral-600 font-mono">Avatar is generated from your username.</p>
+                            </div>
+                        </div>
+
+                        <!-- Bio Field -->
+                        <div class="flex flex-col md:flex-row md:items-start gap-1 md:gap-12 group">
+                            <label class="w-32 pt-3 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Bio</label>
+                            <div class="flex-1 space-y-2 relative">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Bio</label>
+                                <div class="relative">
+                                    <textarea id="bio-input" readonly class="shingaku-input w-full p-3 md:p-4 pr-10 rounded-sm text-sm h-32 resize-none leading-relaxed" maxlength="150">{{bio}}</textarea>
+                                    <button class="absolute right-3 top-4 text-neutral-500 hover:text-[var(--getsuga)] transition-colors p-1" onclick="enableEdit('bio-input')">
+                                        <i data-lucide="pencil" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right text-[10px] text-neutral-600 font-mono">54 / 150</div>
+                            </div>
+                        </div>
+
+                        <!-- Roll No (Strictly Read Only) -->
+                        <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-12 group">
+                            <label class="w-32 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Roll No.</label>
+                            <div class="flex-1">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Roll No.</label>
+                                <div class="relative">
+                                    <input type="text" value={{roll_no}} readonly class="shingaku-input locked w-full p-3 md:p-4 rounded-sm text-sm bg-white/5 opacity-50">
+                                    <i data-lucide="lock" class="w-4 h-4 text-neutral-600 absolute right-4 top-1/2 -translate-y-1/2"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email (Strictly Read Only) -->
+                        <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-12 group">
+                            <label class="w-32 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Email</label>
+                            <div class="flex-1">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Email</label>
+                                <div class="relative">
+                                    <input type="email" value={{email}} readonly class="shingaku-input locked w-full p-3 md:p-4 rounded-sm text-sm bg-white/5 opacity-50 pr-10">
+                                    <i data-lucide="lock" class="w-4 h-4 text-neutral-600 absolute right-4 top-1/2 -translate-y-1/2"></i>
+                                </div>
+                                <p class="text-[10px] text-neutral-600 font-mono mt-1">Email changes require authorization.</p>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex justify-end pt-4 md:pt-8 pb-8">
+                            <button onclick="handleUpdateProfile()" class="clip-btn w-full md:w-auto px-10 py-4 bg-[var(--getsuga)] hover:bg-orange-600 text-black font-bold uppercase tracking-widest text-sm transition-all hover:shadow-[0_0_20px_rgba(255,107,0,0.4)] transform hover:-translate-y-1">
+                                Submit Changes
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TAB: CHANGE PASSWORD -->
+                    <div id="tab-password" class="tab-content hidden space-y-6 md:space-y-8 max-w-3xl">
+                        <h3 class="font-teko text-2xl md:text-3xl text-white uppercase mb-4 md:mb-8 border-b border-white/10 pb-4">Security Clearance</h3>
+                        
+                        <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-12">
+                            <label class="w-40 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Old Password</label>
+                            <div class="flex-1">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Old Password</label>
+                                <div class="relative">
+                                    <input type="password" id="old-pass" class="shingaku-input editable w-full p-3 md:p-4 pr-12 rounded-sm text-sm tracking-widest" placeholder="••••••••">
+                                    <button type="button" onclick="togglePassword('old-pass', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-12">
+                            <label class="w-40 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">New Password</label>
+                            <div class="flex-1">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">New Password</label>
+                                <div class="relative">
+                                    <input type="password" id="new-pass" class="shingaku-input editable w-full p-3 md:p-4 pr-12 rounded-sm text-sm tracking-widest" placeholder="••••••••">
+                                    <button type="button" onclick="togglePassword('new-pass', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-12">
+                            <label class="w-40 text-right text-xs font-mono text-neutral-500 uppercase tracking-wider hidden md:block">Confirm New</label>
+                            <div class="flex-1">
+                                <label class="md:hidden text-[10px] font-mono text-neutral-500 uppercase font-bold">Confirm New</label>
+                                <div class="relative">
+                                    <input type="password" id="confirm-pass" class="shingaku-input editable w-full p-3 md:p-4 pr-12 rounded-sm text-sm tracking-widest" placeholder="••••••••">
+                                    <button type="button" onclick="togglePassword('confirm-pass', this)" class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end pt-4 md:pt-8 pb-8">
+                            <button onclick="handleChangePassword()" class="clip-btn w-full md:w-auto px-10 py-4 bg-white hover:bg-neutral-200 text-black font-bold uppercase tracking-widest text-sm transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transform hover:-translate-y-1">
+                                Update Password
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TAB: NOTIFICATIONS -->
+                    <div id="tab-notifications" class="tab-content hidden space-y-6 md:space-y-8 max-w-3xl">
+                        <h3 class="font-teko text-2xl md:text-3xl text-white uppercase mb-4 md:mb-8 border-b border-white/10 pb-4">Alerts</h3>
+                        <div class="space-y-4 md:space-y-6">
+                            <!-- New Clan Invite -->
+                            <div class="flex items-center justify-between p-4 border border-white/5 bg-white/[0.02] rounded-sm">
+                                <div><h4 class="text-white font-bold text-xs md:text-sm uppercase">New Clan Invite</h4><p class="text-neutral-500 text-[10px] md:text-xs font-mono">Get notified when you receive a clan invitation.</p></div>
+                                <div class="relative inline-block w-12 mr-2 align-middle select-none"><input type="checkbox" checked="" name="toggle" id="toggle-clan-invite" onclick="playClickSound(); updateClanNDB();" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-neutral-700 checked:right-0 checked:border-[var(--reishi)] transition-all duration-300"/><label for="toggle-clan-invite" class="toggle-label block overflow-hidden h-6 rounded-full bg-neutral-800 cursor-pointer"></label></div>
+                            </div>
+
+                            <!-- Upcoming Exams -->
+                            <div class="flex items-center justify-between p-4 border border-white/5 bg-white/[0.02] rounded-sm">
+                                <div><h4 class="text-white font-bold text-xs md:text-sm uppercase">Upcoming Exams</h4><p class="text-neutral-500 text-[10px] md:text-xs font-mono">Get remthinded about approaching exam dates.</p></div>
+                                <div class="relative inline-block w-12 mr-2 align-middle select-none"><input type="checkbox" checked="" name="toggle" id="toggle-exams" onclick="playClickSound(); updateExamNDB();" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-neutral-700 checked:right-0 checked:border-[var(--reishi)] transition-all duration-300"/><label for="toggle-exams" class="toggle-label block overflow-hidden h-6 rounded-full bg-neutral-800 cursor-pointer"></label></div>
+                            </div>
+
+                            <!-- To-Do List Remaining -->
+                            <div class="p-4 border border-white/5 bg-white/[0.02] rounded-sm space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div><h4 class="text-white font-bold text-xs md:text-sm uppercase">To-Do List Remaining</h4><p class="text-neutral-500 text-[10px] md:text-xs font-mono">Daily reminder for incomplete to-do items.</p></div>
+                                    <div class="relative inline-block w-12 mr-2 align-middle select-none"><input type="checkbox" checked="" name="toggle" id="toggle-todo" onclick="playClickSound(); toggleTodoTime(); updateTodoTimeNDB();" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-neutral-700 checked:right-0 checked:border-[var(--reishi)] transition-all duration-300"/><label for="toggle-todo" class="toggle-label block overflow-hidden h-6 rounded-full bg-neutral-800 cursor-pointer"></label></div>
+                                </div>
+                                <div id="todo-time-picker" class="hidden flex items-center gap-3 pt-2 border-t border-white/5">
+                                    <label class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest whitespace-nowrap">Notify At</label>
+                                    <input type="time" id="todo-notify-time" class="shingaku-input editable p-2 rounded-sm text-sm font-bold tracking-widest font-mono text-center w-32" value="20:00" onchange="updateTodoTimeNDB()">
+                                    <p class="text-[10px] font-mono text-neutral-600 hidden md:block">Set your preferred reminder time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB: WAKE ME UP -->
+                    <div id="tab-wake" class="tab-content hidden space-y-6 md:space-y-8 max-w-3xl">
+                        <h3 class="font-teko text-2xl md:text-3xl text-white uppercase mb-4 md:mb-8 border-b border-white/10 pb-4">Wake Me Up Settings</h3>
+                        
+                        <p class="text-xs font-mono text-neutral-400 leading-relaxed bg-white/[0.02] border border-white/5 p-4 rounded-sm">
+                            <i data-lucide="info" class="w-3 h-3 inline mr-1 text-[var(--reishi)]"></i>
+                            Allow your friends to ring your phone to wake you up. Configure who can reach you and how.
+                        </p>
+
+                        <!-- Master Toggle -->
+                        <div class="flex items-center justify-between p-5 border border-[var(--reishi)]/20 bg-[var(--reishi)]/5 rounded-sm">
+                            <div>
+                                <h4 class="text-white font-bold text-xs md:text-sm uppercase tracking-wide">Enable Wake Me Up</h4>
+                                <p class="text-neutral-500 text-[10px] md:text-xs font-mono mt-1">Allow friends to ring your phone remotely.</p>
+                            </div>
+                            <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                <input type="checkbox" name="wake-master" id="wake-master" onclick="playClickSound(); toggleWakeSection()" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-neutral-700 checked:right-0 checked:border-[var(--reishi)] transition-all duration-300"/>
+                                <label for="wake-master" class="toggle-label block overflow-hidden h-6 rounded-full bg-neutral-800 cursor-pointer"></label>
+                            </div>
+                        </div>
+
+                        <div id="wake-settings-body" class="space-y-6 md:space-y-8 transition-all duration-300 hidden">
+                        <!-- Schedule -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div class="space-y-2 md:space-y-4">
+                                <label class="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-widest block">Wake Window Start</label>
+                                <input type="time" id="wake-start" class="shingaku-input editable w-full p-4 rounded-sm text-xl font-bold tracking-widest font-mono text-center" value="06:00">
+                                <p class="text-[10px] font-mono text-neutral-600">Friends can ring you after this time.</p>
+                            </div>
+                            <div class="space-y-2 md:space-y-4">
+                                <label class="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-widest block">Wake Window End</label>
+                                <input type="time" id="wake-end" class="shingaku-input editable w-full p-4 rounded-sm text-xl font-bold tracking-widest font-mono text-center" value="09:00">
+                                <p class="text-[10px] font-mono text-neutral-600">Rings are blocked after this time.</p>
+                            </div>
+                        </div>
+
+                        <!-- Who Can Ring -->
+                        <div class="space-y-4">
+                            <label class="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-widest block">Who Can Ring You</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <label class="cursor-pointer group" onclick="playClickSound()">
+                                    <input id="every" type="radio" name="wake-access" class="peer hidden" value="everyone">
+                                    <div class="border border-white/10 p-4 text-center clip-angle hover:bg-white/5 transition-all peer-checked:border-[var(--reishi)] peer-checked:bg-[var(--reishi)]/10 peer-checked:shadow-[0_0_15px_rgba(0,210,255,0.1)]">
+                                        <i data-lucide="globe" class="w-5 h-5 mx-auto mb-2 text-neutral-500 peer-checked:text-[var(--reishi)]"></i>
+                                        <div class="text-xs font-bold uppercase tracking-wide text-neutral-400">Everyone</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer group" onclick="playClickSound()">
+                                    <input id="friends" type="radio" name="wake-access" class="peer hidden" value="friends" checked>
+                                    <div class="border border-white/10 p-4 text-center clip-angle hover:bg-white/5 transition-all peer-checked:border-[var(--reishi)] peer-checked:bg-[var(--reishi)]/10 peer-checked:shadow-[0_0_15px_rgba(0,210,255,0.1)]">
+                                        <i data-lucide="users" class="w-5 h-5 mx-auto mb-2 text-neutral-500 peer-checked:text-[var(--reishi)]"></i>
+                                        <div class="text-xs font-bold uppercase tracking-wide text-neutral-400">Friends Only</div>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer group" onclick="playClickSound()">
+                                    <input id="nobody" type="radio" name="wake-access" class="peer hidden" value="nobody">
+                                    <div class="border border-white/10 p-4 text-center clip-angle hover:bg-white/5 transition-all peer-checked:border-[var(--reishi)] peer-checked:bg-[var(--reishi)]/10 peer-checked:shadow-[0_0_15px_rgba(0,210,255,0.1)]">
+                                        <i data-lucide="shield-off" class="w-5 h-5 mx-auto mb-2 text-neutral-500 peer-checked:text-[var(--reishi)]"></i>
+                                        <div class="text-xs font-bold uppercase tracking-wide text-neutral-400">Nobody</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Ring Settings -->
+                        <!-- Max Rings Per Day -->
+                        <div class="space-y-2 md:space-y-4">
+                            <label class="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-widest block">Max Rings Per Day</label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" id="wake-max-rings" min="1" max="10" value="3" class="flex-1 h-1 bg-neutral-800 rounded-full appearance-none cursor-pointer accent-[var(--reishi)]" oninput="document.getElementById('ring-count').textContent = this.value">
+                                <span id="ring-count" class="text-lg font-bold font-mono text-[var(--reishi)] w-8 text-center">3</span>
+                            </div>
+                            <p class="text-[10px] font-mono text-neutral-600">Limit how many times friends can ring you in a day.</p>
+                        </div>
+
+                        </div><!-- end wake-settings-body -->
+
+                        <!-- Save Button (always visible) -->
+                        <div class="flex justify-end pt-4 md:pt-8 pb-8">
+                            <button onclick="playClickSound();updateWakeMeUp(); showToast('Wake Me Up settings saved.', 'success');location.reload();" class="clip-btn w-full md:w-auto px-10 py-4 bg-[var(--reishi)] hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm transition-all hover:shadow-[0_0_20px_rgba(0,210,255,0.4)] transform hover:-translate-y-1">
+                                Save Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TAB: DANGER ZONE -->
+                    <div id="tab-danger" class="tab-content hidden space-y-8 md:space-y-10 max-w-3xl">
+                        <div class="p-6 border border-[var(--danger)]/30 bg-[var(--danger)]/5 rounded-sm relative overflow-hidden">
+                            <div class="flex items-center gap-4 text-[var(--danger)] mb-3 relative z-10">
+                                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+                                <span class="font-teko text-2xl tracking-wide uppercase">Forbidden Zone</span>
+                            </div>
+                            <p class="text-neutral-400 text-xs font-mono leading-relaxed relative z-10">Irreversible actions. Proceed with caution.</p>
+                        </div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 md:pb-8 border-b border-white/5 gap-4">
+                            <div><h4 class="text-[var(--danger)] font-bold text-sm uppercase tracking-wide">Delete Account</h4><p class="text-neutral-500 text-[10px] md:text-xs mt-1 font-mono">Permanently erase all academic records.</p></div>
+                            <button onclick="handleDeleteAccount()" class="w-full md:w-auto text-[var(--danger)] hover:text-white text-xs font-bold uppercase tracking-widest font-mono border border-[var(--danger)] px-6 py-3 hover:bg-[var(--danger)] transition-all clip-btn whitespace-nowrap">Delete Permanently</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+<script src="/static/js/profile.js"></script>
+</body>
+</html>

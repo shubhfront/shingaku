@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Live Tests - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/live_tests">
+    <meta property="og:title" content="Live Tests - Shingaku">
+    <meta property="og:description" content="Take live exams with anti-cheating measures and blockchain-verified integrity.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/live_tests">
+    <meta name="twitter:title" content="Live Tests - Shingaku">
+    <meta name="twitter:description" content="Take live exams with anti-cheating measures and blockchain-verified integrity.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/live_tests">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Teko:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --void: #050505; --panel: #111111; --border: rgba(255,255,255,0.06);
+            --getsuga: #ff7b00; --getsuga-glow: rgba(255,123,0,0.15);
+            --reishi: #00f2ff; --reishi-glow: rgba(0,242,255,0.12);
+            --danger: #ef4444; --success: #22c55e;
+        }
+        body { background: var(--void); color: #f5f5f5; font-family: 'JetBrains Mono', monospace; margin: 0; }
+        .font-teko { font-family: 'Teko', sans-serif; }
+
+        .lt-topbar {
+            height: 56px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; background: var(--panel); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 50;
+        }
+        .lt-card {
+            background: var(--panel); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; transition: all 0.2s; cursor: pointer;
+        }
+        .lt-card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-1px); }
+        .lt-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 8px; font-size: 12px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+            border: none; cursor: pointer; transition: all 0.2s;
+        }
+        .lt-btn-primary { background: var(--getsuga); color: #000; }
+        .lt-btn-primary:hover { background: #ff9d4d; }
+        .lt-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+        .lt-btn-ghost { background: rgba(255,255,255,0.03); color: #aaa; border: 1px solid var(--border); }
+        .lt-btn-ghost:hover { background: rgba(255,255,255,0.06); color: #fff; }
+        .lt-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 2px 10px; border-radius: 20px; font-size: 10px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .lt-badge-active { background: var(--getsuga-glow); color: var(--getsuga); border: 1px solid rgba(255,123,0,0.2); }
+        .lt-badge-upcoming { background: var(--reishi-glow); color: var(--reishi); border: 1px solid rgba(0,242,255,0.2); }
+        .lt-badge-done { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+        .lt-badge-cheating { background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.2); }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+        .countdown { font-variant-numeric: tabular-nums; }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(255,123,0,0.2); }
+            50% { border-color: rgba(255,123,0,0.5); }
+        }
+        .active-pulse { animation: pulse-border 2s infinite; }
+    </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="lt-topbar">
+    <div class="flex items-center gap-4">
+        <a href="/dashboard" class="flex items-center gap-2 text-white no-underline hover:opacity-80">
+            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                <i data-lucide="radio" class="w-4 h-4 text-[var(--getsuga)]"></i>
+            </div>
+            <div>
+                <span class="font-teko text-xl font-bold tracking-widest">SHIN<span style="color:var(--getsuga)">GAKU</span></span>
+                <p class="text-[8px] text-neutral-500 font-bold uppercase tracking-widest leading-none">Live Tests</p>
+            </div>
+        </a>
+    </div>
+    <div class="flex items-center gap-3">
+        <a href="/test_section" class="lt-btn lt-btn-ghost" style="padding:6px 14px;font-size:11px;">
+            <i data-lucide="swords" class="w-3.5 h-3.5"></i> Test Arena
+        </a>
+        <a href="/dashboard" class="lt-btn lt-btn-ghost" style="padding:6px 14px;font-size:11px;">
+            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Main -->
+<div class="max-w-3xl mx-auto p-6">
+
+    <!-- Header -->
+    <div class="mb-8">
+        <h1 class="font-teko text-4xl font-bold text-white uppercase tracking-wide">Live Examinations</h1>
+        <p class="text-xs text-neutral-500">Scheduled tests with anti-cheat enforcement & blockchain verification</p>
+    </div>
+
+    <!-- Countdown to next test -->
+    <div id="nextTestBanner" class="hidden mb-6 lt-card active-pulse" style="background:linear-gradient(135deg, rgba(255,123,0,0.05), rgba(0,242,255,0.03));">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[var(--getsuga-glow)] flex items-center justify-center flex-shrink-0">
+                <i data-lucide="alarm-clock" class="w-6 h-6" style="color:var(--getsuga)"></i>
+            </div>
+            <div class="flex-1">
+                <p class="text-[10px] text-neutral-500 font-bold uppercase">Next Test</p>
+                <p class="text-sm font-bold text-white" id="nextTestTitle"></p>
+                <p class="text-xs text-[var(--getsuga)] countdown font-bold mt-1" id="nextTestCountdown"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test list -->
+    <div id="testList" class="space-y-3">
+        <div class="text-center py-16 text-neutral-600">
+            <i data-lucide="loader" class="w-6 h-6 mx-auto mb-2 animate-spin"></i>
+            <p class="text-xs">Loading available tests...</p>
+        </div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="emptyState" class="hidden text-center py-16">
+        <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="calendar-x" class="w-8 h-8 text-neutral-600"></i>
+        </div>
+        <p class="text-sm font-bold text-neutral-500">No live tests available</p>
+        <p class="text-xs text-neutral-600 mt-1">Check back later for upcoming examinations</p>
+    </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+let tests = [];
+let countdownInterval = null;
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function formatCountdown(seconds) {
+    if (seconds <= 0) return 'Starting now!';
+    const d = Math.floor(seconds / 86400);
+    const h = Math.floor((seconds % 86400) / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = Math.floor(seconds % 60);
+    let parts = [];
+    if (d > 0) parts.push(d + 'd');
+    if (h > 0) parts.push(h + 'h');
+    if (m > 0) parts.push(m + 'm');
+    parts.push(s + 's');
+    return parts.join(' ');
+}
+
+async function loadTests() {
+    try {
+        const res = await fetch('/live_tests/available');
+        const data = await res.json();
+        if (data.status === 'success') {
+            tests = data.tests;
+            render();
+            startCountdowns();
+        }
+    } catch (e) { console.error(e); }
+}
+
+function render() {
+    const el = document.getElementById('testList');
+    const empty = document.getElementById('emptyState');
+
+    if (!tests.length) {
+        el.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+    }
+    empty.classList.add('hidden');
+
+    const now = Date.now() / 1000;
+
+    // Find next upcoming test for banner
+    const upcoming = tests.find(t => t.schedule.start_time > now && !t.already_attempted);
+    const banner = document.getElementById('nextTestBanner');
+    if (upcoming) {
+        banner.classList.remove('hidden');
+        document.getElementById('nextTestTitle').textContent = upcoming.title;
+    } else {
+        banner.classList.add('hidden');
+    }
+
+    el.innerHTML = tests.map(t => {
+        const sched = t.schedule;
+        const isActive = now >= sched.start_time && now <= sched.window_end;
+        const isUpcoming = now < sched.start_time;
+        const startDate = new Date(sched.start_time * 1000);
+        const endDate = new Date(sched.window_end * 1000);
+
+        let badge = '', actionBtn = '';
+        if (t.already_attempted) {
+            if (t.attempt_status === 'cheating') {
+                badge = '<span class="lt-badge lt-badge-cheating">Terminated</span>';
+            } else {
+                badge = '<span class="lt-badge lt-badge-done">Completed</span>';
+            }
+            actionBtn = `<button class="lt-btn lt-btn-ghost" disabled style="opacity:0.4;font-size:10px;padding:8px 14px;">Attempted</button>`;
+        } else if (isActive) {
+            badge = '<span class="lt-badge lt-badge-active">● Live Now</span>';
+            actionBtn = `<button class="lt-btn lt-btn-primary" onclick="event.stopPropagation(); startTest('${t._id}')" style="font-size:10px;padding:8px 14px;">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i> Start Exam
+            </button>`;
+        } else if (isUpcoming) {
+            badge = '<span class="lt-badge lt-badge-upcoming">Upcoming</span>';
+            actionBtn = `<div class="text-[10px] text-[var(--reishi)] countdown font-bold" data-countdown="${sched.start_time}"></div>`;
+        }
+
+        return `<div class="lt-card">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg ${isActive ? 'bg-[var(--getsuga-glow)]' : 'bg-white/5'} border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="${isActive ? 'radio' : 'file-text'}" class="w-5 h-5 ${isActive ? 'text-[var(--getsuga)]' : 'text-neutral-500'}"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                        <h3 class="text-sm font-bold text-white">${esc(t.title)}</h3>
+                        ${badge}
+                    </div>
+                    <div class="flex items-center gap-4 text-[10px] text-neutral-500 flex-wrap">
+                        <span><i data-lucide="clock" class="w-3 h-3 inline"></i> ${sched.duration_minutes}min</span>
+                        <span><i data-lucide="list" class="w-3 h-3 inline"></i> ${t.question_count} questions</span>
+                        <span><i data-lucide="target" class="w-3 h-3 inline"></i> ${t.total_marks} marks</span>
+                    </div>
+                    <div class="text-[10px] text-neutral-600 mt-1">
+                        <i data-lucide="calendar" class="w-3 h-3 inline"></i>
+                        ${startDate.toLocaleDateString()} ${startDate.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})} — ${endDate.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}
+                    </div>
+                    ${t.description ? `<p class="text-[10px] text-neutral-600 mt-1">${esc(t.description)}</p>` : ''}
+                </div>
+                <div class="flex-shrink-0">${actionBtn}</div>
+            </div>
+        </div>`;
+    }).join('');
+    lucide.createIcons();
+}
+
+function startCountdowns() {
+    if (countdownInterval) clearInterval(countdownInterval);
+    countdownInterval = setInterval(() => {
+        const now = Date.now() / 1000;
+
+        // Update banner countdown
+        const upcoming = tests.find(t => t.schedule.start_time > now && !t.already_attempted);
+        if (upcoming) {
+            const diff = upcoming.schedule.start_time - now;
+            document.getElementById('nextTestCountdown').textContent = 'Starts in ' + formatCountdown(diff);
+            if (diff <= 0) loadTests(); // Refresh when test starts
+        }
+
+        // Update inline countdowns
+        document.querySelectorAll('[data-countdown]').forEach(el => {
+            const target = parseFloat(el.dataset.countdown);
+            const diff = target - now;
+            el.textContent = diff > 0 ? formatCountdown(diff) : 'Starting now!';
+            if (diff <= 0) loadTests();
+        });
+    }, 1000);
+}
+
+function startTest(testId) {
+    if (!confirm('⚠️ EXAM WARNING\n\nOnce you start:\n• Fullscreen mode will be enforced\n• Leaving fullscreen = exam terminated with 0 marks\n• Tab switching is monitored\n• Copy/paste is blocked\n\nAre you ready to begin?')) return;
+    window.location.href = '/live_tests/exam/' + testId;
+}
+
+loadTests();
+</script>
+</body>
+</html>

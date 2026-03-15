@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Calendar - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/calendar">
+    <meta property="og:title" content="Calendar - Shingaku">
+    <meta property="og:description" content="Plan your academic schedule with Shingaku's smart calendar.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/calendar">
+    <meta name="twitter:title" content="Calendar - Shingaku">
+    <meta name="twitter:description" content="Plan your academic schedule with Shingaku's smart calendar.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/calendar">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <link rel="stylesheet" href="/static/css/calendar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- Boot Screen -->
+<div id="boot-screen" style="position:fixed;inset:0;z-index:9999;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease">
+    <div style="display:flex;gap:6px">
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .1s infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .2s infinite"></div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--text-muted);animation:pulse 1.5s infinite">LOADING CALENDAR...</div>
+</div>
+
+<script>
+    const SHINGAKU_USER = {
+        username: {{ username | default('', true) | tojson }},
+        avatar: {{ avatar | default('', true) | tojson }}
+    };
+</script>
+
+<!-- ========== DESKTOP ========== -->
+<div class="dk-topbar" id="dk-topbar">
+    <div class="dk-topbar-left">
+        <button class="dk-icon-btn" id="sidebar-toggle" title="Toggle sidebar"><i data-lucide="panel-left" style="width:16px;height:16px"></i></button>
+        <div class="dk-brand" onclick="location.href='/dashboard'">
+            <div class="dk-brand-logo"><i data-lucide="sword" style="width:17px;height:17px"></i></div>
+            <div class="dk-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+    </div>
+    <div class="dk-topbar-right">
+        <button class="dk-icon-btn" id="theme-toggle" title="Toggle theme"><i data-lucide="sun" style="width:16px;height:16px"></i></button>
+        <div class="dk-avatar-wrap" style="position:relative">
+            <img class="dk-avatar" id="dk-avatar" src="{{ avatar }}" alt="" onclick="toggleProfileDropdown()">
+            <div class="dk-dropdown" id="profile-dropdown">
+                <div class="dk-dropdown-header" id="dd-user">Profile</div>
+                <button class="dk-dropdown-item" onclick="location.href='/profile'"><i data-lucide="user" style="width:14px;height:14px"></i>My Profile</button>
+                <div class="dk-dropdown-divider"></div>
+                <button class="dk-dropdown-item" onclick="logOut()" style="color:var(--danger)"><i data-lucide="log-out" style="width:14px;height:14px"></i>Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;height:calc(100vh - var(--topbar-h));overflow:hidden" id="dk-body">
+    <nav class="dk-sidebar" id="dk-sidebar">
+        <div class="dk-sidebar-nav scrollbar-hide">
+            <div class="dk-sidebar-label">Main</div>
+            <a href="/dashboard" class="dk-nav-item"><i data-lucide="layout-dashboard" style="width:16px;height:16px"></i><span class="nav-text">Dashboard</span></a>
+            <a href="/notes" class="dk-nav-item"><i data-lucide="file-text" style="width:16px;height:16px"></i><span class="nav-text">Notes</span></a>
+            <a href="/test_section" class="dk-nav-item"><i data-lucide="swords" style="width:16px;height:16px"></i><span class="nav-text">Test Arena</span></a>
+            <a href="/calendar" class="dk-nav-item active"><i data-lucide="calendar-days" style="width:16px;height:16px"></i><span class="nav-text">Calendar</span></a>
+            <a href="/attendance" class="dk-nav-item"><i data-lucide="bar-chart-3" style="width:16px;height:16px"></i><span class="nav-text">Attendance</span></a>
+            <a href="/profile" class="dk-nav-item"><i data-lucide="user" style="width:16px;height:16px"></i><span class="nav-text">Profile</span></a>
+        </div>
+    </nav>
+
+    <main class="dk-main scrollbar-hide" id="dk-main">
+        <div class="dk-main-inner">
+            <div class="cal-header anim-in">
+                <div class="cal-title-group">
+                    <button class="cal-nav-btn" id="cal-prev" title="Previous"><i data-lucide="chevron-left" style="width:16px;height:16px"></i></button>
+                    <h1 class="cal-month-title" id="cal-month-title"></h1>
+                    <button class="cal-nav-btn" id="cal-next" title="Next"><i data-lucide="chevron-right" style="width:16px;height:16px"></i></button>
+                </div>
+                <div class="cal-controls">
+                    <button class="cal-today-btn" id="cal-today-btn">Today</button>
+                    <div class="cal-view-toggle">
+                        <button class="cal-view-btn active" data-view="month">Month</button>
+                        <button class="cal-view-btn" data-view="week">Week</button>
+                    </div>
+                    <button class="cal-sched-upload-btn" onclick="openUploadModal()">
+                        <i data-lucide="upload" style="width:13px;height:13px"></i> My Schedule
+                    </button>
+                </div>
+            </div>
+            <div id="cal-month-view" class="anim-in" style="animation-delay:.06s"></div>
+            <div id="cal-week-view" class="anim-in" style="animation-delay:.06s;display:none"></div>
+        </div>
+    </main>
+</div>
+
+<!-- Day Detail Modal (Tab-based) -->
+<div class="cal-modal-overlay" id="cal-modal-overlay">
+    <div class="cal-modal">
+        <div class="cal-modal-header">
+            <div class="cal-modal-date" id="cal-modal-date"></div>
+            <button class="cal-modal-close" id="cal-modal-close"><i data-lucide="x" style="width:14px;height:14px"></i></button>
+        </div>
+        <div class="cal-tabs" id="cal-tabs"></div>
+        <div id="cal-tab-panels"></div>
+    </div>
+</div>
+
+<!-- Schedule Upload Modal -->
+<div class="cal-upload-overlay" id="cal-upload-overlay">
+    <div class="cal-upload-card">
+        <h3>Upload Class Schedule</h3>
+        <p>Upload a photo or PDF of your weekly timetable. AI will extract and set your recurring schedule.</p>
+        <div class="cal-upload-zone" id="sched-upload-zone" onclick="document.getElementById('sched-file-input').click()">
+            <div class="cal-upload-zone-icon" style="background:var(--getsuga-glow)"><i data-lucide="upload-cloud" style="width:20px;height:20px;color:var(--getsuga)"></i></div>
+            <div class="cal-upload-zone-text">Click to upload or drag & drop</div>
+            <div class="cal-upload-zone-hint">PDF, PNG, JPG, WEBP supported</div>
+        </div>
+        <input type="file" id="sched-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp" style="display:none" onchange="handleScheduleUpload(this)">
+        <div class="cal-upload-status" id="sched-upload-status"></div>
+        <button class="cal-upload-close" onclick="closeUploadModal()">Close</button>
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="toast-container"></div>
+
+<!-- ========== MOBILE ========== -->
+<div class="mob-app" id="mob-app">
+    <div class="mob-header">
+        <div class="mob-brand">
+            <div class="mob-brand-logo"><i data-lucide="sword" style="width:15px;height:15px"></i></div>
+            <div class="mob-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+        <div class="mob-header-actions">
+            <button class="mob-icon-btn" id="mob-theme-toggle" onclick="toggleTheme()"><i data-lucide="sun" style="width:15px;height:15px"></i></button>
+            <img class="mob-avatar" src="{{ avatar }}" alt="" onclick="location.href='/profile'">
+        </div>
+    </div>
+
+    <div class="mob-cal-header">
+        <h2 class="mob-cal-title" id="mob-cal-title"></h2>
+        <div class="mob-cal-nav">
+            <button class="mob-cal-today" id="mob-cal-today">Today</button>
+            <button class="mob-cal-nav-btn" id="mob-cal-prev"><i data-lucide="chevron-left" style="width:14px;height:14px"></i></button>
+            <button class="mob-cal-nav-btn" id="mob-cal-next"><i data-lucide="chevron-right" style="width:14px;height:14px"></i></button>
+        </div>
+    </div>
+
+    <div class="mob-cal-controls">
+        <button class="mob-cal-ctrl-btn active" data-view="month">Month</button>
+        <button class="mob-cal-ctrl-btn" data-view="week">Week</button>
+        <button class="mob-cal-ctrl-btn" onclick="openUploadModal()"><i data-lucide="upload" style="width:11px;height:11px"></i> Schedule</button>
+        <a href="/attendance" class="mob-cal-ctrl-btn"><i data-lucide="bar-chart-3" style="width:11px;height:11px"></i> Attendance</a>
+    </div>
+
+    <div id="mob-cal-month-view"></div>
+    <div id="mob-cal-week-view" style="display:none"></div>
+
+    <nav class="mob-bottombar">
+        <a href="/dashboard" class="mob-tab"><i data-lucide="layout-dashboard" style="width:20px;height:20px"></i><span>Home</span></a>
+        <a href="/notes" class="mob-tab"><i data-lucide="file-text" style="width:20px;height:20px"></i><span>Notes</span></a>
+        <a href="/calendar" class="mob-tab active"><i data-lucide="calendar-days" style="width:20px;height:20px"></i><span>Calendar</span></a>
+        <a href="/test_section" class="mob-tab"><i data-lucide="swords" style="width:20px;height:20px"></i><span>Arena</span></a>
+        <a href="/profile" class="mob-tab"><i data-lucide="user" style="width:20px;height:20px"></i><span>Profile</span></a>
+    </nav>
+</div>
+
+<script src="/static/js/calendar.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

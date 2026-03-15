@@ -1,0 +1,17 @@
+flask
+flask[async]
+flask_cors
+flask_login
+pymongo
+dotenv
+gunicorn
+PyMuPDF
+Pillow
+opencv-python
+numpy
+google-genai
+requests
+google-auth
+google-auth-oauthlib
+google-api-python-client
+web3

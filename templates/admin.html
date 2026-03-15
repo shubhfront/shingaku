@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Panel - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/admin">
+    <meta property="og:title" content="Admin Panel - Shingaku">
+    <meta property="og:description" content="Shingaku administration panel.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/admin">
+    <meta name="twitter:title" content="Admin Panel - Shingaku">
+    <meta name="twitter:description" content="Shingaku administration panel.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/admin">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Teko:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --void: #050505;
+            --panel: #111111;
+            --border: rgba(255,255,255,0.06);
+            --getsuga: #ff7b00;
+            --getsuga-glow: rgba(255,123,0,0.15);
+            --reishi: #00f2ff;
+            --danger: #ef4444;
+            --success: #22c55e;
+        }
+        body { background: var(--void); color: #f5f5f5; font-family: 'JetBrains Mono', monospace; margin: 0; }
+        .font-teko { font-family: 'Teko', sans-serif; }
+
+        /* Topbar */
+        .lt-topbar {
+            height: 56px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; background: var(--panel); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 50;
+        }
+
+        /* Cards */
+        .lt-card {
+            background: var(--panel); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; transition: border-color 0.2s;
+        }
+        .lt-card:hover { border-color: rgba(255,255,255,0.12); }
+
+        /* Input styling */
+        .lt-input {
+            width: 100%; padding: 10px 14px; border-radius: 8px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            color: #f5f5f5; font-family: inherit; font-size: 13px;
+            outline: none; transition: border-color 0.2s;
+        }
+        .lt-input:focus { border-color: var(--getsuga); }
+        .lt-input::placeholder { color: #555; }
+
+        /* Buttons */
+        .lt-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 16px; border-radius: 8px; font-size: 12px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+            border: none; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+        }
+        .lt-btn-sm {
+            padding: 6px 12px; font-size: 11px; gap: 6px;
+        }
+        .lt-btn-primary { background: var(--getsuga); color: #000; }
+        .lt-btn-primary:hover { background: #ff9d4d; }
+        .lt-btn-danger { background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.2); }
+        .lt-btn-danger:hover { background: rgba(239,68,68,0.2); }
+        .lt-btn-ghost { background: rgba(255,255,255,0.03); color: #aaa; border: 1px solid var(--border); }
+        .lt-btn-ghost:hover { background: rgba(255,255,255,0.06); color: #fff; }
+
+        /* Status badges */
+        .lt-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 2px 10px; border-radius: 20px; font-size: 10px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .lt-badge-scheduled { background: rgba(0,242,255,0.1); color: var(--reishi); border: 1px solid rgba(0,242,255,0.2); }
+        .lt-badge-active { background: var(--getsuga-glow); color: var(--getsuga); border: 1px solid rgba(255,123,0,0.2); }
+        .lt-badge-completed { background: rgba(34,197,94,0.1); color: var(--success); border: 1px solid rgba(34,197,94,0.2); }
+
+        /* JSON editor */
+        .lt-json-editor {
+            width: 100%; min-height: 300px; padding: 14px;
+            border-radius: 8px; background: #0a0a0a; border: 1px solid var(--border);
+            color: #e0e0e0; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+            resize: vertical; outline: none; tab-size: 2;
+        }
+        .lt-json-editor:focus { border-color: var(--getsuga); }
+
+        /* Modal overlay */
+        .lt-modal-overlay {
+            position: fixed; inset: 0; z-index: 100;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+            display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        .lt-modal-overlay.open { display: flex; }
+        .lt-modal {
+            background: var(--panel); border: 1px solid var(--border);
+            border-radius: 16px; max-width: 700px; width: 100%;
+            max-height: 90vh; overflow-y: auto; padding: 24px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--getsuga); }
+
+        /* Tab system */
+        .lt-tab { padding: 8px 16px; font-size: 12px; font-weight: 700; color: #666; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .lt-tab.active { color: var(--getsuga); border-bottom-color: var(--getsuga); }
+        .lt-tab:hover { color: #aaa; }
+
+        /* Step indicator */
+        .step-dot {
+            width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+            font-size: 10px; font-weight: 800; background: rgba(255,255,255,0.04); color: #555; border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s;
+        }
+        .step-dot.active { background: var(--getsuga); color: #000; border-color: var(--getsuga); }
+        .step-dot.done { background: var(--success); color: #000; border-color: var(--success); }
+        .step-line { width: 28px; height: 1px; background: rgba(255,255,255,0.08); }
+
+        /* Question review card */
+        .qr-card {
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px; padding: 14px 16px; transition: border-color 0.2s;
+        }
+        .qr-card:hover { border-color: rgba(255,255,255,0.12); }
+        .qr-opt { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-radius: 6px; font-size: 11px; }
+        .qr-opt.correct { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.15); }
+        .qr-opt.wrong { background: transparent; border: 1px solid rgba(255,255,255,0.04); color: #888; }
+        .qr-badge { font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
+        .qr-delete-btn { opacity: 0; transition: opacity 0.2s; }
+        .qr-card:hover .qr-delete-btn { opacity: 1; }
+    </style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="lt-topbar">
+    <div class="flex items-center gap-4">
+        <a href="/dashboard" class="flex items-center gap-2 text-white no-underline hover:opacity-80">
+            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                <i data-lucide="shield" class="w-4 h-4"></i>
+            </div>
+            <div>
+                <span class="font-teko text-xl font-bold tracking-widest">SHIN<span style="color:var(--getsuga)">GAKU</span></span>
+                <p class="text-[8px] text-neutral-500 font-bold uppercase tracking-widest leading-none">Admin Panel</p>
+            </div>
+        </a>
+    </div>
+    <div class="flex items-center gap-3">
+        <a href="/live_tests" class="lt-btn lt-btn-sm lt-btn-ghost">
+            <i data-lucide="eye" class="w-3.5 h-3.5"></i> Student View
+        </a>
+        <a href="/dashboard" class="lt-btn lt-btn-sm lt-btn-ghost">
+            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Dashboard
+        </a>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-5xl mx-auto p-6">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+        <div>
+            <h1 class="font-teko text-4xl font-bold text-white uppercase tracking-wide">Live Tests</h1>
+            <p class="text-xs text-neutral-500">Create and manage scheduled examinations</p>
+        </div>
+        <button class="lt-btn lt-btn-primary" onclick="openCreateModal()">
+            <i data-lucide="plus" class="w-4 h-4"></i> Create Test
+        </button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-1 border-b border-white/[0.06] mb-6">
+        <div class="lt-tab active" data-tab="tests" onclick="switchAdminTab('tests')">All Tests</div>
+        <div class="lt-tab" data-tab="notifications" onclick="switchAdminTab('notifications')">Notifications</div>
+        <div class="lt-tab" data-tab="calendar" onclick="switchAdminTab('calendar')">Calendar Events</div>
+        <div class="lt-tab" data-tab="analytics" onclick="switchAdminTab('analytics')">Analytics</div>
+    </div>
+
+    <!-- Test list -->
+    <div id="testsTab">
+        <div id="testsList" class="space-y-3">
+            <div class="text-center py-16 text-neutral-600">
+                <i data-lucide="loader" class="w-6 h-6 mx-auto mb-2 animate-spin"></i>
+                <p class="text-xs">Loading tests...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics tab -->
+    <div id="analyticsTab" class="hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" id="analyticsCards"></div>
+    </div>
+
+    <!-- Notifications tab -->
+    <div id="notificationsTab" class="hidden">
+        <!-- Send form -->
+        <div class="lt-card mb-6">
+            <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="send" class="w-4 h-4" style="color:var(--getsuga)"></i> Send Notification</h3>
+            <div class="space-y-3">
+                <div>
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase block mb-1">Title</label>
+                    <input type="text" id="notifTitle" class="lt-input" placeholder="e.g. Exam Reminder">
+                </div>
+                <div>
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase block mb-1">Message</label>
+                    <textarea id="notifMessage" class="lt-input" rows="3" placeholder="Write your notification message..."></textarea>
+                </div>
+                <div>
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase block mb-1">Icon</label>
+                    <select id="notifIcon" class="lt-input" style="max-width:200px;">
+                        <option value="bell">Bell</option>
+                        <option value="alert-circle">Alert</option>
+                        <option value="info">Info</option>
+                        <option value="calendar">Calendar</option>
+                        <option value="book-open">Book</option>
+                        <option value="radio">Live</option>
+                        <option value="megaphone">Megaphone</option>
+                    </select>
+                </div>
+                <button class="lt-btn lt-btn-primary" id="sendNotifBtn" onclick="sendNotification()">
+                    <i data-lucide="send" class="w-4 h-4"></i> Send to All Students
+                </button>
+            </div>
+        </div>
+        <!-- Sent history -->
+        <h3 class="text-xs font-bold text-neutral-500 uppercase mb-3">Sent History</h3>
+        <div id="notifHistory" class="space-y-2">
+            <div class="text-center py-8 text-neutral-600 text-xs">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Calendar Events tab -->
+    <div id="calendarTab" class="hidden">
+        <div class="lt-card mb-6">
+            <h3 class="text-sm font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4" style="color:var(--getsuga)"></i> Upload Academic Calendar</h3>
+            <p class="text-[10px] text-neutral-500 font-bold mb-4">Upload a PDF or image of the official academic calendar. AI will extract all holidays, events, and exam dates.</p>
+            <div id="calUploadZone" class="lt-card cursor-pointer hover:border-[var(--getsuga)]/40 mb-3 text-center py-8" onclick="document.getElementById('calEventFileInput').click()" style="border-style:dashed;">
+                <i data-lucide="upload-cloud" class="w-8 h-8 mx-auto mb-2" style="color:var(--getsuga)"></i>
+                <p class="text-xs font-bold text-white">Click to upload academic calendar</p>
+                <p class="text-[10px] text-neutral-500 mt-1">PDF, PNG, JPG supported</p>
+            </div>
+            <input type="file" id="calEventFileInput" accept=".pdf,.png,.jpg,.jpeg,.webp" class="hidden" onchange="handleCalEventUpload(event)">
+            <div id="calEventStatus" class="hidden items-center gap-2 p-3 rounded-lg text-xs font-bold mb-3"></div>
+        </div>
+        <h3 class="text-xs font-bold text-neutral-500 uppercase mb-3">Current Events & Holidays</h3>
+        <div id="calEventsList" class="space-y-2">
+            <div class="text-center py-8 text-neutral-600 text-xs">Loading...</div>
+        </div>
+        <div class="mt-4">
+            <button class="lt-btn lt-btn-danger" onclick="clearAllEvents()" id="clearEventsBtn" style="display:none;">
+                <i data-lucide="trash-2" class="w-4 h-4"></i> Clear All Events
+            </button>
+        </div>
+    </div>
+</div>
+<div class="lt-modal-overlay" id="createModal">
+    <div class="lt-modal" style="max-width:780px;">
+        <div class="flex items-center justify-between mb-5">
+            <div>
+                <h2 class="font-teko text-2xl font-bold text-white uppercase">Create Live Test</h2>
+                <div class="flex items-center gap-2 mt-1" id="stepIndicator">
+                    <span class="step-dot active" data-step="1">1</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot" data-step="2">2</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot" data-step="3">3</span>
+                </div>
+            </div>
+            <button onclick="closeCreateModal()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20 cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <!-- ═══ STEP 1: Source ═══ -->
+        <div id="step1" class="wizard-step">
+            <p class="text-xs text-neutral-400 mb-5">Choose how to add questions for this test.</p>
+
+            <!-- PDF Upload Card -->
+            <div class="lt-card cursor-pointer hover:border-[var(--getsuga)]/40 mb-3" onclick="document.getElementById('pdfUploadInput').click()" id="pdfSourceCard">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[var(--getsuga-glow)] border border-[rgba(255,123,0,0.2)] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="file-scan" class="w-6 h-6" style="color:var(--getsuga)"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-white">Upload PDF — AI Extraction</p>
+                        <p class="text-[10px] text-neutral-500 font-bold">Upload a question paper PDF. Gemini AI will extract all questions, options, and answers automatically.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-600 flex-shrink-0"></i>
+                </div>
+                <input type="file" id="pdfUploadInput" accept=".pdf" class="hidden" onchange="handlePdfUpload(event)">
+            </div>
+
+            <!-- PDF Processing Status (hidden initially) -->
+            <div class="lt-card mb-3 hidden" id="pdfProcessingCard">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[var(--getsuga-glow)] border border-[rgba(255,123,0,0.2)] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="loader" class="w-6 h-6 animate-spin" style="color:var(--getsuga)"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-white" id="pdfProcessingTitle">Processing PDF...</p>
+                        <p class="text-[10px] text-neutral-500 font-bold" id="pdfProcessingStatus">Sending to Gemini AI for question extraction. This may take a moment...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 my-4">
+                <div class="flex-1 h-px bg-white/[0.06]"></div>
+                <span class="text-[10px] text-neutral-600 font-bold">OR</span>
+                <div class="flex-1 h-px bg-white/[0.06]"></div>
+            </div>
+
+            <!-- Manual JSON Card -->
+            <div class="lt-card cursor-pointer hover:border-[var(--reishi)]/30 mb-3" onclick="goToManualJSON()">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-[rgba(0,242,255,0.06)] border border-[rgba(0,242,255,0.15)] flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="code" class="w-6 h-6" style="color:var(--reishi)"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-white">Manual JSON Input</p>
+                        <p class="text-[10px] text-neutral-500 font-bold">Paste a JSON array of questions directly, or upload a .json file.</p>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-neutral-600 flex-shrink-0"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 2: Review Questions ═══ -->
+        <div id="step2" class="wizard-step hidden">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                    <button onclick="goToStep(1)" class="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></button>
+                    <p class="text-xs text-neutral-400"><span class="text-white font-bold" id="reviewQCount">0</span> questions extracted</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-neutral-600 font-bold" id="reviewSource"></span>
+                </div>
+            </div>
+
+            <!-- Manual JSON fallback editor (hidden if PDF source) -->
+            <div id="manualJsonSection" class="hidden mb-4">
+                <div class="flex items-center justify-between mb-1">
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider">Questions JSON</label>
+                    <div class="flex gap-2">
+                        <button class="text-[10px] text-[var(--reishi)] font-bold cursor-pointer hover:underline" onclick="loadSampleJSON()">Load Sample</button>
+                        <label class="text-[10px] text-[var(--getsuga)] font-bold cursor-pointer hover:underline">
+                            Upload .json <input type="file" accept=".json" class="hidden" onchange="handleJSONFile(event)">
+                        </label>
+                    </div>
+                </div>
+                <textarea class="lt-json-editor" id="questionsJSON" placeholder='[{"question": {"text": "..."}, "options": [...], "correct_option": "B", "marks": 4, "type": "mcq"}]' style="min-height:240px;"></textarea>
+                <p class="text-[10px] text-neutral-600 mt-1" id="jsonStatus">Paste your questions array or upload a file</p>
+            </div>
+
+            <!-- Visual question review (shown for PDF extraction) -->
+            <div id="visualReviewSection" class="hidden">
+                <div class="space-y-3 max-h-[50vh] overflow-y-auto pr-1" id="questionReviewList"></div>
+            </div>
+
+            <div class="flex gap-3 pt-4">
+                <button class="lt-btn lt-btn-ghost flex-1" onclick="goToStep(1)">Back</button>
+                <button class="lt-btn lt-btn-primary flex-1" onclick="goToStep(3)" id="reviewNextBtn">
+                    Next: Schedule <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 3: Schedule & Publish ═══ -->
+        <div id="step3" class="wizard-step hidden">
+            <div class="flex items-center gap-3 mb-5">
+                <button onclick="goToStep(2)" class="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer"><i data-lucide="arrow-left" class="w-3.5 h-3.5"></i></button>
+                <p class="text-xs text-neutral-400">Configure schedule & publish</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Title -->
+                <div>
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Test Title</label>
+                    <input type="text" class="lt-input" id="testTitle" placeholder="e.g. Mid-Semester Mathematics">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Description (optional)</label>
+                    <input type="text" class="lt-input" id="testDesc" placeholder="Brief description...">
+                </div>
+
+                <!-- Schedule -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div>
+                        <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Window Opens</label>
+                        <input type="datetime-local" class="lt-input" id="schedStart">
+                    </div>
+                    <div>
+                        <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Window Closes</label>
+                        <input type="datetime-local" class="lt-input" id="schedEnd">
+                    </div>
+                    <div>
+                        <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Duration (minutes)</label>
+                        <input type="number" class="lt-input" id="schedDuration" placeholder="45" min="1" max="300">
+                    </div>
+                </div>
+
+                <!-- Marking -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Total Marks (auto if 0)</label>
+                        <input type="number" class="lt-input" id="totalMarks" placeholder="0" min="0">
+                    </div>
+                    <div>
+                        <label class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1 block">Negative Marking per Wrong</label>
+                        <input type="number" class="lt-input" id="negMarks" placeholder="0" min="0" step="0.25">
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="lt-card" style="background:rgba(255,123,0,0.04);border-color:rgba(255,123,0,0.12);">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="info" class="w-4 h-4 flex-shrink-0" style="color:var(--getsuga)"></i>
+                        <p class="text-[10px] text-neutral-400"><span class="text-white font-bold" id="publishQCount">0</span> questions ready to publish</p>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="flex gap-3 pt-1">
+                    <button class="lt-btn lt-btn-ghost flex-1" onclick="goToStep(2)">Back</button>
+                    <button class="lt-btn lt-btn-primary flex-1" onclick="createTest()" id="createBtn">
+                        <i data-lucide="rocket" class="w-4 h-4"></i> Publish Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Test Detail Modal -->
+<div class="lt-modal-overlay" id="detailModal">
+    <div class="lt-modal" style="max-width:800px;">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="font-teko text-2xl font-bold text-white uppercase" id="detailTitle">Test Details</h2>
+            <button onclick="closeDetailModal()" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20 cursor-pointer">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+        <div id="detailBody">Loading...</div>
+    </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+let allTests = [];
+let wizardStep = 1;
+let extractedQuestions = [];
+let sourceMode = ''; // 'pdf' or 'json'
+
+// ── Tab switching ──
+function switchAdminTab(tab) {
+    document.querySelectorAll('.lt-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    document.getElementById('testsTab').classList.toggle('hidden', tab !== 'tests');
+    document.getElementById('analyticsTab').classList.toggle('hidden', tab !== 'analytics');
+    document.getElementById('notificationsTab').classList.toggle('hidden', tab !== 'notifications');
+    document.getElementById('calendarTab').classList.toggle('hidden', tab !== 'calendar');
+    if (tab === 'analytics') renderAnalytics();
+    if (tab === 'notifications') loadNotifHistory();
+    if (tab === 'calendar') loadCalendarEvents();
+}
+
+// ── Load tests ──
+async function loadTests() {
+    try {
+        const res = await fetch('/admin/list');
+        const data = await res.json();
+        if (data.status === 'success') {
+            allTests = data.tests;
+            renderTests();
+        }
+    } catch (e) { console.error(e); }
+}
+
+function renderTests() {
+    const el = document.getElementById('testsList');
+    if (!allTests.length) {
+        el.innerHTML = `<div class="text-center py-16 text-neutral-600"><i data-lucide="inbox" class="w-8 h-8 mx-auto mb-3"></i><p class="text-sm font-bold">No tests created yet</p><p class="text-xs mt-1">Click "Create Test" to publish your first exam</p></div>`;
+        lucide.createIcons();
+        return;
+    }
+    el.innerHTML = allTests.map(t => {
+        const sched = t.schedule || {};
+        const startDate = new Date(sched.start_time * 1000);
+        const now = Date.now() / 1000;
+        let statusClass = 'lt-badge-scheduled', statusText = 'Scheduled';
+        if (now >= sched.start_time && now <= sched.window_end) { statusClass = 'lt-badge-active'; statusText = 'Active'; }
+        else if (now > sched.window_end) { statusClass = 'lt-badge-completed'; statusText = 'Completed'; }
+
+        return `<div class="lt-card flex items-start gap-4 cursor-pointer" onclick="openDetail('${t._id}')">
+            <div class="w-10 h-10 rounded-lg bg-[var(--getsuga-glow)] border border-[rgba(255,123,0,0.2)] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="file-check" class="w-5 h-5" style="color:var(--getsuga)"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                    <h3 class="text-sm font-bold text-white truncate">${esc(t.title)}</h3>
+                    <span class="lt-badge ${statusClass}">${statusText}</span>
+                </div>
+                <div class="flex items-center gap-4 text-[10px] text-neutral-500">
+                    <span><i data-lucide="clock" class="w-3 h-3 inline"></i> ${sched.duration_minutes || '?'}min</span>
+                    <span><i data-lucide="list" class="w-3 h-3 inline"></i> ${(t.questions||[]).length} Q's</span>
+                    <span><i data-lucide="users" class="w-3 h-3 inline"></i> ${t.attempt_count || 0} attempts</span>
+                    <span><i data-lucide="calendar" class="w-3 h-3 inline"></i> ${startDate.toLocaleDateString()} ${startDate.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</span>
+                </div>
+                ${t.description ? `<p class="text-[10px] text-neutral-600 mt-1 truncate">${esc(t.description)}</p>` : ''}
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <button class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20" onclick="event.stopPropagation(); deleteTest('${t._id}')" title="Delete">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5 text-neutral-500"></i>
+                </button>
+            </div>
+        </div>`;
+    }).join('');
+    lucide.createIcons();
+}
+
+function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+// ══════════════════════════════════════════════
+// WIZARD: Step navigation
+// ══════════════════════════════════════════════
+function goToStep(n) {
+    // Validation before advancing
+    if (n === 3 && sourceMode === 'json') {
+        // Parse JSON from editor
+        const raw = document.getElementById('questionsJSON').value.trim();
+        if (!raw) return alert('Please enter questions JSON first');
+        try {
+            const parsed = JSON.parse(raw);
+            extractedQuestions = Array.isArray(parsed) ? parsed : (parsed.questions || []);
+            if (!extractedQuestions.length) throw new Error();
+        } catch {
+            return alert('Invalid JSON — must be a non-empty array of questions');
+        }
+    }
+    if (n === 3 && sourceMode === 'pdf' && !extractedQuestions.length) {
+        return alert('No questions available. Go back and extract from a PDF or enter manually.');
+    }
+
+    wizardStep = n;
+    document.querySelectorAll('.wizard-step').forEach(s => s.classList.add('hidden'));
+    document.getElementById('step' + n).classList.remove('hidden');
+
+    // Update step dots
+    document.querySelectorAll('.step-dot').forEach(dot => {
+        const s = parseInt(dot.dataset.step);
+        dot.classList.remove('active', 'done');
+        if (s === n) dot.classList.add('active');
+        else if (s < n) dot.classList.add('done');
+    });
+
+    // Update counts when going to step 3
+    if (n === 3) {
+        document.getElementById('publishQCount').textContent = extractedQuestions.length;
+    }
+
+    lucide.createIcons();
+}
+
+function openCreateModal() {
+    wizardStep = 1;
+    sourceMode = '';
+    extractedQuestions = [];
+    document.querySelectorAll('.wizard-step').forEach(s => s.classList.add('hidden'));
+    document.getElementById('step1').classList.remove('hidden');
+    document.querySelectorAll('.step-dot').forEach(dot => {
+        dot.classList.remove('active', 'done');
+        if (dot.dataset.step === '1') dot.classList.add('active');
+    });
+    // Reset form fields
+    ['testTitle','testDesc','schedStart','schedEnd','schedDuration','totalMarks','negMarks'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.value = '';
+    });
+    const jsonEl = document.getElementById('questionsJSON');
+    if (jsonEl) jsonEl.value = '';
+    document.getElementById('pdfSourceCard').classList.remove('hidden');
+    document.getElementById('pdfProcessingCard').classList.add('hidden');
+    document.getElementById('pdfUploadInput').value = '';
+    document.getElementById('createModal').classList.add('open');
+    lucide.createIcons();
+}
+
+function closeCreateModal() { document.getElementById('createModal').classList.remove('open'); }
+
+// ══════════════════════════════════════════════
+// STEP 1: PDF Upload → AI Extraction
+// ══════════════════════════════════════════════
+async function handlePdfUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // Show processing state
+    document.getElementById('pdfSourceCard').classList.add('hidden');
+    document.getElementById('pdfProcessingCard').classList.remove('hidden');
+    document.getElementById('pdfProcessingTitle').textContent = `Processing: ${file.name}`;
+    document.getElementById('pdfProcessingStatus').textContent = 'Sending to Gemini AI for question extraction. This may take a moment...';
+
+    const formData = new FormData();
+    formData.append('pdf', file);
+
+    try {
+        const res = await fetch('/admin/extract_pdf', {
+            method: 'POST',
+            body: formData,
+            redirect: 'follow'
+        });
+
+        if (res.redirected || !res.ok) {
+            throw new Error(res.redirected ? 'Session expired — please refresh the page and try again' : `Server error (${res.status})`);
+        }
+
+        const data = await res.json();
+
+        if (data.status === 'success') {
+            extractedQuestions = data.questions || [];
+            sourceMode = 'pdf';
+
+            // Pre-fill title from exam metadata
+            const meta = data.exam || {};
+            if (meta.title) document.getElementById('testTitle').value = meta.title;
+            if (meta.duration_minutes) document.getElementById('schedDuration').value = meta.duration_minutes;
+            if (meta.total_marks) document.getElementById('totalMarks').value = meta.total_marks;
+
+            // Render visual review
+            renderQuestionReview();
+            document.getElementById('reviewSource').textContent = `From: ${data.source_filename}`;
+            goToStep(2);
+        } else {
+            document.getElementById('pdfProcessingTitle').textContent = 'Extraction failed';
+            document.getElementById('pdfProcessingStatus').textContent = data.message || 'Please try again with a different PDF.';
+            setTimeout(() => {
+                document.getElementById('pdfSourceCard').classList.remove('hidden');
+                document.getElementById('pdfProcessingCard').classList.add('hidden');
+                document.getElementById('pdfUploadInput').value = '';
+            }, 3000);
+        }
+    } catch (err) {
+        document.getElementById('pdfProcessingTitle').textContent = 'Extraction failed';
+        document.getElementById('pdfProcessingStatus').textContent = err.message || 'Could not reach the server. Please try again.';
+        setTimeout(() => {
+            document.getElementById('pdfSourceCard').classList.remove('hidden');
+            document.getElementById('pdfProcessingCard').classList.add('hidden');
+            document.getElementById('pdfUploadInput').value = '';
+        }, 3000);
+    }
+}
+
+// ══════════════════════════════════════════════
+// STEP 1: Manual JSON path
+// ══════════════════════════════════════════════
+function goToManualJSON() {
+    sourceMode = 'json';
+    document.getElementById('manualJsonSection').classList.remove('hidden');
+    document.getElementById('visualReviewSection').classList.add('hidden');
+    document.getElementById('reviewSource').textContent = 'Manual JSON';
+    document.getElementById('reviewQCount').textContent = '—';
+    goToStep(2);
+}
+
+function loadSampleJSON() {
+    const sample = [
+        {
+            "question": {"text": "What is the capital of France?", "images": []},
+            "options": [{"id": "A", "text": "London"}, {"id": "B", "text": "Paris"}, {"id": "C", "text": "Berlin"}, {"id": "D", "text": "Madrid"}],
+            "correct_option": "B", "marks": 4, "type": "mcq"
+        },
+        {
+            "question": {"text": "What is 2 + 2?", "images": []},
+            "options": [{"id": "A", "text": "3"}, {"id": "B", "text": "4"}, {"id": "C", "text": "5"}, {"id": "D", "text": "6"}],
+            "correct_option": "B", "marks": 4, "type": "mcq"
+        }
+    ];
+    document.getElementById('questionsJSON').value = JSON.stringify(sample, null, 2);
+    document.getElementById('jsonStatus').textContent = `${sample.length} questions loaded`;
+    document.getElementById('jsonStatus').style.color = 'var(--success)';
+}
+
+function handleJSONFile(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        try {
+            const data = JSON.parse(ev.target.result);
+            const questions = Array.isArray(data) ? data : (data.questions || []);
+            document.getElementById('questionsJSON').value = JSON.stringify(questions, null, 2);
+            document.getElementById('jsonStatus').textContent = `${questions.length} questions loaded from file`;
+            document.getElementById('jsonStatus').style.color = 'var(--success)';
+        } catch (err) {
+            document.getElementById('jsonStatus').textContent = 'Invalid JSON file';
+            document.getElementById('jsonStatus').style.color = 'var(--danger)';
+        }
+    };
+    reader.readAsText(file);
+}
+
+// ══════════════════════════════════════════════
+// STEP 2: Visual question review
+// ══════════════════════════════════════════════
+function renderQuestionReview() {
+    document.getElementById('manualJsonSection').classList.add('hidden');
+    document.getElementById('visualReviewSection').classList.remove('hidden');
+    document.getElementById('reviewQCount').textContent = extractedQuestions.length;
+
+    const el = document.getElementById('questionReviewList');
+    if (!extractedQuestions.length) {
+        el.innerHTML = '<p class="text-xs text-neutral-600 text-center py-8">No questions extracted</p>';
+        return;
+    }
+
+    el.innerHTML = extractedQuestions.map((q, i) => {
+        const qText = q.question?.text || q.text || '';
+        const type = (q.type || 'mcq').toUpperCase();
+        const marks = q.marks || 1;
+        const correct = q.correct_option || (q.correct_options ? q.correct_options.join(', ') : '?');
+        const typeColors = { MCQ: 'var(--getsuga)', MULTI_CORRECT: '#a855f7', INTEGER: 'var(--reishi)', SUBJECTIVE: '#eab308' };
+        const tc = typeColors[type] || '#888';
+
+        let optsHtml = '';
+        if (q.options && q.options.length) {
+            optsHtml = q.options.map(o => {
+                const isCorrect = o.id === q.correct_option || (q.correct_options && q.correct_options.includes(o.id));
+                return `<div class="qr-opt ${isCorrect ? 'correct' : 'wrong'}">
+                    <span style="font-weight:800;font-size:10px;min-width:16px;${isCorrect ? 'color:var(--success)' : ''}">${esc(o.id)}</span>
+                    <span class="text-[11px]">${esc(o.text || '')}</span>
+                    ${isCorrect ? '<i data-lucide="check" class="w-3 h-3 ml-auto" style="color:var(--success)"></i>' : ''}
+                </div>`;
+            }).join('');
+        } else if (type === 'INTEGER') {
+            optsHtml = `<div class="text-[10px] text-neutral-500 mt-1">Answer: <span class="text-white font-bold">${esc(correct)}</span></div>`;
+        }
+
+        return `<div class="qr-card" id="qr-${i}">
+            <div class="flex items-start justify-between gap-3 mb-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-white font-bold text-xs">Q${i + 1}</span>
+                    <span class="qr-badge" style="background:${tc}15;color:${tc};border:1px solid ${tc}30;">${type}</span>
+                    <span class="text-[10px] text-neutral-500 font-bold">+${marks}</span>
+                </div>
+                <button class="qr-delete-btn w-6 h-6 rounded-md bg-white/5 border border-white/10 flex items-center justify-center hover:bg-red-500/20 cursor-pointer" onclick="removeQuestion(${i})" title="Remove question">
+                    <i data-lucide="x" class="w-3 h-3 text-neutral-500"></i>
+                </button>
+            </div>
+            <p class="text-xs text-neutral-300 mb-2 leading-relaxed">${esc(qText.substring(0, 200))}${qText.length > 200 ? '...' : ''}</p>
+            <div class="space-y-1">${optsHtml}</div>
+        </div>`;
+    }).join('');
+    lucide.createIcons();
+}
+
+function removeQuestion(i) {
+    extractedQuestions.splice(i, 1);
+    renderQuestionReview();
+}
+
+// ══════════════════════════════════════════════
+// STEP 3: Create / Publish
+// ══════════════════════════════════════════════
+async function createTest() {
+    const title = document.getElementById('testTitle').value.trim();
+    const desc = document.getElementById('testDesc').value.trim();
+    const startStr = document.getElementById('schedStart').value;
+    const endStr = document.getElementById('schedEnd').value;
+    const duration = parseInt(document.getElementById('schedDuration').value) || 0;
+    const totalMarks = parseInt(document.getElementById('totalMarks').value) || 0;
+    const negMarks = parseFloat(document.getElementById('negMarks').value) || 0;
+
+    if (!title) return alert('Title is required');
+    if (!startStr || !endStr) return alert('Schedule start and end times are required');
+    if (!duration) return alert('Duration is required');
+
+    let questions = extractedQuestions;
+    if (!questions.length) return alert('No questions to publish');
+
+    const btn = document.getElementById('createBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Publishing...';
+    lucide.createIcons();
+
+    try {
+        const res = await fetch('/admin/create', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                title, description: desc, questions,
+                schedule: {
+                    start_time: new Date(startStr).getTime() / 1000,
+                    window_end: new Date(endStr).getTime() / 1000,
+                    duration_minutes: duration
+                },
+                total_marks: totalMarks,
+                negative_marking: negMarks
+            })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            closeCreateModal();
+            loadTests();
+        } else {
+            alert(data.message || 'Failed to create test');
+        }
+    } catch (e) {
+        alert('Network error');
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="rocket" class="w-4 h-4"></i> Publish Test';
+        lucide.createIcons();
+    }
+}
+
+// ── Delete test ──
+async function deleteTest(id) {
+    if (!confirm('Delete this test? This cannot be undone.')) return;
+    try {
+        await fetch(`/admin/delete/${id}`, { method: 'DELETE' });
+        loadTests();
+    } catch (e) { console.error(e); }
+}
+
+// ── Detail modal ──
+function closeDetailModal() { document.getElementById('detailModal').classList.remove('open'); }
+
+async function openDetail(id) {
+    document.getElementById('detailModal').classList.add('open');
+    document.getElementById('detailBody').innerHTML = '<div class="text-center py-8 text-neutral-500"><i data-lucide="loader" class="w-5 h-5 animate-spin mx-auto"></i></div>';
+    lucide.createIcons();
+
+    try {
+        const res = await fetch(`/admin/test/${id}`);
+        const data = await res.json();
+        if (data.status !== 'success') throw new Error();
+        const t = data.test;
+        const sched = t.schedule || {};
+        const attempts = t.attempts || [];
+
+        document.getElementById('detailTitle').textContent = t.title;
+
+        let html = `
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                <div class="lt-card text-center">
+                    <div class="text-2xl font-bold" style="color:var(--getsuga)">${(t.questions||[]).length}</div>
+                    <div class="text-[10px] text-neutral-500 font-bold">Questions</div>
+                </div>
+                <div class="lt-card text-center">
+                    <div class="text-2xl font-bold" style="color:var(--reishi)">${sched.duration_minutes || 0}m</div>
+                    <div class="text-[10px] text-neutral-500 font-bold">Duration</div>
+                </div>
+                <div class="lt-card text-center">
+                    <div class="text-2xl font-bold" style="color:var(--success)">${attempts.filter(a=>a.status==='submitted').length}</div>
+                    <div class="text-[10px] text-neutral-500 font-bold">Submitted</div>
+                </div>
+                <div class="lt-card text-center">
+                    <div class="text-2xl font-bold" style="color:var(--danger)">${attempts.filter(a=>a.status==='cheating').length}</div>
+                    <div class="text-[10px] text-neutral-500 font-bold">Cheating</div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="text-[10px] text-neutral-500 font-bold uppercase tracking-wider mb-1">Content Hash</div>
+                <code class="text-[10px] text-neutral-400 break-all">${t.content_hash || 'N/A'}</code>
+                ${t.blockchain_tx ? `<div class="text-[10px] text-green-400 mt-1">✓ Stored on blockchain (tx: ${t.blockchain_tx.substring(0,16)}...)</div>` : '<div class="text-[10px] text-yellow-400 mt-1">⚠ Blockchain not configured</div>'}
+            </div>
+
+            <div class="mb-2 text-[10px] text-neutral-500 font-bold uppercase tracking-wider">Attempts (${attempts.length})</div>
+        `;
+
+        if (attempts.length) {
+            html += `<div class="space-y-2">`;
+            for (const a of attempts) {
+                const statusColor = a.status === 'submitted' ? 'var(--success)' : a.status === 'cheating' ? 'var(--danger)' : 'var(--reishi)';
+                html += `<div class="lt-card flex items-center gap-3" style="padding:12px 16px;">
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="user" class="w-4 h-4 text-neutral-400"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-xs font-bold text-white">${esc(a.student_id)}</p>
+                        <p class="text-[10px] text-neutral-500">${new Date(a.start_time * 1000).toLocaleString()}</p>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <span class="text-sm font-bold" style="color:${statusColor}">${a.score !== null ? a.score : '—'}</span>
+                        <p class="text-[10px] font-bold uppercase" style="color:${statusColor}">${a.status}</p>
+                    </div>
+                </div>`;
+            }
+            html += `</div>`;
+        } else {
+            html += `<p class="text-xs text-neutral-600 py-4 text-center">No attempts yet</p>`;
+        }
+
+        document.getElementById('detailBody').innerHTML = html;
+        lucide.createIcons();
+    } catch (e) {
+        document.getElementById('detailBody').innerHTML = '<p class="text-red-400 text-sm">Failed to load details</p>';
+    }
+}
+
+// ── Analytics ──
+function renderAnalytics() {
+    const total = allTests.length;
+    const totalAttempts = allTests.reduce((s, t) => s + (t.attempt_count || 0), 0);
+    const totalCheating = allTests.reduce((s, t) => s + (t.cheating_count || 0), 0);
+    document.getElementById('analyticsCards').innerHTML = `
+        <div class="lt-card text-center">
+            <div class="text-3xl font-bold" style="color:var(--getsuga)">${total}</div>
+            <div class="text-[10px] text-neutral-500 font-bold mt-1">Total Tests</div>
+        </div>
+        <div class="lt-card text-center">
+            <div class="text-3xl font-bold" style="color:var(--reishi)">${totalAttempts}</div>
+            <div class="text-[10px] text-neutral-500 font-bold mt-1">Total Attempts</div>
+        </div>
+        <div class="lt-card text-center">
+            <div class="text-3xl font-bold" style="color:var(--danger)">${totalCheating}</div>
+            <div class="text-[10px] text-neutral-500 font-bold mt-1">Cheating Incidents</div>
+        </div>
+    `;
+    lucide.createIcons();
+}
+
+// ── Init ──
+loadTests();
+
+// ── Notifications ──
+async function sendNotification() {
+    const title = document.getElementById('notifTitle').value.trim();
+    const message = document.getElementById('notifMessage').value.trim();
+    const icon = document.getElementById('notifIcon').value;
+    if (!title || !message) return alert('Title and message are required');
+    const btn = document.getElementById('sendNotifBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Sending...';
+    lucide.createIcons();
+    try {
+        const res = await fetch('/admin/send_notification', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ title, message, icon })
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            document.getElementById('notifTitle').value = '';
+            document.getElementById('notifMessage').value = '';
+            loadNotifHistory();
+        } else {
+            alert(data.message || 'Failed to send');
+        }
+    } catch (e) { alert('Network error'); }
+    finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i> Send to All Students';
+        lucide.createIcons();
+    }
+}
+
+async function loadNotifHistory() {
+    try {
+        const res = await fetch('/admin/notifications');
+        const data = await res.json();
+        const el = document.getElementById('notifHistory');
+        if (!data.notifications || !data.notifications.length) {
+            el.innerHTML = '<div class="text-center py-8 text-neutral-600 text-xs">No notifications sent yet</div>';
+            return;
+        }
+        el.innerHTML = data.notifications.map(n => {
+            const d = new Date(n.created_at * 1000);
+            const typeColor = n.type === 'live_test' ? 'var(--reishi)' : 'var(--getsuga)';
+            const typeBadge = n.type === 'live_test' ? '<span class="lt-badge lt-badge-active" style="font-size:8px;padding:1px 6px;">Auto</span>' : '';
+            return `<div class="lt-card" style="padding:14px 16px;cursor:default;">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style="background:${typeColor}15;border:1px solid ${typeColor}30;">
+                        <i data-lucide="${esc(n.icon || 'bell')}" class="w-4 h-4" style="color:${typeColor}"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-0.5">
+                            <span class="text-xs font-bold text-white">${esc(n.title)}</span>
+                            ${typeBadge}
+                        </div>
+                        <p class="text-[11px] text-neutral-400">${esc(n.message)}</p>
+                        <p class="text-[9px] text-neutral-600 mt-1">${d.toLocaleDateString()} ${d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})} · by ${esc(n.created_by || 'admin')}</p>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+        lucide.createIcons();
+    } catch (e) { console.error(e); }
+}
+
+// ══════════════════════════════════════════════
+// CALENDAR EVENTS
+// ══════════════════════════════════════════════
+async function loadCalendarEvents() {
+    const el = document.getElementById('calEventsList');
+    try {
+        const res = await fetch('/admin/calendar/events');
+        const data = await res.json();
+        if (data.status === 'success') {
+            const events = data.events || {};
+            const dates = Object.keys(events).sort();
+            if (!dates.length) {
+                el.innerHTML = '<div class="text-center py-8 text-neutral-600"><i data-lucide="calendar-x" class="w-6 h-6 mx-auto mb-2"></i><p class="text-xs font-bold">No events uploaded yet</p></div>';
+                document.getElementById('clearEventsBtn').style.display = 'none';
+            } else {
+                let count = 0;
+                el.innerHTML = dates.map(dk => {
+                    const evts = events[dk];
+                    count += evts.length;
+                    return evts.map(e => {
+                        const isHol = e.type === 'holiday';
+                        const bgClass = isHol ? 'bg-red-500/5 border-red-500/10' : 'bg-purple-500/5 border-purple-500/10';
+                        const textColor = isHol ? 'text-red-400' : 'text-purple-400';
+                        const icon = isHol ? 'sun' : 'flag';
+                        return `<div class="lt-card flex items-center gap-3 ${bgClass}" style="padding:12px 16px;">
+                            <i data-lucide="${icon}" class="w-4 h-4 ${textColor} flex-shrink-0"></i>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-xs font-bold text-white truncate">${esc(e.label)}</p>
+                                <p class="text-[10px] text-neutral-500">${dk} &bull; ${e.type}</p>
+                            </div>
+                        </div>`;
+                    }).join('');
+                }).join('');
+                document.getElementById('clearEventsBtn').style.display = '';
+            }
+            lucide.createIcons();
+        }
+    } catch (e) { console.error(e); }
+}
+
+async function handleCalEventUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const status = document.getElementById('calEventStatus');
+    status.className = 'flex items-center gap-2 p-3 rounded-lg text-xs font-bold mb-3';
+    status.style.background = 'var(--getsuga-glow)';
+    status.style.color = 'var(--getsuga)';
+    status.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Processing with AI...';
+    lucide.createIcons();
+
+    const fd = new FormData();
+    fd.append('file', file);
+    try {
+        const res = await fetch('/admin/calendar/upload_events', { method: 'POST', body: fd });
+        const data = await res.json();
+        if (data.status === 'success') {
+            const count = data.count || 0;
+            status.style.background = 'rgba(34,197,94,0.1)';
+            status.style.color = '#22c55e';
+            status.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4"></i> ${count} event dates extracted and saved!`;
+            loadCalendarEvents();
+        } else {
+            status.style.background = 'rgba(239,68,68,0.1)';
+            status.style.color = '#ef4444';
+            status.innerHTML = `<i data-lucide="alert-circle" class="w-4 h-4"></i> ${esc(data.message || 'Upload failed')}`;
+        }
+    } catch {
+        status.style.background = 'rgba(239,68,68,0.1)';
+        status.style.color = '#ef4444';
+        status.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4"></i> Network error';
+    }
+    lucide.createIcons();
+    e.target.value = '';
+}
+
+async function clearAllEvents() {
+    if (!confirm('Delete ALL calendar events? This cannot be undone.')) return;
+    try {
+        const res = await fetch('/admin/calendar/events', { method: 'DELETE' });
+        const data = await res.json();
+        if (data.status === 'success') {
+            loadCalendarEvents();
+        }
+    } catch (e) { console.error(e); }
+}
+</script>
+</body>
+</html>

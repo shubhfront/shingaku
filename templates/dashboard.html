@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Dashboard - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/dashboard">
+    <meta property="og:title" content="Dashboard - Shingaku">
+    <meta property="og:description" content="Your personalized Shingaku dashboard. Track classes, tasks, attendance, and more.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/dashboard">
+    <meta name="twitter:title" content="Dashboard - Shingaku">
+    <meta name="twitter:description" content="Your personalized Shingaku dashboard. Track classes, tasks, attendance, and more.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/dashboard">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Boot/Loading Screen -->
+<div id="boot-screen" style="position:fixed;inset:0;z-index:9999;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease">
+    <div style="display:flex;gap:6px">
+        <div class="boot-cell" style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease infinite"></div>
+        <div class="boot-cell" style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .1s infinite"></div>
+        <div class="boot-cell" style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .2s infinite"></div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--text-muted);animation:pulse 1.5s infinite">LOADING DASHBOARD...</div>
+</div>
+
+<script>
+    const SHINGAKU_USER = {
+        username: {{ username | default('', true) | tojson }},
+        avatar: {{ avatar | default('', true) | tojson }}
+    };
+</script>
+
+<!-- ========== DESKTOP ========== -->
+<div class="dk-topbar" id="dk-topbar">
+    <div class="dk-topbar-left">
+        <button class="dk-icon-btn" id="sidebar-toggle" title="Toggle sidebar"><i data-lucide="panel-left" style="width:16px;height:16px"></i></button>
+        <div class="dk-brand" onclick="location.href='/dashboard'">
+            <div class="dk-brand-logo"><i data-lucide="sword" style="width:17px;height:17px"></i></div>
+            <div class="dk-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+    </div>
+    <div class="dk-topbar-right">
+        <button class="dk-icon-btn" id="theme-toggle" title="Toggle theme"><i data-lucide="sun" style="width:16px;height:16px"></i></button>
+        <button class="dk-icon-btn" id="pomo-open" title="Pomodoro"><i data-lucide="clock-3" style="width:16px;height:16px"></i></button>
+        <div style="position:relative">
+            <button class="dk-icon-btn" id="notif-toggle" title="Notifications"><i data-lucide="bell" style="width:16px;height:16px"></i><span class="badge-dot" id="notif-dot"></span></button>
+            <div class="dk-dropdown" id="notif-dropdown">
+                <div class="dk-dropdown-header">Notifications</div>
+                <div id="notif-list"></div>
+            </div>
+        </div>
+        <div class="dk-avatar-wrap" style="position:relative">
+            <img class="dk-avatar" id="dk-avatar" src="{{ avatar }}" alt="" onclick="toggleProfileDropdown()">
+            <div class="dk-dropdown" id="profile-dropdown">
+                <div class="dk-dropdown-header" id="dd-user">Profile</div>
+                <button class="dk-dropdown-item" onclick="profile()"><i data-lucide="user" style="width:14px;height:14px"></i>My Profile</button>
+                <div class="dk-dropdown-divider"></div>
+                <button class="dk-dropdown-item" onclick="logOut()" style="color:var(--danger)"><i data-lucide="log-out" style="width:14px;height:14px"></i>Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;height:calc(100vh - var(--topbar-h));overflow:hidden" id="dk-body">
+    <!-- Sidebar -->
+    <nav class="dk-sidebar" id="dk-sidebar">
+        <div class="dk-sidebar-nav scrollbar-hide">
+            <div class="dk-sidebar-label">Main</div>
+            <a href="/notes" class="dk-nav-item"><i data-lucide="file-text" style="width:16px;height:16px"></i><span class="nav-text">Notes</span></a>
+            <a href="/test_section" class="dk-nav-item"><i data-lucide="swords" style="width:16px;height:16px"></i><span class="nav-text">Test Arena</span></a>
+            <a href="/calendar" class="dk-nav-item"><i data-lucide="calendar-days" style="width:16px;height:16px"></i><span class="nav-text">Calendar</span></a>
+            <a href="/attendance" class="dk-nav-item"><i data-lucide="bar-chart-3" style="width:16px;height:16px"></i><span class="nav-text">Attendance</span></a>
+            <a href="/skills" class="dk-nav-item"><i data-lucide="route" style="width:16px;height:16px"></i><span class="nav-text">Skills</span></a>
+            <a href="/profile" class="dk-nav-item"><i data-lucide="user" style="width:16px;height:16px"></i><span class="nav-text">Profile</span></a>
+            <div class="dk-sidebar-divider"></div>
+            <div class="dk-sidebar-label">Tools</div>
+            <div class="dk-nav-item" onclick="openPomo()"><i data-lucide="clock-3" style="width:16px;height:16px"></i><span class="nav-text">Pomodoro</span></div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dk-main scrollbar-hide" id="dk-main">
+        <div class="dk-main-inner">
+            <!-- Greeting -->
+            <div class="dk-greeting anim-in">
+                <div class="dk-greeting-sub"><span class="dot"></span><span id="dk-date"></span></div>
+                <h1 id="dk-greeting-text"></h1>
+            </div>
+
+            <!-- Stats -->
+            <div class="dk-stats-row anim-in" style="animation-delay:.04s">
+                <div class="dk-stat-pill">
+                    <div class="dk-stat-icon" style="background:var(--getsuga-glow);color:var(--getsuga)"><i data-lucide="book-open" style="width:18px;height:18px"></i></div>
+                    <div><div class="dk-stat-value" id="dk-stat-classes">0</div><div class="dk-stat-label">Today's Classes</div></div>
+                </div>
+                <div class="dk-stat-pill">
+                    <div class="dk-stat-icon" style="background:var(--reishi-glow);color:var(--reishi)"><i data-lucide="check-square" style="width:18px;height:18px"></i></div>
+                    <div><div class="dk-stat-value" id="dk-stat-todos">0</div><div class="dk-stat-label">Pending Tasks</div></div>
+                </div>
+                <div class="dk-stat-pill">
+                    <div class="dk-stat-icon" style="background:rgba(139,92,246,.1);color:#8b5cf6"><i data-lucide="bell" style="width:18px;height:18px"></i></div>
+                    <div><div class="dk-stat-value" id="dk-stat-notifs">0</div><div class="dk-stat-label">Alerts</div></div>
+                </div>
+                <div class="dk-stat-pill" onclick="location.href='/attendance'" style="cursor:pointer">
+                    <div class="dk-stat-icon" style="background:rgba(34,197,94,.1);color:#22c55e"><i data-lucide="bar-chart-3" style="width:18px;height:18px"></i></div>
+                    <div><div class="dk-stat-value" id="dk-stat-att">--</div><div class="dk-stat-label">Attendance</div></div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="dk-quick-grid anim-in" style="animation-delay:.08s">
+                <a href="/notes" class="dk-quick-link">
+                    <div class="dk-quick-icon" style="background:var(--getsuga-glow);color:var(--getsuga)"><i data-lucide="file-text" style="width:20px;height:20px"></i></div>
+                    <span class="dk-quick-title">Notes</span>
+                </a>
+                <a href="/test_section" class="dk-quick-link">
+                    <div class="dk-quick-icon" style="background:rgba(239,68,68,.08);color:#ef4444"><i data-lucide="swords" style="width:20px;height:20px"></i></div>
+                    <span class="dk-quick-title">Test Arena</span>
+                </a>
+                <a href="/calendar" class="dk-quick-link">
+                    <div class="dk-quick-icon" style="background:var(--reishi-glow);color:var(--reishi)"><i data-lucide="calendar-days" style="width:20px;height:20px"></i></div>
+                    <span class="dk-quick-title">Calendar</span>
+                </a>
+                <a href="/attendance" class="dk-quick-link">
+                    <div class="dk-quick-icon" style="background:rgba(34,197,94,.1);color:#22c55e"><i data-lucide="bar-chart-3" style="width:20px;height:20px"></i></div>
+                    <span class="dk-quick-title">Attendance</span>
+                </a>
+                <a href="/skills" class="dk-quick-link">
+                    <div class="dk-quick-icon" style="background:rgba(139,92,246,.08);color:#8b5cf6"><i data-lucide="route" style="width:20px;height:20px"></i></div>
+                    <span class="dk-quick-title">Skills</span>
+                </a>
+            </div>
+
+            <!-- Today's Highlight (schedule or holiday vibe) -->
+            <div id="dk-highlight" class="dk-highlight-card anim-in" style="animation-delay:.1s;margin-bottom:22px"></div>
+
+            <!-- Attendance Overview -->
+            <div id="dk-att-bar" class="dk-att-bar-card anim-in" style="animation-delay:.12s;margin-bottom:22px"></div>
+
+            <!-- Grid -->
+            <div class="dk-grid dk-grid-main anim-in" style="animation-delay:.14s">
+                <!-- Left: Schedule -->
+                <div class="dk-card">
+                    <div class="dk-section-title">Today's Schedule</div>
+                    <div id="dk-schedule"></div>
+                </div>
+                <!-- Right: Todos -->
+                <div class="dk-card">
+                    <div class="dk-section-title">Tasks</div>
+                    <div id="dk-todos"></div>
+                    <div class="dk-todo-input-wrap">
+                        <input class="dk-todo-input" type="text" id="dk-todo-input" placeholder="Add a new task..." onkeydown="if(event.key==='Enter')addTodo()">
+                        <button class="dk-add-btn" onclick="addTodo()"><i data-lucide="plus" style="width:16px;height:16px"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Pomodoro Overlay -->
+<div class="dk-pomo-overlay" id="pomo-overlay">
+    <div class="dk-pomo-card">
+        <button class="dk-pomo-close" onclick="closePomo()"><i data-lucide="x" style="width:14px;height:14px"></i></button>
+        <div class="dk-pomo-label" id="pomo-phase">Focus Time</div>
+        <div class="dk-pomo-time" id="pomo-time">25:00</div>
+        <div class="dk-pomo-custom" id="pomo-custom">
+            <div class="dk-pomo-custom-row">
+                <label>Focus<input type="number" id="pomo-focus-input" min="1" max="120" value="25"> min</label>
+                <label>Break<input type="number" id="pomo-break-input" min="1" max="60" value="5"> min</label>
+            </div>
+            <button class="dk-pomo-btn secondary" style="margin-top:8px;padding:6px 16px;font-size:11px" onclick="applyPomoCustom()">Apply</button>
+        </div>
+        <div class="dk-pomo-controls">
+            <button class="dk-pomo-btn primary" id="pomo-start" onclick="togglePomo()">Start</button>
+            <button class="dk-pomo-btn secondary" onclick="resetPomo()">Reset</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+
+<!-- ========== MOBILE ========== -->
+<div class="mob-app" id="mob-app">
+    <!-- Header -->
+    <div class="mob-header">
+        <div class="mob-brand">
+            <div class="mob-brand-logo"><i data-lucide="sword" style="width:15px;height:15px"></i></div>
+            <div class="mob-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+        <div class="mob-header-actions">
+            <button class="mob-icon-btn" id="mob-theme-toggle" onclick="toggleTheme()"><i data-lucide="sun" style="width:15px;height:15px"></i></button>
+            <button class="mob-icon-btn" id="mob-notif-btn"><i data-lucide="bell" style="width:15px;height:15px"></i><span class="badge-dot" id="mob-notif-dot"></span></button>
+            <img class="mob-avatar" id="mob-avatar" src="{{ avatar }}" alt="" onclick="profile()">
+        </div>
+    </div>
+
+    <!-- Greeting -->
+    <div class="mob-greeting">
+        <div class="mob-greeting-sub"><span class="dot"></span><span id="mob-date"></span></div>
+        <h1 id="mob-greeting-text"></h1>
+    </div>
+
+    <!-- Stats -->
+    <div class="mob-stats scrollbar-hide">
+        <div class="mob-stat">
+            <div class="mob-stat-icon" style="background:var(--getsuga-glow);color:var(--getsuga)"><i data-lucide="book-open" style="width:16px;height:16px"></i></div>
+            <div><div class="mob-stat-value" id="mob-stat-classes">0</div><div class="mob-stat-label">Classes</div></div>
+        </div>
+        <div class="mob-stat">
+            <div class="mob-stat-icon" style="background:var(--reishi-glow);color:var(--reishi)"><i data-lucide="check-square" style="width:16px;height:16px"></i></div>
+            <div><div class="mob-stat-value" id="mob-stat-todos">0</div><div class="mob-stat-label">Tasks</div></div>
+        </div>
+        <div class="mob-stat">
+            <div class="mob-stat-icon" style="background:rgba(139,92,246,.1);color:#8b5cf6"><i data-lucide="bell" style="width:16px;height:16px"></i></div>
+            <div><div class="mob-stat-value" id="mob-stat-notifs">0</div><div class="mob-stat-label">Alerts</div></div>
+        </div>
+        <div class="mob-stat" onclick="location.href='/attendance'">
+            <div class="mob-stat-icon" style="background:rgba(34,197,94,.1);color:#22c55e"><i data-lucide="bar-chart-3" style="width:16px;height:16px"></i></div>
+            <div><div class="mob-stat-value" id="mob-stat-att">--</div><div class="mob-stat-label">Attend.</div></div>
+        </div>
+    </div>
+
+    <!-- Quick Links Grid -->
+    <div class="mob-quick-grid">
+        <a href="/notes" class="mob-quick-item">
+            <div class="mob-quick-item-icon" style="background:var(--getsuga-glow);color:var(--getsuga)"><i data-lucide="file-text" style="width:18px;height:18px"></i></div>
+            <span class="mob-quick-item-label">Notes</span>
+        </a>
+        <a href="/test_section" class="mob-quick-item">
+            <div class="mob-quick-item-icon" style="background:rgba(239,68,68,.08);color:#ef4444"><i data-lucide="swords" style="width:18px;height:18px"></i></div>
+            <span class="mob-quick-item-label">Arena</span>
+        </a>
+        <a href="/calendar" class="mob-quick-item">
+            <div class="mob-quick-item-icon" style="background:var(--reishi-glow);color:var(--reishi)"><i data-lucide="calendar-days" style="width:18px;height:18px"></i></div>
+            <span class="mob-quick-item-label">Calendar</span>
+        </a>
+        <a href="/attendance" class="mob-quick-item">
+            <div class="mob-quick-item-icon" style="background:rgba(34,197,94,.1);color:#22c55e"><i data-lucide="bar-chart-3" style="width:18px;height:18px"></i></div>
+            <span class="mob-quick-item-label">Attend.</span>
+        </a>
+        <a href="/skills" class="mob-quick-item">
+            <div class="mob-quick-item-icon" style="background:rgba(139,92,246,.08);color:#8b5cf6"><i data-lucide="route" style="width:18px;height:18px"></i></div>
+            <span class="mob-quick-item-label">Skills</span>
+        </a>
+    </div>
+
+    <!-- Highlight (schedule or holiday meme) -->
+    <div class="mob-section">
+        <div id="mob-highlight"></div>
+    </div>
+
+    <!-- Attendance Overview -->
+    <div class="mob-section">
+        <div id="mob-att-bar"></div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="mob-section">
+        <div class="mob-section-title">Today's Timetable</div>
+        <div class="mob-card" id="mob-schedule"></div>
+    </div>
+
+    <!-- Todos -->
+    <div class="mob-section">
+        <div class="mob-section-title">Tasks</div>
+        <div class="mob-card">
+            <div id="mob-todos"></div>
+            <div class="mob-todo-add">
+                <input class="mob-todo-input" type="text" id="mob-todo-input" placeholder="Add task..." onkeydown="if(event.key==='Enter')addTodoMob()">
+                <button class="mob-todo-add-btn" onclick="addTodoMob()"><i data-lucide="plus" style="width:14px;height:14px"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Bar -->
+    <nav class="mob-bottombar">
+        <a href="/dashboard" class="mob-tab active"><i data-lucide="layout-dashboard" style="width:20px;height:20px"></i><span>Home</span></a>
+        <a href="/notes" class="mob-tab"><i data-lucide="file-text" style="width:20px;height:20px"></i><span>Notes</span></a>
+        <a href="/calendar" class="mob-tab"><i data-lucide="calendar-days" style="width:20px;height:20px"></i><span>Calendar</span></a>
+        <a href="/test_section" class="mob-tab"><i data-lucide="swords" style="width:20px;height:20px"></i><span>Arena</span></a>
+        <a href="/profile" class="mob-tab"><i data-lucide="user" style="width:20px;height:20px"></i><span>Profile</span></a>
+    </nav>
+</div>
+
+<!-- Mobile Pomodoro Overlay -->
+<div class="mob-pomo-overlay" id="mob-pomo-overlay">
+    <div class="dk-pomo-card">
+        <button class="dk-pomo-close" onclick="closeMobPomo()"><i data-lucide="x" style="width:14px;height:14px"></i></button>
+        <div class="dk-pomo-label" id="mob-pomo-phase">Focus Time</div>
+        <div class="dk-pomo-time" id="mob-pomo-time">25:00</div>
+        <div class="dk-pomo-custom" id="mob-pomo-custom">
+            <div class="dk-pomo-custom-row">
+                <label>Focus<input type="number" id="mob-pomo-focus-input" min="1" max="120" value="25"> min</label>
+                <label>Break<input type="number" id="mob-pomo-break-input" min="1" max="60" value="5"> min</label>
+            </div>
+            <button class="dk-pomo-btn secondary" style="margin-top:8px;padding:6px 16px;font-size:11px" onclick="applyPomoCustom()">Apply</button>
+        </div>
+        <div class="dk-pomo-controls">
+            <button class="dk-pomo-btn primary" id="mob-pomo-start" onclick="togglePomo()">Start</button>
+            <button class="dk-pomo-btn secondary" onclick="resetPomo()">Reset</button>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/dashboard.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

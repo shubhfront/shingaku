@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Skills - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/skills">
+    <meta property="og:title" content="Skills Roadmap - Shingaku">
+    <meta property="og:description" content="Generate personalized learning roadmaps with AI. Master any skill with curated resources.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@300;500;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/skills.css">
+</head>
+<body>
+
+<!-- Boot Screen -->
+<div id="boot-screen" style="position:fixed;inset:0;z-index:9999;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease">
+    <div style="display:flex;gap:6px">
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .1s infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .2s infinite"></div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--text-muted);animation:pulse 1.5s infinite">LOADING SKILLS...</div>
+</div>
+
+<script>
+    const SHINGAKU_USER = {
+        username: {{ username | default('', true) | tojson }},
+        avatar: {{ avatar | default('', true) | tojson }}
+    };
+</script>
+
+<!-- ========== DESKTOP ========== -->
+<div class="dk-topbar" id="dk-topbar">
+    <div class="dk-topbar-left">
+        <button class="dk-icon-btn" id="sidebar-toggle" title="Toggle sidebar"><i data-lucide="panel-left" style="width:16px;height:16px"></i></button>
+        <div class="dk-brand" onclick="location.href='/dashboard'">
+            <div class="dk-brand-logo"><i data-lucide="sword" style="width:17px;height:17px"></i></div>
+            <div class="dk-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+    </div>
+    <div class="dk-topbar-right">
+        <button class="dk-icon-btn" id="theme-toggle" title="Toggle theme"><i data-lucide="sun" style="width:16px;height:16px"></i></button>
+        <div class="dk-avatar-wrap">
+            <img class="dk-avatar" id="dk-avatar" src="{{ avatar }}" alt="" onclick="location.href='/profile'">
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;height:calc(100vh - var(--topbar-h));overflow:hidden" id="dk-body">
+    <!-- Sidebar -->
+    <nav class="dk-sidebar" id="dk-sidebar">
+        <div class="dk-sidebar-nav scrollbar-hide">
+            <div class="dk-sidebar-label">Main</div>
+            <a href="/dashboard" class="dk-nav-item"><i data-lucide="layout-dashboard" style="width:16px;height:16px"></i><span class="nav-text">Dashboard</span></a>
+            <a href="/notes" class="dk-nav-item"><i data-lucide="file-text" style="width:16px;height:16px"></i><span class="nav-text">Notes</span></a>
+            <a href="/test_section" class="dk-nav-item"><i data-lucide="swords" style="width:16px;height:16px"></i><span class="nav-text">Test Arena</span></a>
+            <a href="/calendar" class="dk-nav-item"><i data-lucide="calendar-days" style="width:16px;height:16px"></i><span class="nav-text">Calendar</span></a>
+            <a href="/attendance" class="dk-nav-item"><i data-lucide="bar-chart-3" style="width:16px;height:16px"></i><span class="nav-text">Attendance</span></a>
+            <a href="/skills" class="dk-nav-item active"><i data-lucide="route" style="width:16px;height:16px"></i><span class="nav-text">Skills</span></a>
+            <a href="/profile" class="dk-nav-item"><i data-lucide="user" style="width:16px;height:16px"></i><span class="nav-text">Profile</span></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dk-main scrollbar-hide" id="dk-main">
+        <div class="dk-main-inner">
+
+            <!-- Header -->
+            <div class="sk-header anim-in">
+                <div class="sk-header-sub"><span class="dot"></span>SKILL FORGE</div>
+                <h1>ROADMAP <span class="accent">GENERATOR</span></h1>
+                <p class="sk-header-desc">Choose your specialization and generate an AI-powered learning roadmap with curated resources.</p>
+            </div>
+
+            <!-- Speciality Picker -->
+            <div class="sk-picker anim-in" id="sk-picker" style="animation-delay:.06s">
+                <div class="sk-picker-title">Choose Your Path</div>
+                <div class="sk-tags" id="sk-tags">
+                    <button class="sk-tag" data-value="Web Development"><i data-lucide="globe" style="width:14px;height:14px"></i>Web Dev</button>
+                    <button class="sk-tag" data-value="AI / Machine Learning"><i data-lucide="brain" style="width:14px;height:14px"></i>AI / ML</button>
+                    <button class="sk-tag" data-value="Data Science"><i data-lucide="bar-chart-2" style="width:14px;height:14px"></i>Data Science</button>
+                    <button class="sk-tag" data-value="Mobile App Development"><i data-lucide="smartphone" style="width:14px;height:14px"></i>Mobile Dev</button>
+                    <button class="sk-tag" data-value="Cybersecurity"><i data-lucide="shield" style="width:14px;height:14px"></i>Cybersecurity</button>
+                    <button class="sk-tag" data-value="Cloud Computing & DevOps"><i data-lucide="cloud" style="width:14px;height:14px"></i>Cloud / DevOps</button>
+                    <button class="sk-tag" data-value="Blockchain Development"><i data-lucide="link" style="width:14px;height:14px"></i>Blockchain</button>
+                    <button class="sk-tag" data-value="Game Development"><i data-lucide="gamepad-2" style="width:14px;height:14px"></i>Game Dev</button>
+                    <button class="sk-tag" data-value="Competitive Programming & DSA"><i data-lucide="code" style="width:14px;height:14px"></i>DSA / CP</button>
+                    <button class="sk-tag" data-value="UI/UX Design"><i data-lucide="palette" style="width:14px;height:14px"></i>UI/UX</button>
+                    <button class="sk-tag" data-value="Embedded Systems & IoT"><i data-lucide="cpu" style="width:14px;height:14px"></i>Embedded / IoT</button>
+                    <button class="sk-tag" data-value="Backend Engineering"><i data-lucide="server" style="width:14px;height:14px"></i>Backend</button>
+                </div>
+                <div class="sk-custom-wrap">
+                    <input type="text" class="sk-custom-input" id="sk-custom" placeholder="Or type a custom skill...">
+                    <button class="sk-generate-btn" id="sk-generate" disabled>
+                        <i data-lucide="sparkles" style="width:16px;height:16px"></i>
+                        <span>Generate Roadmap</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="sk-loading" id="sk-loading" style="display:none">
+                <div class="sk-loading-inner">
+                    <div class="sk-spinner"></div>
+                    <div class="sk-loading-text">Forging your roadmap...</div>
+                    <div class="sk-loading-sub">AI is curating the best learning path</div>
+                </div>
+            </div>
+
+            <!-- Roadmap Container -->
+            <div class="sk-roadmap" id="sk-roadmap" style="display:none">
+                <div class="sk-roadmap-header" id="sk-roadmap-header"></div>
+                <div class="sk-flow" id="sk-flow"></div>
+                <div class="sk-reset-wrap">
+                    <button class="sk-reset-btn" id="sk-reset"><i data-lucide="arrow-left" style="width:14px;height:14px"></i>Generate Another</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Resource Modal -->
+<div class="sk-modal-overlay" id="sk-modal">
+    <div class="sk-modal-card">
+        <button class="sk-modal-close" id="sk-modal-close"><i data-lucide="x" style="width:16px;height:16px"></i></button>
+        <div class="sk-modal-header" id="sk-modal-topic"></div>
+        <div class="sk-modal-desc" id="sk-modal-desc"></div>
+        <div class="sk-modal-body" id="sk-modal-body"></div>
+    </div>
+</div>
+
+<!-- ========== MOBILE ========== -->
+<div class="mob-app" id="mob-app">
+    <!-- Header -->
+    <div class="mob-header">
+        <div class="mob-brand" onclick="location.href='/dashboard'">
+            <div class="mob-brand-logo"><i data-lucide="sword" style="width:15px;height:15px"></i></div>
+            <div class="mob-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+        <div class="mob-header-actions">
+            <button class="mob-icon-btn" id="mob-theme-toggle" onclick="toggleTheme()"><i data-lucide="sun" style="width:15px;height:15px"></i></button>
+            <img class="mob-avatar" id="mob-avatar" src="{{ avatar }}" alt="" onclick="location.href='/profile'">
+        </div>
+    </div>
+
+    <!-- Mobile Content -->
+    <div class="mob-content scrollbar-hide">
+
+        <!-- Header -->
+        <div class="mob-section">
+            <div class="sk-header anim-in">
+                <div class="sk-header-sub"><span class="dot"></span>SKILL FORGE</div>
+                <h1>ROADMAP <span class="accent">GENERATOR</span></h1>
+                <p class="sk-header-desc">Choose your path and generate an AI-powered learning roadmap.</p>
+            </div>
+        </div>
+
+        <!-- Picker -->
+        <div class="mob-section">
+            <div class="sk-picker anim-in" id="mob-sk-picker" style="animation-delay:.06s">
+                <div class="sk-picker-title">Choose Your Path</div>
+                <div class="sk-tags" id="mob-sk-tags">
+                    <button class="sk-tag" data-value="Web Development"><i data-lucide="globe" style="width:14px;height:14px"></i>Web Dev</button>
+                    <button class="sk-tag" data-value="AI / Machine Learning"><i data-lucide="brain" style="width:14px;height:14px"></i>AI / ML</button>
+                    <button class="sk-tag" data-value="Data Science"><i data-lucide="bar-chart-2" style="width:14px;height:14px"></i>Data Science</button>
+                    <button class="sk-tag" data-value="Mobile App Development"><i data-lucide="smartphone" style="width:14px;height:14px"></i>Mobile Dev</button>
+                    <button class="sk-tag" data-value="Cybersecurity"><i data-lucide="shield" style="width:14px;height:14px"></i>Cybersecurity</button>
+                    <button class="sk-tag" data-value="Cloud Computing & DevOps"><i data-lucide="cloud" style="width:14px;height:14px"></i>Cloud / DevOps</button>
+                    <button class="sk-tag" data-value="Blockchain Development"><i data-lucide="link" style="width:14px;height:14px"></i>Blockchain</button>
+                    <button class="sk-tag" data-value="Game Development"><i data-lucide="gamepad-2" style="width:14px;height:14px"></i>Game Dev</button>
+                    <button class="sk-tag" data-value="Competitive Programming & DSA"><i data-lucide="code" style="width:14px;height:14px"></i>DSA / CP</button>
+                    <button class="sk-tag" data-value="UI/UX Design"><i data-lucide="palette" style="width:14px;height:14px"></i>UI/UX</button>
+                    <button class="sk-tag" data-value="Embedded Systems & IoT"><i data-lucide="cpu" style="width:14px;height:14px"></i>Embedded / IoT</button>
+                    <button class="sk-tag" data-value="Backend Engineering"><i data-lucide="server" style="width:14px;height:14px"></i>Backend</button>
+                </div>
+                <div class="sk-custom-wrap">
+                    <input type="text" class="sk-custom-input" id="mob-sk-custom" placeholder="Or type a custom skill...">
+                    <button class="sk-generate-btn" id="mob-sk-generate" disabled>
+                        <i data-lucide="sparkles" style="width:16px;height:16px"></i>
+                        <span>Generate</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="sk-loading" id="mob-sk-loading" style="display:none">
+            <div class="sk-loading-inner">
+                <div class="sk-spinner"></div>
+                <div class="sk-loading-text">Forging your roadmap...</div>
+                <div class="sk-loading-sub">AI is curating the best path</div>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="sk-roadmap" id="mob-sk-roadmap" style="display:none">
+            <div class="mob-section">
+                <div class="sk-roadmap-header" id="mob-sk-roadmap-header"></div>
+                <div class="sk-flow" id="mob-sk-flow"></div>
+                <div class="sk-reset-wrap">
+                    <button class="sk-reset-btn" id="mob-sk-reset"><i data-lucide="arrow-left" style="width:14px;height:14px"></i>Generate Another</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <nav class="mob-bottombar">
+        <a href="/dashboard" class="mob-tab"><i data-lucide="layout-dashboard" style="width:20px;height:20px"></i><span>Home</span></a>
+        <a href="/notes" class="mob-tab"><i data-lucide="file-text" style="width:20px;height:20px"></i><span>Notes</span></a>
+        <a href="/skills" class="mob-tab active"><i data-lucide="route" style="width:20px;height:20px"></i><span>Skills</span></a>
+        <a href="/test_section" class="mob-tab"><i data-lucide="swords" style="width:20px;height:20px"></i><span>Arena</span></a>
+        <a href="/profile" class="mob-tab"><i data-lucide="user" style="width:20px;height:20px"></i><span>Profile</span></a>
+    </nav>
+</div>
+
+<script src="/static/js/skills.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

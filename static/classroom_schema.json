@@ -1,0 +1,5030 @@
+{
+  "course": {
+    "id": "626940139402",
+    "name": "First year (EC , ECD ,PH & MNC )",
+    "link": "https://classroom.google.com/c/NjI2OTQwMTM5NDAy"
+  },
+  "topics": [
+    {
+      "topicId": "720994566602",
+      "name": "SYLLABUS"
+    },
+    {
+      "topicId": "781671661295",
+      "name": "Academic Calendar"
+    },
+    {
+      "topicId": "626940139408",
+      "name": "NOTES"
+    },
+    {
+      "topicId": "781588541747",
+      "name": "SUNIL SIR\u2019s NOTES"
+    },
+    {
+      "topicId": "626940139409",
+      "name": "BOOKS"
+    },
+    {
+      "topicId": "626940139410",
+      "name": "PRACTICAL FILES"
+    },
+    {
+      "topicId": "626940139411",
+      "name": "WORKSHOP"
+    },
+    {
+      "topicId": "626940139412",
+      "name": "Engineering Drawing"
+    },
+    {
+      "topicId": "626940139413",
+      "name": "ASSIGNMENTS"
+    },
+    {
+      "topicId": "626940139414",
+      "name": "ASSIGNMENT SOLUTIONS"
+    },
+    {
+      "topicId": "626940139415",
+      "name": "QUESTION PAPERS"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "ce101",
+      "name": "CE-101 (Applied Mechanics)",
+      "short": "CE",
+      "icon": "compass",
+      "color": "#f97316"
+    },
+    {
+      "id": "cs101",
+      "name": "CS-101 (C Programming)",
+      "short": "CS",
+      "icon": "monitor",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "cy101",
+      "name": "CY-101 (Engineering Chemistry)",
+      "short": "Chem",
+      "icon": "flask-conical",
+      "color": "#22c55e"
+    },
+    {
+      "id": "ec101",
+      "name": "EC-101 (Basic Electronics)",
+      "short": "EC",
+      "icon": "cpu",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "ee101",
+      "name": "EE-101 (Basic Electrical)",
+      "short": "EE",
+      "icon": "zap",
+      "color": "#eab308"
+    },
+    {
+      "id": "en101",
+      "name": "EN-101 (Energy & Environment)",
+      "short": "EN",
+      "icon": "leaf",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "hs101",
+      "name": "HS-101 (Communication Theory)",
+      "short": "HS",
+      "icon": "message-square",
+      "color": "#a855f7"
+    },
+    {
+      "id": "hs103",
+      "name": "HS-103 (Human Values & Ethics)",
+      "short": "HV",
+      "icon": "heart",
+      "color": "#ec4899"
+    },
+    {
+      "id": "ma111",
+      "name": "MA-111 (Eng. Mathematics-1)",
+      "short": "M1",
+      "icon": "function-square",
+      "color": "#f43f5e"
+    },
+    {
+      "id": "ma121",
+      "name": "MA-121 (Eng. Mathematics-2)",
+      "short": "M2",
+      "icon": "sigma",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "mb101",
+      "name": "MB-101 (Marketing & Entrepreneurship)",
+      "short": "MB",
+      "icon": "trending-up",
+      "color": "#fb923c"
+    },
+    {
+      "id": "me101",
+      "name": "ME-101 (Basic Mechanical Eng.)",
+      "short": "ME",
+      "icon": "settings",
+      "color": "#64748b"
+    },
+    {
+      "id": "ms101",
+      "name": "MS-101 (Material Science)",
+      "short": "MS",
+      "icon": "atom",
+      "color": "#10b981"
+    },
+    {
+      "id": "ph101",
+      "name": "PH-101 (Engineering Physics)",
+      "short": "PH",
+      "icon": "atom",
+      "color": "#ef4444"
+    },
+    {
+      "id": "ed",
+      "name": "Engineering Drawing",
+      "short": "ED",
+      "icon": "pencil-ruler",
+      "color": "#d946ef"
+    },
+    {
+      "id": "ws",
+      "name": "Workshop",
+      "short": "WS",
+      "icon": "wrench",
+      "color": "#78716c"
+    }
+  ],
+  "chapters": {
+    "ce101": [
+      {
+        "id": "ce101_c1",
+        "title": "NOTES",
+        "modules": 9
+      },
+      {
+        "id": "ce101_c2",
+        "title": "BOOKS",
+        "modules": 3
+      },
+      {
+        "id": "ce101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 13
+      },
+      {
+        "id": "ce101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 2
+      },
+      {
+        "id": "ce101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 2
+      }
+    ],
+    "cs101": [
+      {
+        "id": "cs101_c1",
+        "title": "NOTES",
+        "modules": 4
+      },
+      {
+        "id": "cs101_c2",
+        "title": "BOOKS",
+        "modules": 1
+      },
+      {
+        "id": "cs101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 9
+      },
+      {
+        "id": "cs101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 1
+      },
+      {
+        "id": "cs101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 1
+      },
+      {
+        "id": "cs101_c6",
+        "title": "Practical Files",
+        "modules": 1
+      }
+    ],
+    "cy101": [
+      {
+        "id": "cy101_c1",
+        "title": "NOTES",
+        "modules": 8
+      },
+      {
+        "id": "cy101_c2",
+        "title": "BOOKS",
+        "modules": 7
+      },
+      {
+        "id": "cy101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 20
+      },
+      {
+        "id": "cy101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 1
+      },
+      {
+        "id": "cy101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 1
+      },
+      {
+        "id": "cy101_c6",
+        "title": "Practical Files",
+        "modules": 2
+      }
+    ],
+    "ec101": [
+      {
+        "id": "ec101_c1",
+        "title": "NOTES",
+        "modules": 5
+      },
+      {
+        "id": "ec101_c2",
+        "title": "BOOKS",
+        "modules": 1
+      },
+      {
+        "id": "ec101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 20
+      },
+      {
+        "id": "ec101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 3
+      },
+      {
+        "id": "ec101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 3
+      },
+      {
+        "id": "ec101_c6",
+        "title": "Practical Files",
+        "modules": 1
+      }
+    ],
+    "ee101": [
+      {
+        "id": "ee101_c1",
+        "title": "NOTES",
+        "modules": 9
+      },
+      {
+        "id": "ee101_c2",
+        "title": "BOOKS",
+        "modules": 3
+      },
+      {
+        "id": "ee101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 23
+      },
+      {
+        "id": "ee101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 5
+      },
+      {
+        "id": "ee101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 5
+      },
+      {
+        "id": "ee101_c6",
+        "title": "Practical Files",
+        "modules": 2
+      }
+    ],
+    "en101": [
+      {
+        "id": "en101_c1",
+        "title": "NOTES",
+        "modules": 10
+      },
+      {
+        "id": "en101_c2",
+        "title": "QUESTION PAPERS",
+        "modules": 9
+      }
+    ],
+    "hs101": [
+      {
+        "id": "hs101_c1",
+        "title": "NOTES",
+        "modules": 17
+      },
+      {
+        "id": "hs101_c2",
+        "title": "BOOKS",
+        "modules": 1
+      },
+      {
+        "id": "hs101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 21
+      },
+      {
+        "id": "hs101_c4",
+        "title": "Practical Files",
+        "modules": 1
+      }
+    ],
+    "hs103": [
+      {
+        "id": "hs103_c1",
+        "title": "NOTES",
+        "modules": 5
+      },
+      {
+        "id": "hs103_c2",
+        "title": "QUESTION PAPERS",
+        "modules": 10
+      }
+    ],
+    "ma111": [
+      {
+        "id": "ma111_c1",
+        "title": "NOTES",
+        "modules": 6
+      },
+      {
+        "id": "ma111_c2",
+        "title": "BOOKS",
+        "modules": 2
+      },
+      {
+        "id": "ma111_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 12
+      },
+      {
+        "id": "ma111_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 4
+      },
+      {
+        "id": "ma111_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 4
+      }
+    ],
+    "ma121": [
+      {
+        "id": "ma121_c1",
+        "title": "NOTES",
+        "modules": 6
+      },
+      {
+        "id": "ma121_c2",
+        "title": "BOOKS",
+        "modules": 6
+      },
+      {
+        "id": "ma121_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 9
+      },
+      {
+        "id": "ma121_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 2
+      },
+      {
+        "id": "ma121_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 2
+      }
+    ],
+    "mb101": [
+      {
+        "id": "mb101_c1",
+        "title": "NOTES",
+        "modules": 11
+      },
+      {
+        "id": "mb101_c2",
+        "title": "QUESTION PAPERS",
+        "modules": 9
+      }
+    ],
+    "me101": [
+      {
+        "id": "me101_c1",
+        "title": "NOTES",
+        "modules": 15
+      },
+      {
+        "id": "me101_c2",
+        "title": "BOOKS",
+        "modules": 3
+      },
+      {
+        "id": "me101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 15
+      }
+    ],
+    "ms101": [
+      {
+        "id": "ms101_c1",
+        "title": "NOTES",
+        "modules": 6
+      },
+      {
+        "id": "ms101_c2",
+        "title": "BOOKS",
+        "modules": 2
+      },
+      {
+        "id": "ms101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 9
+      },
+      {
+        "id": "ms101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 1
+      },
+      {
+        "id": "ms101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 1
+      }
+    ],
+    "ph101": [
+      {
+        "id": "ph101_c1",
+        "title": "NOTES",
+        "modules": 7
+      },
+      {
+        "id": "ph101_c2",
+        "title": "BOOKS",
+        "modules": 2
+      },
+      {
+        "id": "ph101_c3",
+        "title": "QUESTION PAPERS",
+        "modules": 30
+      },
+      {
+        "id": "ph101_c4",
+        "title": "ASSIGNMENTS",
+        "modules": 2
+      },
+      {
+        "id": "ph101_c5",
+        "title": "ASSIGNMENT SOLUTIONS",
+        "modules": 2
+      },
+      {
+        "id": "ph101_c6",
+        "title": "Practical Files",
+        "modules": 1
+      }
+    ],
+    "ed": [
+      {
+        "id": "ed_c1",
+        "title": "Assignment",
+        "modules": 5
+      },
+      {
+        "id": "ed_c2",
+        "title": "Assignment Solutions",
+        "modules": 5
+      },
+      {
+        "id": "ed_c3",
+        "title": "Question Papers",
+        "modules": 16
+      }
+    ],
+    "ws": [
+      {
+        "id": "ws_c1",
+        "title": "Assignement",
+        "modules": 1
+      },
+      {
+        "id": "ws_c2",
+        "title": "Assignment Solutions",
+        "modules": 1
+      },
+      {
+        "id": "ws_c3",
+        "title": "CIVIL",
+        "modules": 1
+      },
+      {
+        "id": "ws_c4",
+        "title": "ELECTRICAL",
+        "modules": 1
+      },
+      {
+        "id": "ws_c5",
+        "title": "MECHANICAL",
+        "modules": 8
+      }
+    ]
+  },
+  "resources": {
+    "ce101": {
+      "ce101_c1": {
+        "notes": [
+          {
+            "title": "Unit 1 -Resolution Of Forces.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-kuAlmorZxWsely6QJLQN_aF0h49Mk9j/view?usp=drive_web",
+            "driveId": "1-kuAlmorZxWsely6QJLQN_aF0h49Mk9j"
+          },
+          {
+            "title": "Unit 2.1 -C.O.M and M.I.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1qJHaf9PGL3M1DT63tI-I-R-Up9zGY6JO/view?usp=drive_web",
+            "driveId": "1qJHaf9PGL3M1DT63tI-I-R-Up9zGY6JO"
+          },
+          {
+            "title": "Unit 2.2 - Virtual Work.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xKqA21ngNyEbgOaSfW3Sz_0L6zIxak4e/view?usp=drive_web",
+            "driveId": "1xKqA21ngNyEbgOaSfW3Sz_0L6zIxak4e"
+          },
+          {
+            "title": "Unit 2.3 - Friction.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1mHxJ_5K-t6aFJ3SwVoUmtyuMrA5js_b1/view?usp=drive_web",
+            "driveId": "1mHxJ_5K-t6aFJ3SwVoUmtyuMrA5js_b1"
+          },
+          {
+            "title": "Unit 3 - Kinematics.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-aNdDQ5IUnS8PcUVy4fpcObXX5_m0pMw/view?usp=drive_web",
+            "driveId": "1-aNdDQ5IUnS8PcUVy4fpcObXX5_m0pMw"
+          },
+          {
+            "title": "Unit 5 - Stress and Strain.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aNZtiBF5nGxewIuYo-g24Gx5ZKUiGwZp/view?usp=drive_web",
+            "driveId": "1aNZtiBF5nGxewIuYo-g24Gx5ZKUiGwZp"
+          },
+          {
+            "title": "Unit 6.1 - Truss.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1geSfOelwi-mBnaDSZ_1QVCmp7B8b53R9/view?usp=drive_web",
+            "driveId": "1geSfOelwi-mBnaDSZ_1QVCmp7B8b53R9"
+          },
+          {
+            "title": "Unit 6.2 - Torsion.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1guzZ9WSwaKH9XiWUEPWiYXx1zpyd-QSM/view?usp=drive_web",
+            "driveId": "1guzZ9WSwaKH9XiWUEPWiYXx1zpyd-QSM"
+          },
+          {
+            "title": "Unit 6.3 - S.F.D , B.M.D and A.F.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dUConFxcMSqFhAgTbanb777grNwBmPLX/view?usp=drive_web",
+            "driveId": "1dUConFxcMSqFhAgTbanb777grNwBmPLX"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ce101_c2": {
+        "notes": [
+          {
+            "title": "Mechanics Book I",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hgXcKoCWgzDNbvTxxL3BM2uXOl8ucL1l/view?usp=drive_web",
+            "driveId": "1hgXcKoCWgzDNbvTxxL3BM2uXOl8ucL1l"
+          },
+          {
+            "title": "Mechanics Book II",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18rRzC1vooc2-haR1M9_r-wojAfwwOrLY/view?usp=drive_web",
+            "driveId": "18rRzC1vooc2-haR1M9_r-wojAfwwOrLY"
+          },
+          {
+            "title": "Mechanics Book III",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1MgBaqL9Fjq4Ge5J7Nr6o8YFb4lLbEnGx/view?usp=drive_web",
+            "driveId": "1MgBaqL9Fjq4Ge5J7Nr6o8YFb4lLbEnGx"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ce101_c3": {
+        "notes": [
+          {
+            "title": "Paper1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1wzyYB1ge-SxQwbl3hStvcJFa0QJOa7sA/view?usp=drive_web",
+            "driveId": "1wzyYB1ge-SxQwbl3hStvcJFa0QJOa7sA"
+          },
+          {
+            "title": "Paper2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1YB3G-t-ebU1b9bLhHUlS4x03zVZeSJyy/view?usp=drive_web",
+            "driveId": "1YB3G-t-ebU1b9bLhHUlS4x03zVZeSJyy"
+          },
+          {
+            "title": "Paper3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1JDIONINHGHRPP3ynrQ3k7OIStie2KVT8/view?usp=drive_web",
+            "driveId": "1JDIONINHGHRPP3ynrQ3k7OIStie2KVT8"
+          },
+          {
+            "title": "Paper5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1P5hOED-DQLCoR01F-QLX8S5OjKI_LONo/view?usp=drive_web",
+            "driveId": "1P5hOED-DQLCoR01F-QLX8S5OjKI_LONo"
+          },
+          {
+            "title": "Paper6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pytuN1v2TVmzRGypWDCOfNlSlna_EEUW/view?usp=drive_web",
+            "driveId": "1pytuN1v2TVmzRGypWDCOfNlSlna_EEUW"
+          },
+          {
+            "title": "Paper4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1EZEWfCwLqYN0IBQRzdcIeJ3FBepuEWFT/view?usp=drive_web",
+            "driveId": "1EZEWfCwLqYN0IBQRzdcIeJ3FBepuEWFT"
+          },
+          {
+            "title": "Paper7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dYRXrAHVBRCLu9N6FwP8Si5bgN8fRAnc/view?usp=drive_web",
+            "driveId": "1dYRXrAHVBRCLu9N6FwP8Si5bgN8fRAnc"
+          },
+          {
+            "title": "Paper8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/17dziMjL3JQegVCjHB0GsNl8CQEmwcvY4/view?usp=drive_web",
+            "driveId": "17dziMjL3JQegVCjHB0GsNl8CQEmwcvY4"
+          },
+          {
+            "title": "Paper9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1T3E2_VUsjelM1wrsEnfNF_T-8Nsc_eRs/view?usp=drive_web",
+            "driveId": "1T3E2_VUsjelM1wrsEnfNF_T-8Nsc_eRs"
+          },
+          {
+            "title": "Paper10.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ykZfdSqHA4R-LJ-ZoQfBdk-bOL9fKqjc/view?usp=drive_web",
+            "driveId": "1ykZfdSqHA4R-LJ-ZoQfBdk-bOL9fKqjc"
+          },
+          {
+            "title": "Paper11.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QWKJTgwjkCboDzOYzzBK98MjbPyNWfAi/view?usp=drive_web",
+            "driveId": "1QWKJTgwjkCboDzOYzzBK98MjbPyNWfAi"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1d_zo8kB_Yy5lwZ8vtw1wvcqTJneTv1Cu/view?usp=drive_web",
+            "driveId": "1d_zo8kB_Yy5lwZ8vtw1wvcqTJneTv1Cu"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1vyzGk2RzL5LWdHRZEAzLR0EXWv2Of3LA/view?usp=drive_web",
+            "driveId": "1vyzGk2RzL5LWdHRZEAzLR0EXWv2Of3LA"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ce101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SJoRC_d7rLCdLg6zKNCMyUNMcVJytqE_/view?usp=drive_web",
+            "driveId": "1SJoRC_d7rLCdLg6zKNCMyUNMcVJytqE_"
+          },
+          {
+            "title": "Ass.2(CE-101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1q-MH-i_ylAo64hZFhWthfIqSO7NjyNNQ/view?usp=drive_web",
+            "driveId": "1q-MH-i_ylAo64hZFhWthfIqSO7NjyNNQ"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ce101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1k4yUuYAKGDaHIb1W7dMMqu4viVbMThoR/view?usp=drive_web",
+            "driveId": "1k4yUuYAKGDaHIb1W7dMMqu4viVbMThoR"
+          },
+          {
+            "title": "Ass.2(CE-101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1u1DF2l66FRD4IdDQ8Jm4SghfpcoQT7vb/view?usp=drive_web",
+            "driveId": "1u1DF2l66FRD4IdDQ8Jm4SghfpcoQT7vb"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "cs101": {
+      "cs101_c1": {
+        "notes": [
+          {
+            "title": "UNIT - 1 and 2(CS-101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1mWRbcAN3FDBCS_cyPRm0jSTokEtI7PgE/view?usp=drive_web",
+            "driveId": "1mWRbcAN3FDBCS_cyPRm0jSTokEtI7PgE"
+          },
+          {
+            "title": "UNIT - 3 (CS -101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1oPzc-10KD-R9j8Vk8F5fKvHuOHMIHmS9/view?usp=drive_web",
+            "driveId": "1oPzc-10KD-R9j8Vk8F5fKvHuOHMIHmS9"
+          },
+          {
+            "title": "UNIT - 4 (CS-101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1A1dTs932ml0OQqMkNh2PoC-DwuP7Krhw/view?usp=drive_web",
+            "driveId": "1A1dTs932ml0OQqMkNh2PoC-DwuP7Krhw"
+          },
+          {
+            "title": "UNIT 5(CS-101).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZtBRk-ZDQ7IWj22Z2BC2yHfR0NZ0ZgHj/view?usp=drive_web",
+            "driveId": "1ZtBRk-ZDQ7IWj22Z2BC2yHfR0NZ0ZgHj"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cs101_c2": {
+        "notes": [
+          {
+            "title": "Let us C",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1RRuCw8CV3ZUdNyaznPRaJisH5DBkRO34/view?usp=drive_web",
+            "driveId": "1RRuCw8CV3ZUdNyaznPRaJisH5DBkRO34"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cs101_c3": {
+        "notes": [
+          {
+            "title": "Paper 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/16x21O9LUWZPi-FtTwyRJYcBfwpA1UI_F/view?usp=drive_web",
+            "driveId": "16x21O9LUWZPi-FtTwyRJYcBfwpA1UI_F"
+          },
+          {
+            "title": "Paper 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ETwRCa4hl16pALLGIbhco1uJ0UzDCtmD/view?usp=drive_web",
+            "driveId": "1ETwRCa4hl16pALLGIbhco1uJ0UzDCtmD"
+          },
+          {
+            "title": "Paper 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1BEZQMzEIaCufUCif1s6RpUsknM-_Q1hC/view?usp=drive_web",
+            "driveId": "1BEZQMzEIaCufUCif1s6RpUsknM-_Q1hC"
+          },
+          {
+            "title": "Paper 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1O93FGCFBTW5IfXBsViqO6EAsZwan5jTI/view?usp=drive_web",
+            "driveId": "1O93FGCFBTW5IfXBsViqO6EAsZwan5jTI"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dXOg-ZWDLUacgi-GSp1zPteOLAmBGLFb/view?usp=drive_web",
+            "driveId": "1dXOg-ZWDLUacgi-GSp1zPteOLAmBGLFb"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1FskLYa1BZAzZ3XLyENz9DQBH4SA_tasI/view?usp=drive_web",
+            "driveId": "1FskLYa1BZAzZ3XLyENz9DQBH4SA_tasI"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1XuGLQmLSHzayKA3CU--eJQDykAWRgxqu/view?usp=drive_web",
+            "driveId": "1XuGLQmLSHzayKA3CU--eJQDykAWRgxqu"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1lShLFmBE1TcmR5Pzzc9Wo0st-9KUmFin/view?usp=drive_web",
+            "driveId": "1lShLFmBE1TcmR5Pzzc9Wo0st-9KUmFin"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18QTOUqVntM6YWUNuzre7zwfr1TXLKgxM/view?usp=drive_web",
+            "driveId": "18QTOUqVntM6YWUNuzre7zwfr1TXLKgxM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cs101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1A5EVPAYGkpzkbu2AGKLPHEtZ48PIt9Os/view?usp=drive_web",
+            "driveId": "1A5EVPAYGkpzkbu2AGKLPHEtZ48PIt9Os"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cs101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bA1bsFSz0BC9KWmbr5j1DHSAgg3g2X-5/view?usp=drive_web",
+            "driveId": "1bA1bsFSz0BC9KWmbr5j1DHSAgg3g2X-5"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cs101_c6": {
+        "notes": [
+          {
+            "title": "CS-102.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1qX9oNQ-mkOS1RtuSoSJn7IuGzWzO4JVR/view?usp=drive_web",
+            "driveId": "1qX9oNQ-mkOS1RtuSoSJn7IuGzWzO4JVR"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "cy101": {
+      "cy101_c1": {
+        "notes": [
+          {
+            "title": "Ch.1 Environmental Chemistry.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fbjCHPzX_D5qCxX9Na16eDbLmBK2Omgt/view?usp=drive_web",
+            "driveId": "1fbjCHPzX_D5qCxX9Na16eDbLmBK2Omgt"
+          },
+          {
+            "title": "Ch.1.1 Environment (Numericals).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11RRmdswgadbbz4qRLiwyeT_IFwyEbZCN/view?usp=drive_web",
+            "driveId": "11RRmdswgadbbz4qRLiwyeT_IFwyEbZCN"
+          },
+          {
+            "title": "Ch.1.3 Copy of Carbon credit.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1JLmkZtuo7LMmqfiK6T5ClhJsP2lWvl2w/view?usp=drive_web",
+            "driveId": "1JLmkZtuo7LMmqfiK6T5ClhJsP2lWvl2w"
+          },
+          {
+            "title": "Ch.2 Spectroscopy.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_T2Shr8hRfBB3MtighxMqN1Lk-3yVHjF/view?usp=drive_web",
+            "driveId": "1_T2Shr8hRfBB3MtighxMqN1Lk-3yVHjF"
+          },
+          {
+            "title": "Ch.3 Nanochemistry.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1078jF0waez-pTRO_DRlNHL6OOCJfkbg_/view?usp=drive_web",
+            "driveId": "1078jF0waez-pTRO_DRlNHL6OOCJfkbg_"
+          },
+          {
+            "title": "Ch.4 Corrosion.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1yrGiJ5Y1ig_MlnO8teTrfN5mHbuYyr_7/view?usp=drive_web",
+            "driveId": "1yrGiJ5Y1ig_MlnO8teTrfN5mHbuYyr_7"
+          },
+          {
+            "title": "Ch.5 Lubricants.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1yVxIIp7IIpn6p2pMoGfJBc9GLPa3L0PT/view?usp=drive_web",
+            "driveId": "1yVxIIp7IIpn6p2pMoGfJBc9GLPa3L0PT"
+          },
+          {
+            "title": "Phase Rule.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1VXmK7sSrcgosY8Qb8k8guSxud-Q0RELw/view?usp=drive_web",
+            "driveId": "1VXmK7sSrcgosY8Qb8k8guSxud-Q0RELw"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cy101_c2": {
+        "notes": [
+          {
+            "title": "Carbon credit.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/12PJtteHAyD6KJTQYuk7g-D5VCadFOFYQ/view?usp=drive_web",
+            "driveId": "12PJtteHAyD6KJTQYuk7g-D5VCadFOFYQ"
+          },
+          {
+            "title": "corrosion and its control.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1yZQIbwoH-v4EqYsXzWijsAH2r3FMaKtg/view?usp=drive_web",
+            "driveId": "1yZQIbwoH-v4EqYsXzWijsAH2r3FMaKtg"
+          },
+          {
+            "title": "Engineering chemistry by shashi chawla.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1x9OFLLhfxanTtL6zvNmeob1G06QPxPcC/view?usp=drive_web",
+            "driveId": "1x9OFLLhfxanTtL6zvNmeob1G06QPxPcC"
+          },
+          {
+            "title": "Environmental.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-oQJhRrlSs8iwQOgrFQ2dElybDzPWCDa/view?usp=drive_web",
+            "driveId": "1-oQJhRrlSs8iwQOgrFQ2dElybDzPWCDa"
+          },
+          {
+            "title": "Lubricants.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/130pHjzj2MnBDjv2iuCX8XMDutvu4RHeX/view?usp=drive_web",
+            "driveId": "130pHjzj2MnBDjv2iuCX8XMDutvu4RHeX"
+          },
+          {
+            "title": "Titanium Oxide",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1DHb1NvhFHCTBR0KUCZzPNfzHOasqzaHv/view?usp=drive_web",
+            "driveId": "1DHb1NvhFHCTBR0KUCZzPNfzHOasqzaHv"
+          },
+          {
+            "title": "UVvis and IR spectroscopy.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1EEtOWI8PLCdkOAmJKaxAq7runGmdzpi2/view?usp=drive_web",
+            "driveId": "1EEtOWI8PLCdkOAmJKaxAq7runGmdzpi2"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cy101_c3": {
+        "notes": [
+          {
+            "title": "PAPER 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1yJpe45aBqD92_p5eoQoximVQJV1J5Qp6/view?usp=drive_web",
+            "driveId": "1yJpe45aBqD92_p5eoQoximVQJV1J5Qp6"
+          },
+          {
+            "title": "PAPER 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1i-ZT2q9bQelrdVNrXg6JCqqCAF-vJ01b/view?usp=drive_web",
+            "driveId": "1i-ZT2q9bQelrdVNrXg6JCqqCAF-vJ01b"
+          },
+          {
+            "title": "PAPER 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xv512IX8ISKCK68kUSRII9JsN7n7QnbL/view?usp=drive_web",
+            "driveId": "1xv512IX8ISKCK68kUSRII9JsN7n7QnbL"
+          },
+          {
+            "title": "Paper 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SNQEqqT5HaOcMbCrlDsSU9LwoPfdiMuB/view?usp=drive_web",
+            "driveId": "1SNQEqqT5HaOcMbCrlDsSU9LwoPfdiMuB"
+          },
+          {
+            "title": "Paper5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1VS5OV4qsmmE4p9yoiEm6stcQ235rbHNF/view?usp=drive_web",
+            "driveId": "1VS5OV4qsmmE4p9yoiEm6stcQ235rbHNF"
+          },
+          {
+            "title": "Paper6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18ETq0JRsfGie01S9MXJMZGTPPywwQdlc/view?usp=drive_web",
+            "driveId": "18ETq0JRsfGie01S9MXJMZGTPPywwQdlc"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1wqR3vrwvQ7yo4P7hitJKoYxQkkFzri8d/view?usp=drive_web",
+            "driveId": "1wqR3vrwvQ7yo4P7hitJKoYxQkkFzri8d"
+          },
+          {
+            "title": "Paper 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18aK2jI36TZC_2NpTy2ZWlWBE3Mk8UIE6/view?usp=drive_web",
+            "driveId": "18aK2jI36TZC_2NpTy2ZWlWBE3Mk8UIE6"
+          },
+          {
+            "title": "Mid Sem. 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1DbrDNzQlBTKUqHDbg-UpmXU_4onM9f89/view?usp=drive_web",
+            "driveId": "1DbrDNzQlBTKUqHDbg-UpmXU_4onM9f89"
+          },
+          {
+            "title": "End Sem2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Uv55utZMmeR3ZA0zV6d-1snziwRDthji/view?usp=drive_web",
+            "driveId": "1Uv55utZMmeR3ZA0zV6d-1snziwRDthji"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eZNWXZOvCWtTqp_cG-gDE-0Vrb_Maxob/view?usp=drive_web",
+            "driveId": "1eZNWXZOvCWtTqp_cG-gDE-0Vrb_Maxob"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Ah_IJ4iwLkNWfSlqqpvV232SkRpYZQG4/view?usp=drive_web",
+            "driveId": "1Ah_IJ4iwLkNWfSlqqpvV232SkRpYZQG4"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QQsI6JJM8us_XWrK6rdFeEQTCTqTc4hr/view?usp=drive_web",
+            "driveId": "1QQsI6JJM8us_XWrK6rdFeEQTCTqTc4hr"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1TAg8DTun6IgDEGqDWXeZdDwWPs4G2Hip/view?usp=drive_web",
+            "driveId": "1TAg8DTun6IgDEGqDWXeZdDwWPs4G2Hip"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fcQ4brBu1fadLJIR81wzph1eN4pALNXk/view?usp=drive_web",
+            "driveId": "1fcQ4brBu1fadLJIR81wzph1eN4pALNXk"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HZFHYBv__fiyd-TZBWuNGjWU-TsddOva/view?usp=drive_web",
+            "driveId": "1HZFHYBv__fiyd-TZBWuNGjWU-TsddOva"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1iMeieUeJ73UAU0sse7wO_NXWEweGZiV_/view?usp=drive_web",
+            "driveId": "1iMeieUeJ73UAU0sse7wO_NXWEweGZiV_"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1q09Xp8cziVVvDn1x9Ip95Ee0h8N55N4A/view?usp=drive_web",
+            "driveId": "1q09Xp8cziVVvDn1x9Ip95Ee0h8N55N4A"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1txUsri5AAOlAxSkD1jPGzrvdapgzHqEQ/view?usp=drive_web",
+            "driveId": "1txUsri5AAOlAxSkD1jPGzrvdapgzHqEQ"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hxkP37TlDVpV4D9pTQMistgrwqLp0ExU/view?usp=drive_web",
+            "driveId": "1hxkP37TlDVpV4D9pTQMistgrwqLp0ExU"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cy101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1TxjNHe7F9suEiKKc2COITLztqA5veOJt/view?usp=drive_web",
+            "driveId": "1TxjNHe7F9suEiKKc2COITLztqA5veOJt"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cy101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1vltCUPburYyvdyy0iAtrwHb0CqUnPKIM/view?usp=drive_web",
+            "driveId": "1vltCUPburYyvdyy0iAtrwHb0CqUnPKIM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "cy101_c6": {
+        "notes": [
+          {
+            "title": "Practical File1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1t7XPe7GKKEpMOm2TpVer7mbQPVAxoy23/view?usp=drive_web",
+            "driveId": "1t7XPe7GKKEpMOm2TpVer7mbQPVAxoy23"
+          },
+          {
+            "title": "VIVA (Exp. 1 to 4 ).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13Pbk5Y9HlIfF3ayGLkupyEzchyLV3PNy/view?usp=drive_web",
+            "driveId": "13Pbk5Y9HlIfF3ayGLkupyEzchyLV3PNy"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ec101": {
+      "ec101_c1": {
+        "notes": [
+          {
+            "title": "Chapter 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SyE1YOjzP4yRfIaTkROuFkMywNTQcMBq/view?usp=drive_web",
+            "driveId": "1SyE1YOjzP4yRfIaTkROuFkMywNTQcMBq"
+          },
+          {
+            "title": "Chapter 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hu-ANNyNEocOeGC1GF_ideeQbGyrz3dr/view?usp=drive_web",
+            "driveId": "1hu-ANNyNEocOeGC1GF_ideeQbGyrz3dr"
+          },
+          {
+            "title": "Chapter 3 and 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1zXXdCwIeVkzd4--endYbp_Y2_blYrESg/view?usp=drive_web",
+            "driveId": "1zXXdCwIeVkzd4--endYbp_Y2_blYrESg"
+          },
+          {
+            "title": "Chapter 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HDG53szoXi0dD48ALJwhEJNBMN2QRc7m/view?usp=drive_web",
+            "driveId": "1HDG53szoXi0dD48ALJwhEJNBMN2QRc7m"
+          },
+          {
+            "title": "Chapter 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1sFfjFfGmx_cncZNXTY_iJiRgjPDunGd7/view?usp=drive_web",
+            "driveId": "1sFfjFfGmx_cncZNXTY_iJiRgjPDunGd7"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ec101_c2": {
+        "notes": [
+          {
+            "title": "Electronic Devices and Circuit Theory_Book_11th_Edition.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1J2lLYnxRzQysPzd-FMxjmHbA39Ypq_nk/view?usp=drive_web",
+            "driveId": "1J2lLYnxRzQysPzd-FMxjmHbA39Ypq_nk"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ec101_c3": {
+        "notes": [
+          {
+            "title": "Paper 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1GInop1_ZlbnARRXPZ5TOAzQ58pSRt8Bi/view?usp=drive_web",
+            "driveId": "1GInop1_ZlbnARRXPZ5TOAzQ58pSRt8Bi"
+          },
+          {
+            "title": "Paper 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1VPPnFfL6RM9MaahyLacrVCIQOjBe_3rE/view?usp=drive_web",
+            "driveId": "1VPPnFfL6RM9MaahyLacrVCIQOjBe_3rE"
+          },
+          {
+            "title": "Paper 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bBZnEHvb-SKAW1zoTfLcdxQyqpPiqVSN/view?usp=drive_web",
+            "driveId": "1bBZnEHvb-SKAW1zoTfLcdxQyqpPiqVSN"
+          },
+          {
+            "title": "Paper 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1AGZGZk43yaLqyMHxz09XL0H7IQXhm9x_/view?usp=drive_web",
+            "driveId": "1AGZGZk43yaLqyMHxz09XL0H7IQXhm9x_"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1TYAgh0-u22pJAaR4yx7iZQCJPizm6Hrv/view?usp=drive_web",
+            "driveId": "1TYAgh0-u22pJAaR4yx7iZQCJPizm6Hrv"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1OxggEfpyV5ycqU3Mr0TIoKKuySCXJLlq/view?usp=drive_web",
+            "driveId": "1OxggEfpyV5ycqU3Mr0TIoKKuySCXJLlq"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1O-_iiAGSb2wObZkxlC1H8cKKPjkMvMEu/view?usp=drive_web",
+            "driveId": "1O-_iiAGSb2wObZkxlC1H8cKKPjkMvMEu"
+          },
+          {
+            "title": "Paper 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1JUabds7bdBSV73JWid8068tikVkW-29m/view?usp=drive_web",
+            "driveId": "1JUabds7bdBSV73JWid8068tikVkW-29m"
+          },
+          {
+            "title": "Paper 9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1g4GaOK58ps-8usTr64P4O4m3czgUomwk/view?usp=drive_web",
+            "driveId": "1g4GaOK58ps-8usTr64P4O4m3czgUomwk"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1OcyXUXpQOI6tWQQ-tu7a-zTJNBvQcExm/view?usp=drive_web",
+            "driveId": "1OcyXUXpQOI6tWQQ-tu7a-zTJNBvQcExm"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Qh2opOTcDEvBJyd-yvOXJKs6U3ifm2U3/view?usp=drive_web",
+            "driveId": "1Qh2opOTcDEvBJyd-yvOXJKs6U3ifm2U3"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ehE5d9ieduRI3Cu_3dNhBkny99Au-9Jd/view?usp=drive_web",
+            "driveId": "1ehE5d9ieduRI3Cu_3dNhBkny99Au-9Jd"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14DRRws9IW5gij_1kKG2iklilDM72aXJ7/view?usp=drive_web",
+            "driveId": "14DRRws9IW5gij_1kKG2iklilDM72aXJ7"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pNmnGorqPTV5Wv_H54NKLYEntL9GhKRG/view?usp=drive_web",
+            "driveId": "1pNmnGorqPTV5Wv_H54NKLYEntL9GhKRG"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1vdskk-BxlJuqExNd4i4VueNhp5YByxVS/view?usp=drive_web",
+            "driveId": "1vdskk-BxlJuqExNd4i4VueNhp5YByxVS"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Qcn6r8SAeThw46T-GJMRZXl4BG-6FhJ0/view?usp=drive_web",
+            "driveId": "1Qcn6r8SAeThw46T-GJMRZXl4BG-6FhJ0"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1cFSvAcbhXBxS0n6U4F1Wgthh076ZHkWc/view?usp=drive_web",
+            "driveId": "1cFSvAcbhXBxS0n6U4F1Wgthh076ZHkWc"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ySy8OLPLR2wPlfDlmdJxJhvNbQOr35vK/view?usp=drive_web",
+            "driveId": "1ySy8OLPLR2wPlfDlmdJxJhvNbQOr35vK"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QFXkVvMiauj6YFIBfmvRhrDuTMbu8dzj/view?usp=drive_web",
+            "driveId": "1QFXkVvMiauj6YFIBfmvRhrDuTMbu8dzj"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1VB_aeJztIpbchCKkqUnFHzThelNWjlka/view?usp=drive_web",
+            "driveId": "1VB_aeJztIpbchCKkqUnFHzThelNWjlka"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ec101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1DBuBPPoGpkgpRMHnnMeeBeATfnH7AzkR/view?usp=drive_web",
+            "driveId": "1DBuBPPoGpkgpRMHnnMeeBeATfnH7AzkR"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/107b62sp2WUl7lfsRx7MEW_uP-9cU2Tlo/view?usp=drive_web",
+            "driveId": "107b62sp2WUl7lfsRx7MEW_uP-9cU2Tlo"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1it-Mz-bDTBOA5KViT2NM_YXDxkznWYIK/view?usp=drive_web",
+            "driveId": "1it-Mz-bDTBOA5KViT2NM_YXDxkznWYIK"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ec101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1YFEwI3F9fq4yQmPkfC7FAshYGkGKis2J/view?usp=drive_web",
+            "driveId": "1YFEwI3F9fq4yQmPkfC7FAshYGkGKis2J"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fVWfAiVilks7l3saqU2OsdI75pFWOa5W/view?usp=drive_web",
+            "driveId": "1fVWfAiVilks7l3saqU2OsdI75pFWOa5W"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/199pptGygOobuClJzseCI8gDHXJ1XloyX/view?usp=drive_web",
+            "driveId": "199pptGygOobuClJzseCI8gDHXJ1XloyX"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ec101_c6": {
+        "notes": [
+          {
+            "title": "Practical File (EC-102).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1T8Zl8O0IjUqH_D_nzk_HUmKg0SLvw8wf/view?usp=drive_web",
+            "driveId": "1T8Zl8O0IjUqH_D_nzk_HUmKg0SLvw8wf"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ee101": {
+      "ee101_c1": {
+        "notes": [
+          {
+            "title": "Ch.1 DC.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18wyWXC4YGV3TzuIKRRxSsXlQTz-s39Iu/view?usp=drive_web",
+            "driveId": "18wyWXC4YGV3TzuIKRRxSsXlQTz-s39Iu"
+          },
+          {
+            "title": "Ch.2 Single Phase AC.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14e8xGqHi3c_mDSbU5wnTxqGcuHzHrZvn/view?usp=drive_web",
+            "driveId": "14e8xGqHi3c_mDSbU5wnTxqGcuHzHrZvn"
+          },
+          {
+            "title": "Ch.2.2 Three Phase AC.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14eml-h8n9Gu8Z_vj8hYpItpt34_MD4lw/view?usp=drive_web",
+            "driveId": "14eml-h8n9Gu8Z_vj8hYpItpt34_MD4lw"
+          },
+          {
+            "title": "Ch.3 Electromagentism.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1AoMAz_9qzjwcuHnb7hpo2Yd3N2kVcMaw/view?usp=drive_web",
+            "driveId": "1AoMAz_9qzjwcuHnb7hpo2Yd3N2kVcMaw"
+          },
+          {
+            "title": "Ch.3.2 Transformer.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pAmqM_RIsLOrRyH8elb73oLoZAGNQwC-/view?usp=drive_web",
+            "driveId": "1pAmqM_RIsLOrRyH8elb73oLoZAGNQwC-"
+          },
+          {
+            "title": "Ch.4 Measuring Instruments.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eQaYmX0pQU1rzQOq6sYJU1d6Vfw5f9nM/view?usp=drive_web",
+            "driveId": "1eQaYmX0pQU1rzQOq6sYJU1d6Vfw5f9nM"
+          },
+          {
+            "title": "Ch.5 DC Machines.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1IcRHDc4W5fnd0roTse2CW6vMjavpEdcY/view?usp=drive_web",
+            "driveId": "1IcRHDc4W5fnd0roTse2CW6vMjavpEdcY"
+          },
+          {
+            "title": "Ch.5.2 DC Machine.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10PBMvgNVlfQcUUELuaU071gn8xB53ZL0/view?usp=drive_web",
+            "driveId": "10PBMvgNVlfQcUUELuaU071gn8xB53ZL0"
+          },
+          {
+            "title": "Ch.5.3  AC Machines.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1rDRnup6S088_SywDVPviTJeP0U3TkYiM/view?usp=drive_web",
+            "driveId": "1rDRnup6S088_SywDVPviTJeP0U3TkYiM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ee101_c2": {
+        "notes": [
+          {
+            "title": "b-l-theraja-volume-1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dI-W2c7hrKfbYfwf-kf1vuogyNcK76EG/view?usp=drive_web",
+            "driveId": "1dI-W2c7hrKfbYfwf-kf1vuogyNcK76EG"
+          },
+          {
+            "title": "fundamentals-of-electric-circuits-sixth-edition-pdf.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fTC4pyISupA54V9ssxvcFZB9zbRDGBEG/view?usp=drive_web",
+            "driveId": "1fTC4pyISupA54V9ssxvcFZB9zbRDGBEG"
+          },
+          {
+            "title": "Solutions_Manual_of_Fundamentals_of_elec (1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1zhyRfwNwTvpKSm5mxX-9T0ZLvNXER-OS/view?usp=drive_web",
+            "driveId": "1zhyRfwNwTvpKSm5mxX-9T0ZLvNXER-OS"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ee101_c3": {
+        "notes": [
+          {
+            "title": "Mid Sem 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_VLDK0j2XsZw91LcfSXiGqU7Xt9u69lN/view?usp=drive_web",
+            "driveId": "1_VLDK0j2XsZw91LcfSXiGqU7Xt9u69lN"
+          },
+          {
+            "title": "Mid Sem 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eQTIfWE6gXXiOIl4xmJJUZpGEbSSf8B4/view?usp=drive_web",
+            "driveId": "1eQTIfWE6gXXiOIl4xmJJUZpGEbSSf8B4"
+          },
+          {
+            "title": "Mid Sem 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1scDIg9c8tSRa8ThBtxQKcVa348YSys18/view?usp=drive_web",
+            "driveId": "1scDIg9c8tSRa8ThBtxQKcVa348YSys18"
+          },
+          {
+            "title": "Mid Sem 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/17Ks6773PBpGc9vMJTFFZ6vElV43xFNZb/view?usp=drive_web",
+            "driveId": "17Ks6773PBpGc9vMJTFFZ6vElV43xFNZb"
+          },
+          {
+            "title": "Mid sem 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1FEtUwxSJSPbJ342Y-Ck0T78Tn9Z05NXp/view?usp=drive_web",
+            "driveId": "1FEtUwxSJSPbJ342Y-Ck0T78Tn9Z05NXp"
+          },
+          {
+            "title": "PAPER 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Z4PckI2_jqvA8H8q9YVjvVtCaTmL8sU_/view?usp=drive_web",
+            "driveId": "1Z4PckI2_jqvA8H8q9YVjvVtCaTmL8sU_"
+          },
+          {
+            "title": "PAPER 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1k3eysF026Ya_eoJrirP90-ollK_-U6YZ/view?usp=drive_web",
+            "driveId": "1k3eysF026Ya_eoJrirP90-ollK_-U6YZ"
+          },
+          {
+            "title": "PAPER 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xUy_jstwg2qspKgHOxYdtWIt-uoBp8Jq/view?usp=drive_web",
+            "driveId": "1xUy_jstwg2qspKgHOxYdtWIt-uoBp8Jq"
+          },
+          {
+            "title": "PAPER 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-wie1QU6g4SNJjgaB_PzpKwuEWyhCxw5/view?usp=drive_web",
+            "driveId": "1-wie1QU6g4SNJjgaB_PzpKwuEWyhCxw5"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Jv0DH84woPVEFuI0xzwiG-rgeMdJiJrz/view?usp=drive_web",
+            "driveId": "1Jv0DH84woPVEFuI0xzwiG-rgeMdJiJrz"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bEnTpWlpkpEJ6TKuqDw8lkaEaablZ-OP/view?usp=drive_web",
+            "driveId": "1bEnTpWlpkpEJ6TKuqDw8lkaEaablZ-OP"
+          },
+          {
+            "title": "Mid Sem. 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13Y06MmJgKhOmadqxAjzAUzOV5iCOmFlb/view?usp=drive_web",
+            "driveId": "13Y06MmJgKhOmadqxAjzAUzOV5iCOmFlb"
+          },
+          {
+            "title": "End Sem 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/17i7-4Ju6u3DXogrgK1IoVlvHDxFWr091/view?usp=drive_web",
+            "driveId": "17i7-4Ju6u3DXogrgK1IoVlvHDxFWr091"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eaMTTpZgAoQY-6bQxr33kwAYixt2qt4I/view?usp=drive_web",
+            "driveId": "1eaMTTpZgAoQY-6bQxr33kwAYixt2qt4I"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1y6F_BeQi2RS52TlRy2YffDk7cluexLON/view?usp=drive_web",
+            "driveId": "1y6F_BeQi2RS52TlRy2YffDk7cluexLON"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fgCfqHU7NY00flrPfTBtVw_FYxvvxhT9/view?usp=drive_web",
+            "driveId": "1fgCfqHU7NY00flrPfTBtVw_FYxvvxhT9"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10SHCtirRok_CWOLHls7GZVH0FEUiWPYU/view?usp=drive_web",
+            "driveId": "10SHCtirRok_CWOLHls7GZVH0FEUiWPYU"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1TZNvf3Q4x903B4_g6fgrEfGt0NJtHZ2n/view?usp=drive_web",
+            "driveId": "1TZNvf3Q4x903B4_g6fgrEfGt0NJtHZ2n"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bHLe88-rH56F55h3i-In4zAg5bS0eq9H/view?usp=drive_web",
+            "driveId": "1bHLe88-rH56F55h3i-In4zAg5bS0eq9H"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1XZiGuZah21h_yn9gcaa4N48nYGTUNLh3/view?usp=drive_web",
+            "driveId": "1XZiGuZah21h_yn9gcaa4N48nYGTUNLh3"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1VBDwSvo4MwWMFGgJQ-FXPoh7_HEdd6i6/view?usp=drive_web",
+            "driveId": "1VBDwSvo4MwWMFGgJQ-FXPoh7_HEdd6i6"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Cx417Wrs60A2QhNsDiUrApBKFkzw12oq/view?usp=drive_web",
+            "driveId": "1Cx417Wrs60A2QhNsDiUrApBKFkzw12oq"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1GBc7m0qgUFPAMWlCrBEhpeDmN6i3JP2n/view?usp=drive_web",
+            "driveId": "1GBc7m0qgUFPAMWlCrBEhpeDmN6i3JP2n"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ee101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1rQ3DMMokJT2SpMkpeFMJLlLlh2okMZMh/view?usp=drive_web",
+            "driveId": "1rQ3DMMokJT2SpMkpeFMJLlLlh2okMZMh"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HwN2v_Qas2Lpr-TTtm9eO-dvw2tHQI5I/view?usp=drive_web",
+            "driveId": "1HwN2v_Qas2Lpr-TTtm9eO-dvw2tHQI5I"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_AuItCjPsGfYogDmGeWXZe7tfa18DMsf/view?usp=drive_web",
+            "driveId": "1_AuItCjPsGfYogDmGeWXZe7tfa18DMsf"
+          },
+          {
+            "title": "Assignment 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Wp-SNGVHW8-kFlFFNYmBpYqanJPrIB7f/view?usp=drive_web",
+            "driveId": "1Wp-SNGVHW8-kFlFFNYmBpYqanJPrIB7f"
+          },
+          {
+            "title": "Assignment 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/15hkzXK9Ybrjqkrlsj9M_51UQ91eqIT5T/view?usp=drive_web",
+            "driveId": "15hkzXK9Ybrjqkrlsj9M_51UQ91eqIT5T"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ee101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_i0v5B6pNj2rriA6TWNc-1ukWgGkLv2P/view?usp=drive_web",
+            "driveId": "1_i0v5B6pNj2rriA6TWNc-1ukWgGkLv2P"
+          },
+          {
+            "title": "Assignment 2 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ayGUGSXWzBG9XAAP0Hj18vGQuprHoqoL/view?usp=drive_web",
+            "driveId": "1ayGUGSXWzBG9XAAP0Hj18vGQuprHoqoL"
+          },
+          {
+            "title": "Assignment 3 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1a3NHGIwkcG5821RX5J63IMZ-AaHFMpLo/view?usp=drive_web",
+            "driveId": "1a3NHGIwkcG5821RX5J63IMZ-AaHFMpLo"
+          },
+          {
+            "title": "Assignment 4 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZA3ECJGY5gZK-7OYEEGVWd3BFn_33Joa/view?usp=drive_web",
+            "driveId": "1ZA3ECJGY5gZK-7OYEEGVWd3BFn_33Joa"
+          },
+          {
+            "title": "Assignment 5 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1gGhKtcrygfjdC6YTwyc8FSbKfxmTwf2k/view?usp=drive_web",
+            "driveId": "1gGhKtcrygfjdC6YTwyc8FSbKfxmTwf2k"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ee101_c6": {
+        "notes": [
+          {
+            "title": "Practical File.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tiNkh6XXKlMVUPhzRj0j3hOzIQoapVC2/view?usp=drive_web",
+            "driveId": "1tiNkh6XXKlMVUPhzRj0j3hOzIQoapVC2"
+          },
+          {
+            "title": "EE Viva.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Y7nhAIXA_faPe2GP9TB7flIIWYaPMxYd/view?usp=drive_web",
+            "driveId": "1Y7nhAIXA_faPe2GP9TB7flIIWYaPMxYd"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "en101": {
+      "en101_c1": {
+        "notes": [
+          {
+            "title": "NOTES 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1j82wiZE4WJaXIhcjZrjQw_nn2Kqt8JtY/view?usp=drive_web",
+            "driveId": "1j82wiZE4WJaXIhcjZrjQw_nn2Kqt8JtY"
+          },
+          {
+            "title": "NOTES 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tDW25MhY_IHDCAA6buuPvNfK_YdOjrbN/view?usp=drive_web",
+            "driveId": "1tDW25MhY_IHDCAA6buuPvNfK_YdOjrbN"
+          },
+          {
+            "title": "NOTES 3.jpg",
+            "type": "IMG",
+            "size": "",
+            "date": "",
+            "icon": "image",
+            "link": "https://drive.google.com/file/d/15RM43QyMN-GJgmwjPdeasGOlDAN6ocnd/view?usp=drive_web",
+            "driveId": "15RM43QyMN-GJgmwjPdeasGOlDAN6ocnd"
+          },
+          {
+            "title": "NOTES 4.jpg",
+            "type": "IMG",
+            "size": "",
+            "date": "",
+            "icon": "image",
+            "link": "https://drive.google.com/file/d/1jx21f9bQBXUiyRFVcY0KK3TDEngNfbWC/view?usp=drive_web",
+            "driveId": "1jx21f9bQBXUiyRFVcY0KK3TDEngNfbWC"
+          },
+          {
+            "title": "NOTES 5.jpg",
+            "type": "IMG",
+            "size": "",
+            "date": "",
+            "icon": "image",
+            "link": "https://drive.google.com/file/d/1YreGcap-9NpHvl6fEl-Wmh45fxWHWujo/view?usp=drive_web",
+            "driveId": "1YreGcap-9NpHvl6fEl-Wmh45fxWHWujo"
+          },
+          {
+            "title": "EN unit 3 for mid sem.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1V1DNag_Xhug86mObeuZm0zMAIli_6KCo/view?usp=drive_web",
+            "driveId": "1V1DNag_Xhug86mObeuZm0zMAIli_6KCo"
+          },
+          {
+            "title": "Unit_I_EN_A.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PWadpvKWJnvYWIubE-EFCF8XTLlHBbcZ/view?usp=drive_web",
+            "driveId": "1PWadpvKWJnvYWIubE-EFCF8XTLlHBbcZ"
+          },
+          {
+            "title": "UNIT_II_EN_A.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1I3JdiyltDLW5A-vDvSt9aL-Duok72KKj/view?usp=drive_web",
+            "driveId": "1I3JdiyltDLW5A-vDvSt9aL-Duok72KKj"
+          },
+          {
+            "title": "UNIT_III_EN_A.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hOqGLWIr7kyCO6FeXQ97k1rUMFYNENtZ/view?usp=drive_web",
+            "driveId": "1hOqGLWIr7kyCO6FeXQ97k1rUMFYNENtZ"
+          },
+          {
+            "title": "UNIT_IV_EN_A.D..pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/12W5RIi2nxtsx3jO9O13_1VI9YBF6XPyM/view?usp=drive_web",
+            "driveId": "12W5RIi2nxtsx3jO9O13_1VI9YBF6XPyM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "en101_c2": {
+        "notes": [
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dk3GLHpVQgRIpCywWFOxfBCq-gaDNkF0/view?usp=drive_web",
+            "driveId": "1dk3GLHpVQgRIpCywWFOxfBCq-gaDNkF0"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Q5GAmuRosHutw-DHyGcrdByeIfsimhU3/view?usp=drive_web",
+            "driveId": "1Q5GAmuRosHutw-DHyGcrdByeIfsimhU3"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1P66qNqvqV4ybNqRSV9AFfBtwGR2l_QC2/view?usp=drive_web",
+            "driveId": "1P66qNqvqV4ybNqRSV9AFfBtwGR2l_QC2"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1m1GyvCQglDAyjlKEPQSXyPrtRGVVEZpX/view?usp=drive_web",
+            "driveId": "1m1GyvCQglDAyjlKEPQSXyPrtRGVVEZpX"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QB_IapRjxgrncayuAJ_R8jnFmO65VDkh/view?usp=drive_web",
+            "driveId": "1QB_IapRjxgrncayuAJ_R8jnFmO65VDkh"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tiUboODhBYpuInaEWiTKDbQfEBULRcK6/view?usp=drive_web",
+            "driveId": "1tiUboODhBYpuInaEWiTKDbQfEBULRcK6"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Rl8Cx_xviX-j4Vxzqz5sBfwYmmFw1eOH/view?usp=drive_web",
+            "driveId": "1Rl8Cx_xviX-j4Vxzqz5sBfwYmmFw1eOH"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1NAHY_0JUndXPZ_DuF0ubeRScsdX5c9oP/view?usp=drive_web",
+            "driveId": "1NAHY_0JUndXPZ_DuF0ubeRScsdX5c9oP"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HbfZw9IQl4NoE4B2ZyZU0MT9mkaFyzpH/view?usp=drive_web",
+            "driveId": "1HbfZw9IQl4NoE4B2ZyZU0MT9mkaFyzpH"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "hs101": {
+      "hs101_c1": {
+        "notes": [
+          {
+            "title": "Challenges in learning ESL.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hXD3Pb9AkkQYauubT-u7gQjPywQczSlP/view?usp=drive_web",
+            "driveId": "1hXD3Pb9AkkQYauubT-u7gQjPywQczSlP"
+          },
+          {
+            "title": "Communication.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Zh7CGJkEX3lpQcVG5JyDe0EQTaOvrs8V/view?usp=drive_web",
+            "driveId": "1Zh7CGJkEX3lpQcVG5JyDe0EQTaOvrs8V"
+          },
+          {
+            "title": "Effective listening skills.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/15skqM3tGzIbkKO6CSA_F3mykExe8vxHo/view?usp=drive_web",
+            "driveId": "15skqM3tGzIbkKO6CSA_F3mykExe8vxHo"
+          },
+          {
+            "title": "Group Discussion.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Z5dBnoxiGAY0oC4suHgb-h5YDlx37_3Y/view?usp=drive_web",
+            "driveId": "1Z5dBnoxiGAY0oC4suHgb-h5YDlx37_3Y"
+          },
+          {
+            "title": "interview skills.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1o3pB6xhgmPmyiVwddV5WZPnB_qg4u2MR/view?usp=drive_web",
+            "driveId": "1o3pB6xhgmPmyiVwddV5WZPnB_qg4u2MR"
+          },
+          {
+            "title": "Interview.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Y2uQymT6KlgEOUQc5BMQK-mwzOXoS3Jk/view?usp=drive_web",
+            "driveId": "1Y2uQymT6KlgEOUQc5BMQK-mwzOXoS3Jk"
+          },
+          {
+            "title": "Meetings agenda and minutes.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1MxhYIS3GkxxiyM_K9VAc9plrgZj08P79/view?usp=drive_web",
+            "driveId": "1MxhYIS3GkxxiyM_K9VAc9plrgZj08P79"
+          },
+          {
+            "title": "Note taking and note making.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18581ylCdTR6rQCT_7kl2nNXyocZZxBjg/view?usp=drive_web",
+            "driveId": "18581ylCdTR6rQCT_7kl2nNXyocZZxBjg"
+          },
+          {
+            "title": "Presentation.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PuJEHhahqPsC27R0h1FoueujZ3TbQEOR/view?usp=drive_web",
+            "driveId": "1PuJEHhahqPsC27R0h1FoueujZ3TbQEOR"
+          },
+          {
+            "title": "PRESENTATION.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_Cf4HBN0FSquCEhsSzmc_avvBmMIf0RC/view?usp=drive_web",
+            "driveId": "1_Cf4HBN0FSquCEhsSzmc_avvBmMIf0RC"
+          },
+          {
+            "title": "Public Speaking.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1353DVdVQaYO45S316B1lCT7z8lub-X5r/view?usp=drive_web",
+            "driveId": "1353DVdVQaYO45S316B1lCT7z8lub-X5r"
+          },
+          {
+            "title": "Reading Skills.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1y4Iz5aincfjTviRYqgp6Uw2pkakSoajD/view?usp=drive_web",
+            "driveId": "1y4Iz5aincfjTviRYqgp6Uw2pkakSoajD"
+          },
+          {
+            "title": "Report.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_oYkUJo4f0VxaRpS5xKRJxVxYE9RT4RH/view?usp=drive_web",
+            "driveId": "1_oYkUJo4f0VxaRpS5xKRJxVxYE9RT4RH"
+          },
+          {
+            "title": "SLA Theories.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PiIG8eXGEw7hR0RbfTWM4zr75Nv3RzWT/view?usp=drive_web",
+            "driveId": "1PiIG8eXGEw7hR0RbfTWM4zr75Nv3RzWT"
+          },
+          {
+            "title": "SWOT ANALYSIS REVISED.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-h1xcOR4mq1NaOKLSQ46zW31CeiVG6FC/view?usp=drive_web",
+            "driveId": "1-h1xcOR4mq1NaOKLSQ46zW31CeiVG6FC"
+          },
+          {
+            "title": "writing an SOP.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fWRaqgPyyQ-OxaSLKqsi8AWjxrxv-tEA/view?usp=drive_web",
+            "driveId": "1fWRaqgPyyQ-OxaSLKqsi8AWjxrxv-tEA"
+          },
+          {
+            "title": "Writing skills .pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1BGcy3Em6c0Z7pNYxW4TJvW4VVcFzxgYM/view?usp=drive_web",
+            "driveId": "1BGcy3Em6c0Z7pNYxW4TJvW4VVcFzxgYM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "hs101_c2": {
+        "notes": [
+          {
+            "title": "Technical communication principles and practice by Raman, Meenakshi Sharma, Sangeeta (z-lib.org).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Fc4kE_kwW9Ntn-5pLPN6MWCJJ1QXjPuS/view?usp=drive_web",
+            "driveId": "1Fc4kE_kwW9Ntn-5pLPN6MWCJJ1QXjPuS"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "hs101_c3": {
+        "notes": [
+          {
+            "title": "PAPER 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tDfF2C9byFJWDmA_iSRUJMbqR39zydKX/view?usp=drive_web",
+            "driveId": "1tDfF2C9byFJWDmA_iSRUJMbqR39zydKX"
+          },
+          {
+            "title": "PAPER 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1iMLRBq5_wLXIdp-_3WpkjOgmdzkfHA99/view?usp=drive_web",
+            "driveId": "1iMLRBq5_wLXIdp-_3WpkjOgmdzkfHA99"
+          },
+          {
+            "title": "PAPER 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1scHT2VVF3bM_x0tPhjmu2IGuV3Ms51ra/view?usp=drive_web",
+            "driveId": "1scHT2VVF3bM_x0tPhjmu2IGuV3Ms51ra"
+          },
+          {
+            "title": "PAPER 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PXwGFtQIQ2d_JedWYnt1TDqm3KLrMy_E/view?usp=drive_web",
+            "driveId": "1PXwGFtQIQ2d_JedWYnt1TDqm3KLrMy_E"
+          },
+          {
+            "title": "PAPER 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1MeXYX8Qs8B948wbfOlvP5a6d7EaSJbGD/view?usp=drive_web",
+            "driveId": "1MeXYX8Qs8B948wbfOlvP5a6d7EaSJbGD"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xLth6zeU0l6slRRSDSOi_ztIjJXrbjAt/view?usp=drive_web",
+            "driveId": "1xLth6zeU0l6slRRSDSOi_ztIjJXrbjAt"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ymyhipSeipFdHVAatECZv8mIte88EpoH/view?usp=drive_web",
+            "driveId": "1ymyhipSeipFdHVAatECZv8mIte88EpoH"
+          },
+          {
+            "title": "Paper 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1zdN1Fjk31G3nV1pBwVOkvAK62sbICIAI/view?usp=drive_web",
+            "driveId": "1zdN1Fjk31G3nV1pBwVOkvAK62sbICIAI"
+          },
+          {
+            "title": "Paper 9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_QYz_qN5CJXqw2bgp1KF7qgizzoVKxQO/view?usp=drive_web",
+            "driveId": "1_QYz_qN5CJXqw2bgp1KF7qgizzoVKxQO"
+          },
+          {
+            "title": "Mid Sem. 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1336Mb_ixP2kq_L2kv76meOPCD36Vx0TZ/view?usp=drive_web",
+            "driveId": "1336Mb_ixP2kq_L2kv76meOPCD36Vx0TZ"
+          },
+          {
+            "title": "End Sem.2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-cZHpa3uhX-kAReCvYHHXNMx3AUJ5JGV/view?usp=drive_web",
+            "driveId": "1-cZHpa3uhX-kAReCvYHHXNMx3AUJ5JGV"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eWD3xqemtttXzEiloloFiKnZ5eNlvLVA/view?usp=drive_web",
+            "driveId": "1eWD3xqemtttXzEiloloFiKnZ5eNlvLVA"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/17sa4wxQ3vlCDVr9te7NZqibsa1mWvB7m/view?usp=drive_web",
+            "driveId": "17sa4wxQ3vlCDVr9te7NZqibsa1mWvB7m"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1WzlG5yVuTaWA-o5qCjimvq_SJSAAJ9qF/view?usp=drive_web",
+            "driveId": "1WzlG5yVuTaWA-o5qCjimvq_SJSAAJ9qF"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1EpIKpBWwfFjOoWMwBPkj9R8AtUWRhB2S/view?usp=drive_web",
+            "driveId": "1EpIKpBWwfFjOoWMwBPkj9R8AtUWRhB2S"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dVPrsHsevPOHN-n9OXoTvNyy9YHgl3sc/view?usp=drive_web",
+            "driveId": "1dVPrsHsevPOHN-n9OXoTvNyy9YHgl3sc"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1wPl7JSkVPMshu35TGaqTG6rm8Zso4R0S/view?usp=drive_web",
+            "driveId": "1wPl7JSkVPMshu35TGaqTG6rm8Zso4R0S"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1qDzceUXpHPwcLpjRdmKiFTZr5x_yrErD/view?usp=drive_web",
+            "driveId": "1qDzceUXpHPwcLpjRdmKiFTZr5x_yrErD"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1GFLxCL-CjJiv18IA5wv6tjPE7fzB0yUn/view?usp=drive_web",
+            "driveId": "1GFLxCL-CjJiv18IA5wv6tjPE7fzB0yUn"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1MYHVh5Lq6LIeMjoTHRsnJkOsdNztLSXD/view?usp=drive_web",
+            "driveId": "1MYHVh5Lq6LIeMjoTHRsnJkOsdNztLSXD"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1JmlU97E19pKIjrDL5TaQzHmAWKzVSoyh/view?usp=drive_web",
+            "driveId": "1JmlU97E19pKIjrDL5TaQzHmAWKzVSoyh"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "hs101_c4": {
+        "notes": [
+          {
+            "title": "Practical File(1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1YTcUVg9xloUJTwxSpxa3nk3tErc4qazf/view?usp=drive_web",
+            "driveId": "1YTcUVg9xloUJTwxSpxa3nk3tErc4qazf"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "hs103": {
+      "hs103_c1": {
+        "notes": [
+          {
+            "title": "UNIT_1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Q4HqjMiTNIvzA-RNPKq4YaYEdf5kecG6/view?usp=drive_web",
+            "driveId": "1Q4HqjMiTNIvzA-RNPKq4YaYEdf5kecG6"
+          },
+          {
+            "title": "UNIT_2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1rk-T6WqIgX0mn5fpo46GvvDBtcSjpPkO/view?usp=drive_web",
+            "driveId": "1rk-T6WqIgX0mn5fpo46GvvDBtcSjpPkO"
+          },
+          {
+            "title": "UNIT_3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1B3MSdSf3Sh93wAF93M9HkN60Q2tNIPy2/view?usp=drive_web",
+            "driveId": "1B3MSdSf3Sh93wAF93M9HkN60Q2tNIPy2"
+          },
+          {
+            "title": "UNIT_4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10xKCEL2fqvwRNPQI3DvtHZeHfjOyPwS5/view?usp=drive_web",
+            "driveId": "10xKCEL2fqvwRNPQI3DvtHZeHfjOyPwS5"
+          },
+          {
+            "title": "Cognitive_dissonance.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pXoWndpoKdHGNAiMkHehg776GeZ5up4S/view?usp=drive_web",
+            "driveId": "1pXoWndpoKdHGNAiMkHehg776GeZ5up4S"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "hs103_c2": {
+        "notes": [
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1e11eI_ldL2z3EwR3D3VUYEMIwE9JF4_h/view?usp=drive_web",
+            "driveId": "1e11eI_ldL2z3EwR3D3VUYEMIwE9JF4_h"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aM0fdI-Mt9xG3DoAFtUOlzt79vz1gkm-/view?usp=drive_web",
+            "driveId": "1aM0fdI-Mt9xG3DoAFtUOlzt79vz1gkm-"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1I0WUgMa6rtqrTJhZAtI5G-dlaFDjJcKQ/view?usp=drive_web",
+            "driveId": "1I0WUgMa6rtqrTJhZAtI5G-dlaFDjJcKQ"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13ZXABdy79s40PV9lPwSgN12X6nvORrmQ/view?usp=drive_web",
+            "driveId": "13ZXABdy79s40PV9lPwSgN12X6nvORrmQ"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Os6ud0l_2kIjMP6eb2NjQc7I7YLsc1W6/view?usp=drive_web",
+            "driveId": "1Os6ud0l_2kIjMP6eb2NjQc7I7YLsc1W6"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xgpaGo50_RvrhKI12o3tIqsWBNm3PJMo/view?usp=drive_web",
+            "driveId": "1xgpaGo50_RvrhKI12o3tIqsWBNm3PJMo"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/16jFNBwR50BFprSqSt27d7e0z1HruDUXH/view?usp=drive_web",
+            "driveId": "16jFNBwR50BFprSqSt27d7e0z1HruDUXH"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1r_3DCee271lgaHFTihQLm1aEnUwV8Fbp/view?usp=drive_web",
+            "driveId": "1r_3DCee271lgaHFTihQLm1aEnUwV8Fbp"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/16wQXlLnPbkML3V5tZ7aXl-tL3g1lUmVI/view?usp=drive_web",
+            "driveId": "16wQXlLnPbkML3V5tZ7aXl-tL3g1lUmVI"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10NPs1oDQTunuAvRUKzH1ZxlJM6kVxHVR/view?usp=drive_web",
+            "driveId": "10NPs1oDQTunuAvRUKzH1ZxlJM6kVxHVR"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ma111": {
+      "ma111_c1": {
+        "notes": [
+          {
+            "title": "Differenecial Calculus.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Lh1SDe_TXqSFO6u8qRPjpJ00ls3A_WT0/view?usp=drive_web",
+            "driveId": "1Lh1SDe_TXqSFO6u8qRPjpJ00ls3A_WT0"
+          },
+          {
+            "title": "Fouier Series.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/19_y9QKhUp7Fc-jyjWmREOnSI76o6RcZv/view?usp=drive_web",
+            "driveId": "19_y9QKhUp7Fc-jyjWmREOnSI76o6RcZv"
+          },
+          {
+            "title": "Integration.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1BW3-m3Ta1KrVNZXkzhxb7FHjLOBbNlOY/view?usp=drive_web",
+            "driveId": "1BW3-m3Ta1KrVNZXkzhxb7FHjLOBbNlOY"
+          },
+          {
+            "title": "Matrix (1st).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-idn7gU3hDGv-O8IkFF0uEwelF9EebZk/view?usp=drive_web",
+            "driveId": "1-idn7gU3hDGv-O8IkFF0uEwelF9EebZk"
+          },
+          {
+            "title": "Matrix (2nd).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1gg-2f4k9_yf0MlUJQpxPmUPz8LmRpMpd/view?usp=drive_web",
+            "driveId": "1gg-2f4k9_yf0MlUJQpxPmUPz8LmRpMpd"
+          },
+          {
+            "title": "Vectors.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1V3QIrp3GH5QceJ_lIocgKIP9wFw0gNaY/view?usp=drive_web",
+            "driveId": "1V3QIrp3GH5QceJ_lIocgKIP9wFw0gNaY"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma111_c2": {
+        "notes": [
+          {
+            "title": "[Grewal_B._S.]_(if required password-eduinformer) Higher_engineering_mathematics(easyengineering.net).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11tEiX6GLue8aOLaaRHyw6r4q-lVRFXnI/view?usp=drive_web",
+            "driveId": "11tEiX6GLue8aOLaaRHyw6r4q-lVRFXnI"
+          },
+          {
+            "title": "Advanced Engineering Mathematics 10th Edition (1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1op0FgfjY8dUneY51yDMBsO1RFIU_zyHh/view?usp=drive_web",
+            "driveId": "1op0FgfjY8dUneY51yDMBsO1RFIU_zyHh"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma111_c3": {
+        "notes": [
+          {
+            "title": "PAPER 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/19GVW6wDtqtq2IleJNuvJSjPb706ZZyss/view?usp=drive_web",
+            "driveId": "19GVW6wDtqtq2IleJNuvJSjPb706ZZyss"
+          },
+          {
+            "title": "PAPER 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1lGlsMx77QwpWyCaBjT0vCxr4oFv3HkQV/view?usp=drive_web",
+            "driveId": "1lGlsMx77QwpWyCaBjT0vCxr4oFv3HkQV"
+          },
+          {
+            "title": "Paper3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aaUL4_8QAX2O7EPCWlPBv2PQH_w3uQ_w/view?usp=drive_web",
+            "driveId": "1aaUL4_8QAX2O7EPCWlPBv2PQH_w3uQ_w"
+          },
+          {
+            "title": "Paper4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1UrkcZ8uwPoadO2hp5dipGrauJeJ2u7-j/view?usp=drive_web",
+            "driveId": "1UrkcZ8uwPoadO2hp5dipGrauJeJ2u7-j"
+          },
+          {
+            "title": "Mid Sem. 2022-23",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tEJUUqLUdtEXR0qKf2kNoFOqVcGi9CxA/view?usp=drive_web",
+            "driveId": "1tEJUUqLUdtEXR0qKf2kNoFOqVcGi9CxA"
+          },
+          {
+            "title": "End Sem 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13aseo-2v8iR3hZ-ZLf69usvVXkAZSuPM/view?usp=drive_web",
+            "driveId": "13aseo-2v8iR3hZ-ZLf69usvVXkAZSuPM"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eECbqfiNmLEIEUl_89kE2cq5nPPSLW2r/view?usp=drive_web",
+            "driveId": "1eECbqfiNmLEIEUl_89kE2cq5nPPSLW2r"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1uyiLAJKsz4bBgBKYosvAjWDHT5PMFxBg/view?usp=drive_web",
+            "driveId": "1uyiLAJKsz4bBgBKYosvAjWDHT5PMFxBg"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bEWPepAP5Iaqp_uaLdVAais2vdt8SuET/view?usp=drive_web",
+            "driveId": "1bEWPepAP5Iaqp_uaLdVAais2vdt8SuET"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1lP8rND9BqkC_tc1lhJSubQYe6URTOsya/view?usp=drive_web",
+            "driveId": "1lP8rND9BqkC_tc1lhJSubQYe6URTOsya"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dbVYMFBvKlanDIUlUeAcy9S2i1TlK54N/view?usp=drive_web",
+            "driveId": "1dbVYMFBvKlanDIUlUeAcy9S2i1TlK54N"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/16O4KyEPaEEw0mRxZjuTBMkqOnM78Wt8k/view?usp=drive_web",
+            "driveId": "16O4KyEPaEEw0mRxZjuTBMkqOnM78Wt8k"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma111_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Or44wXAzyZ5CXqw1lnqa3MIm1m5RHYPK/view?usp=drive_web",
+            "driveId": "1Or44wXAzyZ5CXqw1lnqa3MIm1m5RHYPK"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/12NaCPZWDJjtuKJ3x93vVvDAh_1Mddghi/view?usp=drive_web",
+            "driveId": "12NaCPZWDJjtuKJ3x93vVvDAh_1Mddghi"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/15XBsmMfbfds6RP2_oiPYRpFPrI_cCDDq/view?usp=drive_web",
+            "driveId": "15XBsmMfbfds6RP2_oiPYRpFPrI_cCDDq"
+          },
+          {
+            "title": "Assignment 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SZqCHNsVAHHIo9B4z3OZJM_b0SuSUfa9/view?usp=drive_web",
+            "driveId": "1SZqCHNsVAHHIo9B4z3OZJM_b0SuSUfa9"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma111_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1oIzyAmhMUZLvhJUvNliEix1RIffyjbb7/view?usp=drive_web",
+            "driveId": "1oIzyAmhMUZLvhJUvNliEix1RIffyjbb7"
+          },
+          {
+            "title": "Assignment 2 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_xQ4ESSxmntT1RlhcOViseXX9WYLh9eV/view?usp=drive_web",
+            "driveId": "1_xQ4ESSxmntT1RlhcOViseXX9WYLh9eV"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1C281mR4uL_ah1zJCKPtAkVPcYlaBqxxX/view?usp=drive_web",
+            "driveId": "1C281mR4uL_ah1zJCKPtAkVPcYlaBqxxX"
+          },
+          {
+            "title": "Assignment 4 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1msmu-740hNeJhykP38p745XHukhX1OdH/view?usp=drive_web",
+            "driveId": "1msmu-740hNeJhykP38p745XHukhX1OdH"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ma121": {
+      "ma121_c1": {
+        "notes": [
+          {
+            "title": "Unit 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1h7S98eokzI2Vw2GsNPK7D-exfTLF3rcD/view?usp=drive_web",
+            "driveId": "1h7S98eokzI2Vw2GsNPK7D-exfTLF3rcD"
+          },
+          {
+            "title": "Unit 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZtbbgYyxVBNOHuMPg-nvEXBApaIV4ase/view?usp=drive_web",
+            "driveId": "1ZtbbgYyxVBNOHuMPg-nvEXBApaIV4ase"
+          },
+          {
+            "title": "unit 3.2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1zqkngK-GubRwEiskuuhha2Ku0JSnUpXs/view?usp=drive_web",
+            "driveId": "1zqkngK-GubRwEiskuuhha2Ku0JSnUpXs"
+          },
+          {
+            "title": "Unit 3.3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ta0B7NvFqJy7mwAuiakNijoqE1fcut3R/view?usp=drive_web",
+            "driveId": "1ta0B7NvFqJy7mwAuiakNijoqE1fcut3R"
+          },
+          {
+            "title": "Unit 3.1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1IwJ3EbLZxSQQxWuUYMtoD3rHfYoS76AW/view?usp=drive_web",
+            "driveId": "1IwJ3EbLZxSQQxWuUYMtoD3rHfYoS76AW"
+          },
+          {
+            "title": "Unit 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/17tflgvjlVmam35732QG5SsqFu0hDOwrq/view?usp=drive_web",
+            "driveId": "17tflgvjlVmam35732QG5SsqFu0hDOwrq"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma121_c2": {
+        "notes": [
+          {
+            "title": "Ch-1 ODE.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aV2PmxzEAgYSQ4_mNm8xomyeK7eqs0V_/view?usp=drive_web",
+            "driveId": "1aV2PmxzEAgYSQ4_mNm8xomyeK7eqs0V_"
+          },
+          {
+            "title": "Ch-2 Partial.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SDDETfPape80e593S-zEcsAQKs7vwCTK/view?usp=drive_web",
+            "driveId": "1SDDETfPape80e593S-zEcsAQKs7vwCTK"
+          },
+          {
+            "title": "Ch-3.1 Laplace.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1W8OqTzfmfhOUzvNkyzlQwHPZxhiBQzmV/view?usp=drive_web",
+            "driveId": "1W8OqTzfmfhOUzvNkyzlQwHPZxhiBQzmV"
+          },
+          {
+            "title": "Ch-3.3 Z- Transformation.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QRB8Sg26d5wK_rM5vv2HuGbw1r_dMl7Y/view?usp=drive_web",
+            "driveId": "1QRB8Sg26d5wK_rM5vv2HuGbw1r_dMl7Y"
+          },
+          {
+            "title": "Ch-4 Probability.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/178zGoymiDoyUMbYCr5QI8c3m1Pu_JxK5/view?usp=drive_web",
+            "driveId": "178zGoymiDoyUMbYCr5QI8c3m1Pu_JxK5"
+          },
+          {
+            "title": "Ch-3.2 Fourier.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1KJwjaYp9AIt_0BcMKPAFONh3Mp8xRQly/view?usp=drive_web",
+            "driveId": "1KJwjaYp9AIt_0BcMKPAFONh3Mp8xRQly"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma121_c3": {
+        "notes": [
+          {
+            "title": "Paper 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Ju4kqnVbjO_EM7hxtQ2ilBpT32Z9nz7N/view?usp=drive_web",
+            "driveId": "1Ju4kqnVbjO_EM7hxtQ2ilBpT32Z9nz7N"
+          },
+          {
+            "title": "Paper 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QWjgr4X68OhG3ZwAA1SWPG0Rzzn3XV4q/view?usp=drive_web",
+            "driveId": "1QWjgr4X68OhG3ZwAA1SWPG0Rzzn3XV4q"
+          },
+          {
+            "title": "Paper 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fY_Xq5meh48efo97g0gmeXZyCgKf1tVm/view?usp=drive_web",
+            "driveId": "1fY_Xq5meh48efo97g0gmeXZyCgKf1tVm"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1EVfHcDZ4aCab_2f_Ugpz1t5Cm8wzW1lJ/view?usp=drive_web",
+            "driveId": "1EVfHcDZ4aCab_2f_Ugpz1t5Cm8wzW1lJ"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fpY7HRaCikEXksWo57Dyck3B7rrfSNqy/view?usp=drive_web",
+            "driveId": "1fpY7HRaCikEXksWo57Dyck3B7rrfSNqy"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1NmMEQteu32pDQdxcH6joTEbQIrNcvOPZ/view?usp=drive_web",
+            "driveId": "1NmMEQteu32pDQdxcH6joTEbQIrNcvOPZ"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1y8lAzLmq8wLUoOufyh7IWhNVctLXr--L/view?usp=drive_web",
+            "driveId": "1y8lAzLmq8wLUoOufyh7IWhNVctLXr--L"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bCJn3Gb4_P0-Mde4BodrmRKlykpXTUZu/view?usp=drive_web",
+            "driveId": "1bCJn3Gb4_P0-Mde4BodrmRKlykpXTUZu"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1AVGPHXJlYtQjVOYVUn2RGOR0olQ0tcZY/view?usp=drive_web",
+            "driveId": "1AVGPHXJlYtQjVOYVUn2RGOR0olQ0tcZY"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma121_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1JujeyhYw8wZVohYqmDa1N67Ot065WTeT/view?usp=drive_web",
+            "driveId": "1JujeyhYw8wZVohYqmDa1N67Ot065WTeT"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1SUEXgW-0_h3MKYdzGmQa3Ihotpye6P3j/view?usp=drive_web",
+            "driveId": "1SUEXgW-0_h3MKYdzGmQa3Ihotpye6P3j"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ma121_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11EN3ueK6a3UvEpXEwfQ9_zXh8UXkFRKq/view?usp=drive_web",
+            "driveId": "11EN3ueK6a3UvEpXEwfQ9_zXh8UXkFRKq"
+          },
+          {
+            "title": "Assignment 2 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QjbwRmVe_Tvkyrj84LiBw2nURhQD0gxu/view?usp=drive_web",
+            "driveId": "1QjbwRmVe_Tvkyrj84LiBw2nURhQD0gxu"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "mb101": {
+      "mb101_c1": {
+        "notes": [
+          {
+            "title": "NOTES 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QqpAR7pO0Mm0Jw9hyOuvOTCmV8Fs0Hun/view?usp=drive_web",
+            "driveId": "1QqpAR7pO0Mm0Jw9hyOuvOTCmV8Fs0Hun"
+          },
+          {
+            "title": "NOTES 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ssnVFGSwxiMbfSI7xKFHVfqg8OpFkr1G/view?usp=drive_web",
+            "driveId": "1ssnVFGSwxiMbfSI7xKFHVfqg8OpFkr1G"
+          },
+          {
+            "title": "NOTES 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1uh_6-xsoMwnDWSfQINvg7vFYKOgg76a3/view?usp=drive_web",
+            "driveId": "1uh_6-xsoMwnDWSfQINvg7vFYKOgg76a3"
+          },
+          {
+            "title": "NOTES 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1GFaJcpF5Se6akJEYTauqSRE3WrtQeZL1/view?usp=drive_web",
+            "driveId": "1GFaJcpF5Se6akJEYTauqSRE3WrtQeZL1"
+          },
+          {
+            "title": "NOTES 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1TscbwS8Ekhao6mohp6XcTOH9DqoHw072/view?usp=drive_web",
+            "driveId": "1TscbwS8Ekhao6mohp6XcTOH9DqoHw072"
+          },
+          {
+            "title": "NOTES 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1b1D_B6u4E2Ey6U1CVHTkdM1dwSFFzOBF/view?usp=drive_web",
+            "driveId": "1b1D_B6u4E2Ey6U1CVHTkdM1dwSFFzOBF"
+          },
+          {
+            "title": "NOTES 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1RkBP87BS2cjB7xRVX7kB3vvWMrk2-klQ/view?usp=drive_web",
+            "driveId": "1RkBP87BS2cjB7xRVX7kB3vvWMrk2-klQ"
+          },
+          {
+            "title": "NOTES 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1l8t-gaqMIjOSDEdYTykrYTGlZLVPPb4P/view?usp=drive_web",
+            "driveId": "1l8t-gaqMIjOSDEdYTykrYTGlZLVPPb4P"
+          },
+          {
+            "title": "NOTES 9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tjo_BPq8Eud5Qwy3OxN-_Dzp9IrL_DWM/view?usp=drive_web",
+            "driveId": "1tjo_BPq8Eud5Qwy3OxN-_Dzp9IrL_DWM"
+          },
+          {
+            "title": "Unit_1_mb_A.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1KeBpKccEzb0_vk8qXsp5qMcyZ5MPv8XN/view?usp=drive_web",
+            "driveId": "1KeBpKccEzb0_vk8qXsp5qMcyZ5MPv8XN"
+          },
+          {
+            "title": "Unit_2_mb_A.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1BBg2NDy4VRA2_wXyq7sVjNPXkiKS296i/view?usp=drive_web",
+            "driveId": "1BBg2NDy4VRA2_wXyq7sVjNPXkiKS296i"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "mb101_c2": {
+        "notes": [
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1dprGAfWRFMROB4sAwLqbAmOBXOyqGdLN/view?usp=drive_web",
+            "driveId": "1dprGAfWRFMROB4sAwLqbAmOBXOyqGdLN"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Rg96o06rAXIn4xHTOKat2FVeuVfjqp5O/view?usp=drive_web",
+            "driveId": "1Rg96o06rAXIn4xHTOKat2FVeuVfjqp5O"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1FxnnUME-MV8K_mII0UWw-V22gg1h2HiJ/view?usp=drive_web",
+            "driveId": "1FxnnUME-MV8K_mII0UWw-V22gg1h2HiJ"
+          },
+          {
+            "title": "MID SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14RqFho398cEyyI_6B94rswcxXAtFfnoN/view?usp=drive_web",
+            "driveId": "14RqFho398cEyyI_6B94rswcxXAtFfnoN"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZJf_n2EvSM8ggbtbrCmoXOOTMsFhBDCf/view?usp=drive_web",
+            "driveId": "1ZJf_n2EvSM8ggbtbrCmoXOOTMsFhBDCf"
+          },
+          {
+            "title": "MID SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Ihgn993jrtJT_pNdGP_Vh7-ywKGM8oE_/view?usp=drive_web",
+            "driveId": "1Ihgn993jrtJT_pNdGP_Vh7-ywKGM8oE_"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1kJ0bWajUf67-B353y9kBgz-FEAQKFHFn/view?usp=drive_web",
+            "driveId": "1kJ0bWajUf67-B353y9kBgz-FEAQKFHFn"
+          },
+          {
+            "title": "MID SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13sZJHULskIZAz7T_RsohmtGuAB9LvmbH/view?usp=drive_web",
+            "driveId": "13sZJHULskIZAz7T_RsohmtGuAB9LvmbH"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14fCQ-rh4aPbRqthuSDInIHBuAbB6ZRpG/view?usp=drive_web",
+            "driveId": "14fCQ-rh4aPbRqthuSDInIHBuAbB6ZRpG"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "me101": {
+      "me101_c1": {
+        "notes": [
+          {
+            "title": "UNIT 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tdnbmJcDRJ68--dUU-xx6l0OLQcjeb-g/view?usp=drive_web",
+            "driveId": "1tdnbmJcDRJ68--dUU-xx6l0OLQcjeb-g"
+          },
+          {
+            "title": "UNIT 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Vf_hSaSPlFNJgK1xAukGLgrDJ8gl1cr-/view?usp=drive_web",
+            "driveId": "1Vf_hSaSPlFNJgK1xAukGLgrDJ8gl1cr-"
+          },
+          {
+            "title": "UNIT 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1cbTGK1NblrhtiOUwGje9IUFxIiR_ftyp/view?usp=drive_web",
+            "driveId": "1cbTGK1NblrhtiOUwGje9IUFxIiR_ftyp"
+          },
+          {
+            "title": "UNIT 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aLLy5K79NplhTF9ouncDE5DblhyhnVNr/view?usp=drive_web",
+            "driveId": "1aLLy5K79NplhTF9ouncDE5DblhyhnVNr"
+          },
+          {
+            "title": "UNIT 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1FGHuuWXMohDGcdYYgyee-hYcJMa1yKXz/view?usp=drive_web",
+            "driveId": "1FGHuuWXMohDGcdYYgyee-hYcJMa1yKXz"
+          },
+          {
+            "title": "UNIT 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1nx56I3oztPj4zH59Lh6FdIJRdCSHWVA4/view?usp=drive_web",
+            "driveId": "1nx56I3oztPj4zH59Lh6FdIJRdCSHWVA4"
+          },
+          {
+            "title": "C.O.M and M.I.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aEUU2I_V2gK9iPw4mCbO_MVkvdDugW6T/view?usp=drive_web",
+            "driveId": "1aEUU2I_V2gK9iPw4mCbO_MVkvdDugW6T"
+          },
+          {
+            "title": "Friction.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1c7Tt36-ZmoFCHmeLy6Ma4biKazp4YAku/view?usp=drive_web",
+            "driveId": "1c7Tt36-ZmoFCHmeLy6Ma4biKazp4YAku"
+          },
+          {
+            "title": "Kinematics.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1c5y0m_5ti8CRM5X1fUCI8dMHRE1LOfqV/view?usp=drive_web",
+            "driveId": "1c5y0m_5ti8CRM5X1fUCI8dMHRE1LOfqV"
+          },
+          {
+            "title": "Resolution Of Forces.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aF1NynN6wSDS7Ipj1yaHcxTfTNmG4Elw/view?usp=drive_web",
+            "driveId": "1aF1NynN6wSDS7Ipj1yaHcxTfTNmG4Elw"
+          },
+          {
+            "title": "S.F.D , B.M.D and A.F.D.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1a1rgn0v492PWxZTdjEIbZg_Ap1J6sDSH/view?usp=drive_web",
+            "driveId": "1a1rgn0v492PWxZTdjEIbZg_Ap1J6sDSH"
+          },
+          {
+            "title": "Stress and Strain.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1c86fjNBKSUeO2Kp_U9P3txJ5rd75ZhXk/view?usp=drive_web",
+            "driveId": "1c86fjNBKSUeO2Kp_U9P3txJ5rd75ZhXk"
+          },
+          {
+            "title": "Torsion.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1a0T-NXRVPxeUr742nF6uzm4ASNczHTWr/view?usp=drive_web",
+            "driveId": "1a0T-NXRVPxeUr742nF6uzm4ASNczHTWr"
+          },
+          {
+            "title": "Truss.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aFI1HmDZq_vq0i_Y95GKhE-gFeJgU1yl/view?usp=drive_web",
+            "driveId": "1aFI1HmDZq_vq0i_Y95GKhE-gFeJgU1yl"
+          },
+          {
+            "title": "Virtual Work.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aCKpmx2c7KpiX5Zx4yeNz4-p9WWUxtxl/view?usp=drive_web",
+            "driveId": "1aCKpmx2c7KpiX5Zx4yeNz4-p9WWUxtxl"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "me101_c2": {
+        "notes": [
+          {
+            "title": "Dr. Sadhu Singh.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hu6tIrHgrPVa2lIXJbjmu4PZTwzWTrEm/view?usp=drive_web",
+            "driveId": "1hu6tIrHgrPVa2lIXJbjmu4PZTwzWTrEm"
+          },
+          {
+            "title": "Bhavikatti, S. S.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1wsLZlFGzKcxJU3VGE0TMe0W5bDvBgNBZ/view?usp=drive_web",
+            "driveId": "1wsLZlFGzKcxJU3VGE0TMe0W5bDvBgNBZ"
+          },
+          {
+            "title": "Sanjay Bansal.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1jUMs7t2DPfdhJagWWrIV6g8yWIm1w237/view?usp=drive_web",
+            "driveId": "1jUMs7t2DPfdhJagWWrIV6g8yWIm1w237"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "me101_c3": {
+        "notes": [
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1eRPMeZ8Vr77aCBvxfn8QhyKFxwhUxWPb/view?usp=drive_web",
+            "driveId": "1eRPMeZ8Vr77aCBvxfn8QhyKFxwhUxWPb"
+          },
+          {
+            "title": "MID SEM 2023(NEW-2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fCxG80lSFpgdxNbS26BNO51-ap_nLt1A/view?usp=drive_web",
+            "driveId": "1fCxG80lSFpgdxNbS26BNO51-ap_nLt1A"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1jZMFcOU3orPlHICl7GzDG257yBXY_nDc/view?usp=drive_web",
+            "driveId": "1jZMFcOU3orPlHICl7GzDG257yBXY_nDc"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aOkdN9367oCrzYQTaMfxAXPBikwZgxUW/view?usp=drive_web",
+            "driveId": "1aOkdN9367oCrzYQTaMfxAXPBikwZgxUW"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ErK0_G095tBNkMEldh2Z4g9zH3EcT88X/view?usp=drive_web",
+            "driveId": "1ErK0_G095tBNkMEldh2Z4g9zH3EcT88X"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ozB4GHMuenGrpj3EHdQkl5c1mwlcQlXY/view?usp=drive_web",
+            "driveId": "1ozB4GHMuenGrpj3EHdQkl5c1mwlcQlXY"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/18W7cXh6Mv2TtN71aSg8QEvFquhchtC7j/view?usp=drive_web",
+            "driveId": "18W7cXh6Mv2TtN71aSg8QEvFquhchtC7j"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 3).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1a69RtpY-c4Ou_HMEiQdNYjfcZtXJXJgr/view?usp=drive_web",
+            "driveId": "1a69RtpY-c4Ou_HMEiQdNYjfcZtXJXJgr"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fJ79PPwgyst7WnsiEQJKVrxpJSwRQVVP/view?usp=drive_web",
+            "driveId": "1fJ79PPwgyst7WnsiEQJKVrxpJSwRQVVP"
+          },
+          {
+            "title": "MID SEM 2025 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HILAkKWq63D1Ed27HiK2GmIPzFDsIiHr/view?usp=drive_web",
+            "driveId": "1HILAkKWq63D1Ed27HiK2GmIPzFDsIiHr"
+          },
+          {
+            "title": "MID SEM 2025 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PCSpxPquzY4A51CvUCJTP-i5Zzop_qqR/view?usp=drive_web",
+            "driveId": "1PCSpxPquzY4A51CvUCJTP-i5Zzop_qqR"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1J12qTh9XOEeId8s3EDGJdBwcNcEvc8PY/view?usp=drive_web",
+            "driveId": "1J12qTh9XOEeId8s3EDGJdBwcNcEvc8PY"
+          },
+          {
+            "title": "MID SEM 2025-26 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pKkAm1XDL6FGkNbu9gBD2LFl-bWuWuz2/view?usp=drive_web",
+            "driveId": "1pKkAm1XDL6FGkNbu9gBD2LFl-bWuWuz2"
+          },
+          {
+            "title": "MID SEM 2025-26 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1CwrUqnTrPTTKKklKBv1McPYQW_4ZWWmt/view?usp=drive_web",
+            "driveId": "1CwrUqnTrPTTKKklKBv1McPYQW_4ZWWmt"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1wVefs7LXnB6NxbjmZXO615PmXBoeaLMj/view?usp=drive_web",
+            "driveId": "1wVefs7LXnB6NxbjmZXO615PmXBoeaLMj"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ms101": {
+      "ms101_c1": {
+        "notes": [
+          {
+            "title": "Unit 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Y4DQ1vuMft1osXkraxHnFL7IE9iVxWES/view?usp=drive_web",
+            "driveId": "1Y4DQ1vuMft1osXkraxHnFL7IE9iVxWES"
+          },
+          {
+            "title": "Unit 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Ol0RK2O2Ex09eGazCbfkdUUKSH3fR3_Q/view?usp=drive_web",
+            "driveId": "1Ol0RK2O2Ex09eGazCbfkdUUKSH3fR3_Q"
+          },
+          {
+            "title": "Unit 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Z2K5gIPXAYubflY_z4YbT40F7P0YY0CL/view?usp=drive_web",
+            "driveId": "1Z2K5gIPXAYubflY_z4YbT40F7P0YY0CL"
+          },
+          {
+            "title": "Unit 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11lCm7Wr2oAjjB3yvH4NkSO_3560FQsot/view?usp=drive_web",
+            "driveId": "11lCm7Wr2oAjjB3yvH4NkSO_3560FQsot"
+          },
+          {
+            "title": "Unit 5 Part 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Wy8jOBVMCqR1e9Dq9OqdmFHubVNX9hp_/view?usp=drive_web",
+            "driveId": "1Wy8jOBVMCqR1e9Dq9OqdmFHubVNX9hp_"
+          },
+          {
+            "title": "Unit 5 Part 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Sipw8wd2svUl0l3T_NpPD0isu6nYFuPs/view?usp=drive_web",
+            "driveId": "1Sipw8wd2svUl0l3T_NpPD0isu6nYFuPs"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ms101_c2": {
+        "notes": [
+          {
+            "title": "[V._Raghavan]_Materials_Science_and_Engineering.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1r1uW9fbNtV8C4wZOD0KVENLz-yfieUdQ/view?usp=drive_web",
+            "driveId": "1r1uW9fbNtV8C4wZOD0KVENLz-yfieUdQ"
+          },
+          {
+            "title": "Materials Science and Engineering An Introduction by William D. Callister, Jr., David G. Rethwish (z-lib.org).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10x_0ifxGoCWBJb1P-5v8FAvKANiX2jh_/view?usp=drive_web",
+            "driveId": "10x_0ifxGoCWBJb1P-5v8FAvKANiX2jh_"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ms101_c3": {
+        "notes": [
+          {
+            "title": "PAPER 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1mCVAyUOfcUV_2U5-gigUKS1W8I6rvqs7/view?usp=drive_web",
+            "driveId": "1mCVAyUOfcUV_2U5-gigUKS1W8I6rvqs7"
+          },
+          {
+            "title": "PAPER 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_1MOwMWETNdg6wllfSFVaNvs42N9d3N5/view?usp=drive_web",
+            "driveId": "1_1MOwMWETNdg6wllfSFVaNvs42N9d3N5"
+          },
+          {
+            "title": "PAPER 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1NdbXkCtLDsc0GDjornzqtqiOUbFabmFu/view?usp=drive_web",
+            "driveId": "1NdbXkCtLDsc0GDjornzqtqiOUbFabmFu"
+          },
+          {
+            "title": "PAPER 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1oM8o1i8TTAUwFmRKqdRAStVH21vz5nLI/view?usp=drive_web",
+            "driveId": "1oM8o1i8TTAUwFmRKqdRAStVH21vz5nLI"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1L48a_KS_3hUTS3mti1lrhSqZ5U2dVN22/view?usp=drive_web",
+            "driveId": "1L48a_KS_3hUTS3mti1lrhSqZ5U2dVN22"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Apsl5usSXooa2OVciq-doAXOUPfvaiE_/view?usp=drive_web",
+            "driveId": "1Apsl5usSXooa2OVciq-doAXOUPfvaiE_"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/13FqRXeojrNUm4sE0b5Bj080HNUFRMh6e/view?usp=drive_web",
+            "driveId": "13FqRXeojrNUm4sE0b5Bj080HNUFRMh6e"
+          },
+          {
+            "title": "Mid Sem. 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1DGwizswpC_mHKrvSNMEqPPZ9mNEbMxbz/view?usp=drive_web",
+            "driveId": "1DGwizswpC_mHKrvSNMEqPPZ9mNEbMxbz"
+          },
+          {
+            "title": "End Sem 2022-23.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1p9Egd7Ay-paN2OB_AiNkpd4yj0-9HNG1/view?usp=drive_web",
+            "driveId": "1p9Egd7Ay-paN2OB_AiNkpd4yj0-9HNG1"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ms101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1rn-MAA2wjnGTY9mWoqLTL5YIYM7tt584/view?usp=drive_web",
+            "driveId": "1rn-MAA2wjnGTY9mWoqLTL5YIYM7tt584"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ms101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1H2pbnfGkGeMV2nffexYn5IlT2BErTFEJ/view?usp=drive_web",
+            "driveId": "1H2pbnfGkGeMV2nffexYn5IlT2BErTFEJ"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ph101": {
+      "ph101_c1": {
+        "notes": [
+          {
+            "title": "Chapter 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1nU_07XWmghB1X3UYtLfaJ1rW_h4NPfiK/view?usp=drive_web",
+            "driveId": "1nU_07XWmghB1X3UYtLfaJ1rW_h4NPfiK"
+          },
+          {
+            "title": "Chapter 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1O30_Q7YogsFHu1-YTp4zE3Uvc3ijj8UQ/view?usp=drive_web",
+            "driveId": "1O30_Q7YogsFHu1-YTp4zE3Uvc3ijj8UQ"
+          },
+          {
+            "title": "Chapter 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1lULJt1xIPImslzERxdGMum3m0X0baC7A/view?usp=drive_web",
+            "driveId": "1lULJt1xIPImslzERxdGMum3m0X0baC7A"
+          },
+          {
+            "title": "chapter 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1glO4sohJqJOO6MzkM-fuosmk-70WO9Ir/view?usp=drive_web",
+            "driveId": "1glO4sohJqJOO6MzkM-fuosmk-70WO9Ir"
+          },
+          {
+            "title": "Chapter 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ycehez4mL5ixxXJd3Ig8sCDsoPvQuewm/view?usp=drive_web",
+            "driveId": "1ycehez4mL5ixxXJd3Ig8sCDsoPvQuewm"
+          },
+          {
+            "title": "Chapter 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1IxMEwvcsDV_5Iyyr11EFYmynUPsUFcUM/view?usp=drive_web",
+            "driveId": "1IxMEwvcsDV_5Iyyr11EFYmynUPsUFcUM"
+          },
+          {
+            "title": "Physics New Notes",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1te-GqtvBbj-zgiKNuBS-WMMomt7Wb8Hu/view?usp=drive_web",
+            "driveId": "1te-GqtvBbj-zgiKNuBS-WMMomt7Wb8Hu"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ph101_c2": {
+        "notes": [
+          {
+            "title": "Engineering Physics ",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1hMFaBm6FTij6o_dOwxFZGzx3m62YL6V-/view?usp=drive_web",
+            "driveId": "1hMFaBm6FTij6o_dOwxFZGzx3m62YL6V-"
+          },
+          {
+            "title": "quantum mechanics.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1jAz9xJ2WiimMKLipEAiOTOJy_vu60_Qz/view?usp=drive_web",
+            "driveId": "1jAz9xJ2WiimMKLipEAiOTOJy_vu60_Qz"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ph101_c3": {
+        "notes": [
+          {
+            "title": "Paper 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1e3XoptTl8w9Z5IK1CFK8zuH0gVz9N0Gm/view?usp=drive_web",
+            "driveId": "1e3XoptTl8w9Z5IK1CFK8zuH0gVz9N0Gm"
+          },
+          {
+            "title": "Paper 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PFH-fPD9VdNWAZWOkrZofrllxZ5PS17G/view?usp=drive_web",
+            "driveId": "1PFH-fPD9VdNWAZWOkrZofrllxZ5PS17G"
+          },
+          {
+            "title": "Paper 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bH7ErDovSK6EM0Uk6Ey0_81fV3eVdQ00/view?usp=drive_web",
+            "driveId": "1bH7ErDovSK6EM0Uk6Ey0_81fV3eVdQ00"
+          },
+          {
+            "title": "Paper 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1zfd2OAfTdRDhqgKduFV7le1IqCCa-IUf/view?usp=drive_web",
+            "driveId": "1zfd2OAfTdRDhqgKduFV7le1IqCCa-IUf"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1axrU_TUSTM_qp1R47-MWudldkckY0eHG/view?usp=drive_web",
+            "driveId": "1axrU_TUSTM_qp1R47-MWudldkckY0eHG"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/12QSA2EbzZhfIEDGOOa5j5EEmYU33y6TL/view?usp=drive_web",
+            "driveId": "12QSA2EbzZhfIEDGOOa5j5EEmYU33y6TL"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aNHyXaD5uIjYhRPWVZNSVU75GhZlXC6z/view?usp=drive_web",
+            "driveId": "1aNHyXaD5uIjYhRPWVZNSVU75GhZlXC6z"
+          },
+          {
+            "title": "Paper 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1tBXuZuiDYoVLwKFcauzS3YxJSl_CQPSQ/view?usp=drive_web",
+            "driveId": "1tBXuZuiDYoVLwKFcauzS3YxJSl_CQPSQ"
+          },
+          {
+            "title": "Paper 9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1B6vd6aHHE5qnBMikpOe81pvjPD9OY0HA/view?usp=drive_web",
+            "driveId": "1B6vd6aHHE5qnBMikpOe81pvjPD9OY0HA"
+          },
+          {
+            "title": "Paper 10.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1UJ9u7Q0u108eTqb0YjY50H__RLBsvCJO/view?usp=drive_web",
+            "driveId": "1UJ9u7Q0u108eTqb0YjY50H__RLBsvCJO"
+          },
+          {
+            "title": "Paper 11.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/15rfNxsqEk-xLhFosuP_5A67PmGWnaSQC/view?usp=drive_web",
+            "driveId": "15rfNxsqEk-xLhFosuP_5A67PmGWnaSQC"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1CAccgWajwGVS4gnBEmCI34E67dcg7iUJ/view?usp=drive_web",
+            "driveId": "1CAccgWajwGVS4gnBEmCI34E67dcg7iUJ"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11OhPzp8Ykf3DNL4L2QfkRu119lrKvH9z/view?usp=drive_web",
+            "driveId": "11OhPzp8Ykf3DNL4L2QfkRu119lrKvH9z"
+          },
+          {
+            "title": "MID SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1e9zV3GOzaWD2tlqSbJJyWByi45keQ7r6/view?usp=drive_web",
+            "driveId": "1e9zV3GOzaWD2tlqSbJJyWByi45keQ7r6"
+          },
+          {
+            "title": "MID SEM 2023(NEW-2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1f2qTzKW-6otkJI7TW36t-ZBnfZm1dvT2/view?usp=drive_web",
+            "driveId": "1f2qTzKW-6otkJI7TW36t-ZBnfZm1dvT2"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/19C5j7_h0eI3HJbQ8QN0zDPzQe0PBXWxW/view?usp=drive_web",
+            "driveId": "19C5j7_h0eI3HJbQ8QN0zDPzQe0PBXWxW"
+          },
+          {
+            "title": "MID SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1cOwXChOJInKsZsEUOoeUJTnouZv3AVcZ/view?usp=drive_web",
+            "driveId": "1cOwXChOJInKsZsEUOoeUJTnouZv3AVcZ"
+          },
+          {
+            "title": "END SEM 2024.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1pPkvmgmTcfsFH7Tk3Lbs-FIAfWppPl9s/view?usp=drive_web",
+            "driveId": "1pPkvmgmTcfsFH7Tk3Lbs-FIAfWppPl9s"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1lPpkhfl--bRjsmhb-QGnrIc7k0_p-ymV/view?usp=drive_web",
+            "driveId": "1lPpkhfl--bRjsmhb-QGnrIc7k0_p-ymV"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bBI-tm9tYvamMCSKsSuS5c2NBwRjRTqr/view?usp=drive_web",
+            "driveId": "1bBI-tm9tYvamMCSKsSuS5c2NBwRjRTqr"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 3).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11yGF6YnzW5f7RaYjIRFdLiq81bKFKWWt/view?usp=drive_web",
+            "driveId": "11yGF6YnzW5f7RaYjIRFdLiq81bKFKWWt"
+          },
+          {
+            "title": "MID SEM 2024-25 (Paper 4).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/10GrZPMziQh052il9e1hp46W8f2_wxwXT/view?usp=drive_web",
+            "driveId": "10GrZPMziQh052il9e1hp46W8f2_wxwXT"
+          },
+          {
+            "title": "END SEM 2024-25.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1aD5cwInM7YD8sJ2K5jb6W0GJzPA6IrJQ/view?usp=drive_web",
+            "driveId": "1aD5cwInM7YD8sJ2K5jb6W0GJzPA6IrJQ"
+          },
+          {
+            "title": "MID SEM 2025 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1RTUFfAltBaHivX-MDwNUm_b6Zaod8gzn/view?usp=drive_web",
+            "driveId": "1RTUFfAltBaHivX-MDwNUm_b6Zaod8gzn"
+          },
+          {
+            "title": "MID SEM 2025 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1PF8CDpAND0ugzSiCM_75e3aXTmVTaW3p/view?usp=drive_web",
+            "driveId": "1PF8CDpAND0ugzSiCM_75e3aXTmVTaW3p"
+          },
+          {
+            "title": "END SEM 2025.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1fGikpwkNdhi_IWeGCpLOSyGsiHshSd1y/view?usp=drive_web",
+            "driveId": "1fGikpwkNdhi_IWeGCpLOSyGsiHshSd1y"
+          },
+          {
+            "title": "MID SEM 2025-26 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1OT7Yr0dtHs951c6bWwkJRtJmdjNePUNE/view?usp=drive_web",
+            "driveId": "1OT7Yr0dtHs951c6bWwkJRtJmdjNePUNE"
+          },
+          {
+            "title": "MID SEM 2025-26 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1DSCM37smmFY_IOG3C3dY6BIEyQVOjzv8/view?usp=drive_web",
+            "driveId": "1DSCM37smmFY_IOG3C3dY6BIEyQVOjzv8"
+          },
+          {
+            "title": "MID SEM 2025-26 (Paper 3).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1t0yA85rzV-KgOCMWoGinmbmwpEKGigu9/view?usp=drive_web",
+            "driveId": "1t0yA85rzV-KgOCMWoGinmbmwpEKGigu9"
+          },
+          {
+            "title": "END SEM 2025-26.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1AKwp1XHdJs1P1mfiW7jkp3VHS6YBlipQ/view?usp=drive_web",
+            "driveId": "1AKwp1XHdJs1P1mfiW7jkp3VHS6YBlipQ"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ph101_c4": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1uoFFS2nUVUMBSYMcBFduj1fKun2LRgpm/view?usp=drive_web",
+            "driveId": "1uoFFS2nUVUMBSYMcBFduj1fKun2LRgpm"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZJKRppMib2DHERAcgggz7_FqtUuxPCA6/view?usp=drive_web",
+            "driveId": "1ZJKRppMib2DHERAcgggz7_FqtUuxPCA6"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ph101_c5": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1j4ASAkVJdBWPbasYCE0pt15XyddDdNAW/view?usp=drive_web",
+            "driveId": "1j4ASAkVJdBWPbasYCE0pt15XyddDdNAW"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Y5pPbDtKgFIaDYV7LNz2ymh-Ny9FfAFM/view?usp=drive_web",
+            "driveId": "1Y5pPbDtKgFIaDYV7LNz2ymh-Ny9FfAFM"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ph101_c6": {
+        "notes": [
+          {
+            "title": "Practical File (PH-102).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1cFbSSr5a1wElCllqbBRU0GdkBWg91UAT/view?usp=drive_web",
+            "driveId": "1cFbSSr5a1wElCllqbBRU0GdkBWg91UAT"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ed": {
+      "ed_c1": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/11IQHHZbzqsruhFxFOWoI94R3S1ZaZOBl/view?usp=drive_web",
+            "driveId": "11IQHHZbzqsruhFxFOWoI94R3S1ZaZOBl"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/14T7VAtESZSr_YMKruor16bEDmpn-NTE-/view?usp=drive_web",
+            "driveId": "14T7VAtESZSr_YMKruor16bEDmpn-NTE-"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1D6rkN8emwmisoYZAez1crL8seWQZiZLQ/view?usp=drive_web",
+            "driveId": "1D6rkN8emwmisoYZAez1crL8seWQZiZLQ"
+          },
+          {
+            "title": "Assignment 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1h9CGjcol7hyasyEp2bnlwdIPOfEmL0fb/view?usp=drive_web",
+            "driveId": "1h9CGjcol7hyasyEp2bnlwdIPOfEmL0fb"
+          },
+          {
+            "title": "Assignment 5.pdf.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1IpTbIWSQsdjca7NukbpY74okVlDGByKU/view?usp=drive_web",
+            "driveId": "1IpTbIWSQsdjca7NukbpY74okVlDGByKU"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ed_c2": {
+        "notes": [
+          {
+            "title": "Assignment 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1J92nOSUz_KcC7biiW4Q95JON1Nr4Pdus/view?usp=drive_web",
+            "driveId": "1J92nOSUz_KcC7biiW4Q95JON1Nr4Pdus"
+          },
+          {
+            "title": "Assignment 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1H7_2Lv9_5UDJSylIZthMChbHpDI68ntV/view?usp=drive_web",
+            "driveId": "1H7_2Lv9_5UDJSylIZthMChbHpDI68ntV"
+          },
+          {
+            "title": "Assignment 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1GIuGy29msdcTCDUG_T8jCmFSMIoN2_yi/view?usp=drive_web",
+            "driveId": "1GIuGy29msdcTCDUG_T8jCmFSMIoN2_yi"
+          },
+          {
+            "title": "Assignment 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1_2zN7OlGbf_wi66CRjBH6lFYb5Tn-c4T/view?usp=drive_web",
+            "driveId": "1_2zN7OlGbf_wi66CRjBH6lFYb5Tn-c4T"
+          },
+          {
+            "title": "Assignment 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1IZ6BFRXamLjT6v1Z1sBGgMEXLjg1Lbpt/view?usp=drive_web",
+            "driveId": "1IZ6BFRXamLjT6v1Z1sBGgMEXLjg1Lbpt"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ed_c3": {
+        "notes": [
+          {
+            "title": "Paper 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1bSnSTt-MgK3qIhDBEpjaaoWde9xSRF1E/view?usp=drive_web",
+            "driveId": "1bSnSTt-MgK3qIhDBEpjaaoWde9xSRF1E"
+          },
+          {
+            "title": "Paper 2.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QPHqLBFU7o5aC3Rko780_IoNz8oB2chq/view?usp=drive_web",
+            "driveId": "1QPHqLBFU7o5aC3Rko780_IoNz8oB2chq"
+          },
+          {
+            "title": "Paper 3.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1HjcLASe6uIE2Fyw811EnEFb5X1OIdKfK/view?usp=drive_web",
+            "driveId": "1HjcLASe6uIE2Fyw811EnEFb5X1OIdKfK"
+          },
+          {
+            "title": "Paper 4.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/15hMQ5EbDVyJWUZVcueo5UM4g2IzeMtgk/view?usp=drive_web",
+            "driveId": "15hMQ5EbDVyJWUZVcueo5UM4g2IzeMtgk"
+          },
+          {
+            "title": "Paper 5.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QO-KwKcrjhyEttGWxK7lXUuKScvi8Q-g/view?usp=drive_web",
+            "driveId": "1QO-KwKcrjhyEttGWxK7lXUuKScvi8Q-g"
+          },
+          {
+            "title": "Paper 6.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/19_h2HINT67iwq265uFygiGc3I9C77wh7/view?usp=drive_web",
+            "driveId": "19_h2HINT67iwq265uFygiGc3I9C77wh7"
+          },
+          {
+            "title": "Paper 7.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ewBBJXkV-u3VeHtrhTIgxP4m2hiJQaoj/view?usp=drive_web",
+            "driveId": "1ewBBJXkV-u3VeHtrhTIgxP4m2hiJQaoj"
+          },
+          {
+            "title": "Paper 8.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1OvAH3b-5JDbNcMNfG9AaltBWmCY1DhZS/view?usp=drive_web",
+            "driveId": "1OvAH3b-5JDbNcMNfG9AaltBWmCY1DhZS"
+          },
+          {
+            "title": "Paper 9.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1ZihLj42n3_Xw4LwYdWRLt69kgA8VXGl5/view?usp=drive_web",
+            "driveId": "1ZihLj42n3_Xw4LwYdWRLt69kgA8VXGl5"
+          },
+          {
+            "title": "Mid Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1b1vl-L62wtddMQOXUkQzLDJoeMJaK9Bs/view?usp=drive_web",
+            "driveId": "1b1vl-L62wtddMQOXUkQzLDJoeMJaK9Bs"
+          },
+          {
+            "title": "End Sem 2023.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-mOTefXA1acvrQxpJ4Gj1MCaNmRmmTi9/view?usp=drive_web",
+            "driveId": "1-mOTefXA1acvrQxpJ4Gj1MCaNmRmmTi9"
+          },
+          {
+            "title": "END SEM 2023(NEW).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1p6fVwGI57Tdm308bYjDgW0CkvWBVwjwK/view?usp=drive_web",
+            "driveId": "1p6fVwGI57Tdm308bYjDgW0CkvWBVwjwK"
+          },
+          {
+            "title": "END SEM 2024-25 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1P4OpRActX-G_Jj80eMQy0lHAqRUtdnHi/view?usp=drive_web",
+            "driveId": "1P4OpRActX-G_Jj80eMQy0lHAqRUtdnHi"
+          },
+          {
+            "title": "END SEM 2024-25 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1jlS6GtOo2DHkVKfXRLZYiMdtajWtSZoi/view?usp=drive_web",
+            "driveId": "1jlS6GtOo2DHkVKfXRLZYiMdtajWtSZoi"
+          },
+          {
+            "title": "END SEM 2025-26 (Paper 1).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1R0BNo8iyPCoyxZ5nAXPQhZJOg2su3XD8/view?usp=drive_web",
+            "driveId": "1R0BNo8iyPCoyxZ5nAXPQhZJOg2su3XD8"
+          },
+          {
+            "title": "END SEM 2025-26 (Paper 2).pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1oCjqVvvQCFvOW9A0RlViYlq1KDGCPvYg/view?usp=drive_web",
+            "driveId": "1oCjqVvvQCFvOW9A0RlViYlq1KDGCPvYg"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    },
+    "ws": {
+      "ws_c1": {
+        "notes": [
+          {
+            "title": "Assignmemt 1.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1cHKmRj4VmOEDW3MMG0GvfNVOcE33Ezk8/view?usp=drive_web",
+            "driveId": "1cHKmRj4VmOEDW3MMG0GvfNVOcE33Ezk8"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ws_c2": {
+        "notes": [
+          {
+            "title": "Assignment 1 solutions.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1QOFqQSSp4E2svdw6UNdJQT0aPVQUsi0b/view?usp=drive_web",
+            "driveId": "1QOFqQSSp4E2svdw6UNdJQT0aPVQUsi0b"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ws_c3": {
+        "notes": [
+          {
+            "title": "Civil Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/19zsWFs9C_OR8cimflGZyJRahHBAB1WsV/view?usp=drive_web",
+            "driveId": "19zsWFs9C_OR8cimflGZyJRahHBAB1WsV"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ws_c4": {
+        "notes": [
+          {
+            "title": "Electrical Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/12hUFF-IAFvpDiiFLCyo27yh3vKxMgLHw/view?usp=drive_web",
+            "driveId": "12hUFF-IAFvpDiiFLCyo27yh3vKxMgLHw"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      },
+      "ws_c5": {
+        "notes": [
+          {
+            "title": "Full Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1LOY9j7Am8arVa4ctcdt_BTnB2QrDDR6V/view?usp=drive_web",
+            "driveId": "1LOY9j7Am8arVa4ctcdt_BTnB2QrDDR6V"
+          },
+          {
+            "title": "Fitting Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1EgvVs2bk0O9vRNJxkapa3DSfTGeXv1gI/view?usp=drive_web",
+            "driveId": "1EgvVs2bk0O9vRNJxkapa3DSfTGeXv1gI"
+          },
+          {
+            "title": "Turning Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1-nwmN0gNBD3yFSut_ovkh_V_WSLsqEQZ/view?usp=drive_web",
+            "driveId": "1-nwmN0gNBD3yFSut_ovkh_V_WSLsqEQZ"
+          },
+          {
+            "title": "Foundry Shop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1xfMUP32tUYKcKU-DSII4nPhgUAJkN9t4/view?usp=drive_web",
+            "driveId": "1xfMUP32tUYKcKU-DSII4nPhgUAJkN9t4"
+          },
+          {
+            "title": "Black Smithy.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1S0empKPc2u-oFhlIvNY1HQ_Kw43wu5P4/view?usp=drive_web",
+            "driveId": "1S0empKPc2u-oFhlIvNY1HQ_Kw43wu5P4"
+          },
+          {
+            "title": "Carpentry Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1CbttPJhJkYQt1_BR00POpjkw-WfYDMIG/view?usp=drive_web",
+            "driveId": "1CbttPJhJkYQt1_BR00POpjkw-WfYDMIG"
+          },
+          {
+            "title": "Welding Workshop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1LpY-nn-CbSufnORgrVb3qcFOo0EtJNCJ/view?usp=drive_web",
+            "driveId": "1LpY-nn-CbSufnORgrVb3qcFOo0EtJNCJ"
+          },
+          {
+            "title": "Sheet Metal Shop.pdf",
+            "type": "PDF",
+            "size": "",
+            "date": "",
+            "icon": "file-text",
+            "link": "https://drive.google.com/file/d/1Avsyz9YdL5UmE9qZtkdjVlehglTTFFZI/view?usp=drive_web",
+            "driveId": "1Avsyz9YdL5UmE9qZtkdjVlehglTTFFZI"
+          }
+        ],
+        "recordings": [],
+        "practice": []
+      }
+    }
+  }
+}

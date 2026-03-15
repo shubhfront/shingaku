@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Attendance Tracker - Shingaku</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shingaku.com/attendance">
+    <meta property="og:title" content="Attendance Tracker - Shingaku">
+    <meta property="og:description" content="Track your college attendance with Shingaku's smart attendance tracker.">
+    <meta property="og:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Shingaku">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shingaku.com/attendance">
+    <meta name="twitter:title" content="Attendance Tracker - Shingaku">
+    <meta name="twitter:description" content="Track your college attendance with Shingaku's smart attendance tracker.">
+    <meta name="twitter:image" content="https://i.ibb.co/RG666hmv/Screenshot-20260311-055543.png">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="canonical" href="https://shingaku.com/attendance">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon.png">
+    <link rel="stylesheet" href="/static/css/attendance.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- Boot Screen -->
+<div id="boot-screen" style="position:fixed;inset:0;z-index:9999;background:var(--void);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s ease,visibility .5s ease">
+    <div style="display:flex;gap:6px">
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .1s infinite"></div>
+        <div style="width:14px;height:14px;background:var(--getsuga);animation:bootPulse .6s ease .2s infinite"></div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--text-muted);animation:pulse 1.5s infinite">LOADING ATTENDANCE...</div>
+</div>
+
+<script>
+    const SHINGAKU_USER = {
+        username: {{ username | default('', true) | tojson }},
+        avatar: {{ avatar | default('', true) | tojson }}
+    };
+</script>
+
+<!-- ========== DESKTOP ========== -->
+<div class="dk-topbar" id="dk-topbar">
+    <div class="dk-topbar-left">
+        <button class="dk-icon-btn" id="sidebar-toggle" title="Toggle sidebar"><i data-lucide="panel-left" style="width:16px;height:16px"></i></button>
+        <div class="dk-brand" onclick="location.href='/dashboard'">
+            <div class="dk-brand-logo"><i data-lucide="sword" style="width:17px;height:17px"></i></div>
+            <div class="dk-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+    </div>
+    <div class="dk-topbar-right">
+        <button class="dk-icon-btn" id="theme-toggle" title="Toggle theme"><i data-lucide="sun" style="width:16px;height:16px"></i></button>
+        <div class="dk-avatar-wrap" style="position:relative">
+            <img class="dk-avatar" id="dk-avatar" src="{{ avatar }}" alt="" onclick="toggleProfileDropdown()">
+            <div class="dk-dropdown" id="profile-dropdown">
+                <div class="dk-dropdown-header" id="dd-user">Profile</div>
+                <button class="dk-dropdown-item" onclick="location.href='/profile'"><i data-lucide="user" style="width:14px;height:14px"></i>My Profile</button>
+                <div class="dk-dropdown-divider"></div>
+                <button class="dk-dropdown-item" onclick="logOut()" style="color:var(--danger)"><i data-lucide="log-out" style="width:14px;height:14px"></i>Log Out</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;height:calc(100vh - var(--topbar-h));overflow:hidden" id="dk-body">
+    <nav class="dk-sidebar" id="dk-sidebar">
+        <div class="dk-sidebar-nav scrollbar-hide">
+            <div class="dk-sidebar-label">Main</div>
+            <a href="/dashboard" class="dk-nav-item"><i data-lucide="layout-dashboard" style="width:16px;height:16px"></i><span class="nav-text">Dashboard</span></a>
+            <a href="/notes" class="dk-nav-item"><i data-lucide="file-text" style="width:16px;height:16px"></i><span class="nav-text">Notes</span></a>
+            <a href="/test_section" class="dk-nav-item"><i data-lucide="swords" style="width:16px;height:16px"></i><span class="nav-text">Test Arena</span></a>
+            <a href="/calendar" class="dk-nav-item"><i data-lucide="calendar-days" style="width:16px;height:16px"></i><span class="nav-text">Calendar</span></a>
+            <a href="/attendance" class="dk-nav-item active"><i data-lucide="bar-chart-3" style="width:16px;height:16px"></i><span class="nav-text">Attendance</span></a>
+            <a href="/profile" class="dk-nav-item"><i data-lucide="user" style="width:16px;height:16px"></i><span class="nav-text">Profile</span></a>
+        </div>
+    </nav>
+
+    <main class="dk-main scrollbar-hide" id="dk-main">
+        <div class="dk-main-inner">
+            <!-- Header -->
+            <div class="att-header anim-in">
+                <div class="att-header-left">
+                    <h1 class="att-title"><i data-lucide="bar-chart-3" style="width:22px;height:22px;vertical-align:-4px;margin-right:8px"></i>Attendance Portal</h1>
+                    <div class="att-subtitle">Track your lecture attendance. Minimum required: 70%</div>
+                </div>
+                <div class="att-overall-badge" id="att-overall">--</div>
+            </div>
+
+            <!-- Group Selector -->
+            <div class="att-group-section anim-in" style="animation-delay:.04s" id="att-group-section"></div>
+
+            <!-- Subject Cards -->
+            <div class="att-cards-grid anim-in" style="animation-delay:.08s" id="att-cards"></div>
+
+            <!-- Empty State -->
+            <div class="att-empty anim-in" id="att-empty" style="display:none">
+                <i data-lucide="calendar-x" style="width:40px;height:40px;color:var(--text-muted)"></i>
+                <div class="att-empty-text">No schedule found</div>
+                <div class="att-empty-sub">Upload your timetable in the <a href="/calendar" style="color:var(--getsuga)">Calendar</a> page first.</div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Toast -->
+<div id="toast-container"></div>
+
+<!-- ========== MOBILE ========== -->
+<div class="mob-app" id="mob-app">
+    <div class="mob-header">
+        <div class="mob-brand">
+            <div class="mob-brand-logo"><i data-lucide="sword" style="width:15px;height:15px"></i></div>
+            <div class="mob-brand-text">SHIN<span>GAKU</span></div>
+        </div>
+        <div class="mob-header-actions">
+            <button class="mob-icon-btn" id="mob-theme-toggle" onclick="toggleTheme()"><i data-lucide="sun" style="width:15px;height:15px"></i></button>
+            <img class="mob-avatar" src="{{ avatar }}" alt="" onclick="location.href='/profile'">
+        </div>
+    </div>
+
+    <div class="mob-att-header">
+        <h2 class="mob-att-title"><i data-lucide="bar-chart-3" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px"></i>Attendance</h2>
+        <div class="att-overall-badge mob" id="mob-att-overall">--</div>
+    </div>
+
+    <!-- Mobile Group Selector -->
+    <div class="mob-att-group" id="mob-att-group-section"></div>
+
+    <!-- Mobile Cards -->
+    <div class="mob-att-cards" id="mob-att-cards"></div>
+
+    <!-- Mobile Empty -->
+    <div class="att-empty" id="mob-att-empty" style="display:none">
+        <i data-lucide="calendar-x" style="width:32px;height:32px;color:var(--text-muted)"></i>
+        <div class="att-empty-text">No schedule found</div>
+        <div class="att-empty-sub">Upload your timetable in <a href="/calendar" style="color:var(--getsuga)">Calendar</a></div>
+    </div>
+
+    <nav class="mob-bottombar">
+        <a href="/dashboard" class="mob-tab"><i data-lucide="layout-dashboard" style="width:20px;height:20px"></i><span>Home</span></a>
+        <a href="/notes" class="mob-tab"><i data-lucide="file-text" style="width:20px;height:20px"></i><span>Notes</span></a>
+        <a href="/calendar" class="mob-tab"><i data-lucide="calendar-days" style="width:20px;height:20px"></i><span>Calendar</span></a>
+        <a href="/attendance" class="mob-tab active"><i data-lucide="bar-chart-3" style="width:20px;height:20px"></i><span>Attend</span></a>
+        <a href="/profile" class="mob-tab"><i data-lucide="user" style="width:20px;height:20px"></i><span>Profile</span></a>
+    </nav>
+</div>
+
+<script src="/static/js/attendance.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
